@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # setting routes with form shown below
+  # VERB(URL, to: CONTROLLER#METHOD)
+  post 'authentications/register', to: "authentications#register"
+  post 'authentications/login', to: "authentications#login"
 end
