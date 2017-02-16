@@ -9,3 +9,7 @@ What we will be taking from each statement (income, cashflow and the other), wha
 18:00 - git master admin and team git guide.
 
 18:22 - (jm and jf) started looking at JF and HD's previous work on nokogiri. aiming to successfully scape one income statement for appl and parse the fields we want into a ruby hash.
+
+18:42 - familiarising myself with the sec document website and the urls we will be scraping.
+
+19:39 - xpath vs css selectors, following Nokogiri guide
