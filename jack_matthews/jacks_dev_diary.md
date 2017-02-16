@@ -13,3 +13,7 @@ What we will be taking from each statement (income, cashflow and the other), wha
 18:42 - familiarising myself with the sec document website and the urls we will be scraping.
 
 19:39 - xpath vs css selectors, following Nokogiri guide
+
+20:24 - looping though manages to print out first three rows of apples IS (nokogiri, xpath, .each_with_index)
+
+<img width="850" alt="screen shot 2017-02-16 at 20 30 40" src="https://cloud.githubusercontent.com/assets/20629455/23039963/72768190-f487-11e6-8e98-297123928f27.png">
