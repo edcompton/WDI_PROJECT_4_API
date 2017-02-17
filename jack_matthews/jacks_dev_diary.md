@@ -1,6 +1,6 @@
 #Development Diary
 
-##Friday 16 February 2017
+##Thursday 16 February 2017
 16:00 - broad chat about the urls we will be scraping, accession id's, company tickers, the documents we will be scraping (3 docs per accession/filling).
 What we will be taking from each statement (income, cashflow and the other), what different companies call the different fields on their statements.
 - began discussing the above with regards to SQL tables, queries and active record:
@@ -21,3 +21,7 @@ What we will be taking from each statement (income, cashflow and the other), wha
 22:00 - another play
 
 22:53 - using xpath to identify correct row/link on value then traversing dom to collect all desired information.  Xpath objects are great to loop though.  getting some good output now.
+
+##Friday 17 February
+
+10:30 - stand up, ed up to speed, delegating work (ed saving htmls, jm and jk parsing htmls, henry working on out financial models and database table fields)
