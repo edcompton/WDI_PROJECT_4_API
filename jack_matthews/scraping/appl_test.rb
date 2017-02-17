@@ -45,6 +45,7 @@ on_click_phrases.each_with_index do |on_click_phrase, i|
   nokogiri_objects = doc.xpath("//a[contains(@onclick, '#{on_click_phrase}')]/../../td[@class='nump']")
 
   # push values from nokogiri_object and onclick titles
+  # NOTE current regex expression removes decimal points!
   # into final hash under appropriate year and title
   nokogiri_objects.each_with_index do |nokogiri_object, j|
     appl_IS_2016[date_symbols[j]][on_click_phrase.to_sym] = {
