@@ -35,18 +35,19 @@ dates.each do |i|
 end
 find_earliest_year
 
-# def find_values cce_xml_node
-#   node = cce_xml_node.xpath("./../../../td[@class = 'nump']")
-#   p node.text
-# end
-#
-# onclicks = @doc.xpath("//a//@onclick")
-# onclicks.each do |onclick|
-#   if onclick.value.include? cash_cash_equivalents[0]
-#     p onclick.value.split(',')[1]
-#     find_values onclick
-#   elsif onclick.value.include? "AvailableForSaleSecuritiesCurrent"
-#     p onclick.value.split(',')[1]
-#     find_values onclick
-#   end
-# end
+def find_values cce_xml_node
+  node = cce_xml_node.xpath("./../../../td[@class = 'nump']")
+  p node.text
+end
+def find_onclicks
+  onclicks = @doc.xpath("//a//@onclick")
+  onclicks.each do |onclick|
+    if onclick.value.include? cash_cash_equivalents[0]
+      p onclick.value.split(',')[1]
+      find_values onclick
+    elsif onclick.value.include? "AvailableForSaleSecuritiesCurrent"
+      p onclick.value.split(',')[1]
+      find_values onclick
+    end
+  end
+end
