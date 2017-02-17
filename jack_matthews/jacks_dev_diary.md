@@ -25,3 +25,13 @@ What we will be taking from each statement (income, cashflow and the other), wha
 ##Friday 17 February
 
 10:30 - stand up, ed up to speed, delegating work (ed saving htmls, jm and jk parsing htmls, henry working on out financial models and database table fields)
+
+lunch
+
+13:30 - parsed html dock into properly formatted ruby hash
+
+16:15 - team meeting, discussed how to make sure we capture the rows and values that we require for out model as have currently hard coded the on_click titles for apple into an array which is looped through.
+Also discussed testing and the above hash structure - what should be saved, discarded rows and empty model rows.
+Ed showed his html scraping progress.
+Alex suggested we store the array of possible row titles that we will need to be looking for in a yml file.  our passing methods should be generic and stored in a class and reference the yml file.
+Agreed to dry dev diary and dry code before end of today so we can present to each other tomorrow morning.

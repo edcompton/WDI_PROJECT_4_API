@@ -1,20 +1,36 @@
 IS = {
   dates: [],
-  date1: {
-    onclick1: {
-      title: "title1",
-      value: 34567
+  "2016": {
+    Sales: {
+      on_click_title: "SalesRevenueNet",
+      row_title: "SalesRevenueNet",
+      value: 215678
     },
-    onclick2: {
-      title: "title1",
-      value: 34567
+    COGS: {
+      on_click_title: "CostOfGoodsAndServicesSold",
+      value: 145000
+    }
+  },
+  "2015": {
+    Sales: {
+      on_click_title: "SalesRevenueNet",
+      value: 215678
     },
-    onclick3: {
-      title: "title1",
-      value: 34567
+    COGS: {
+      on_click_title: "CostOfGoodsAndServicesSold",
+      value: 145000
     }
   }
 }
+
+class IncomeStatementParser
+
+
+end
+
+
+
+
 
 require 'nokogiri'
 require 'pp'
@@ -33,6 +49,10 @@ date_divs.each do |date|
   appl_IS_2016[:dates] << date.text
   appl_IS_2016[date.text[-4..-1].to_sym] = {}
 end
+
+# array within an array / not really
+# make part of class
+# stick below array in a yml file
 
 on_click_phrases = ["SalesRevenueNet", "CostOfGoodsAndServicesSold", "GrossProfit", "ResearchAndDevelopmentExpense", "SellingGeneralAndAdministrativeExpense", "OperatingExpenses", "OperatingIncomeLoss", "NonoperatingIncomeExpense", "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest", "IncomeTaxExpenseBenefit", "NetIncomeLoss", "EarningsPerShareBasic", "EarningsPerShareDiluted", "WeightedAverageNumberOfSharesOutstandingBasic", "WeightedAverageNumberOfDilutedSharesOutstanding", "CommonStockDividendsPerShareDeclared"]
 
