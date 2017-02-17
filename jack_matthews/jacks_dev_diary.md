@@ -19,3 +19,5 @@ What we will be taking from each statement (income, cashflow and the other), wha
 <img width="850" alt="screen shot 2017-02-16 at 20 30 40" src="https://cloud.githubusercontent.com/assets/20629455/23039963/72768190-f487-11e6-8e98-297123928f27.png">
 
 22:00 - another play
+
+22:53 - using xpath to identify correct row/link on value then traversing dom to collect all desired information.  Xpath objects are great to loop though.  getting some good output now.
