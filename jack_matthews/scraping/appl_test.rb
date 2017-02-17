@@ -1,54 +1,11 @@
-IS = {
-  dates: [],
-  "2016": {
-    Sales: {
-      on_click_title: "SalesRevenueNet",
-      row_title: "SalesRevenueNet",
-      value: 215678
-    },
-    COGS: {
-      on_click_title: "CostOfGoodsAndServicesSold",
-      value: 145000
-    }
-  },
-  "2015": {
-    Sales: {
-      on_click_title: "SalesRevenueNet",
-      value: 215678
-    },
-    COGS: {
-      on_click_title: "CostOfGoodsAndServicesSold",
-      value: 145000
-    }
-  }
-}
-
-class IncomeStatementParser
-
-
-end
-
-
-
-
-
 require 'nokogiri'
 require 'pp'
 require 'pry'
 
 html_file = File.open("apple_IS.html")
-
 doc = Nokogiri::HTML.parse(html_file)
 
-date_divs = doc.xpath('//div[text() = "Sep. 24, 2016"]/../../th/div')
-
-appl_IS_2016 = {}
-appl_IS_2016[:dates] = []
-
-date_divs.each do |date|
-  appl_IS_2016[:dates] << date.text
-  appl_IS_2016[date.text[-4..-1].to_sym] = {}
-end
+document_period_end_date = "Sep. 24, 2016"
 
 # array within an array / not really
 # make part of class
@@ -56,51 +13,46 @@ end
 
 on_click_phrases = ["SalesRevenueNet", "CostOfGoodsAndServicesSold", "GrossProfit", "ResearchAndDevelopmentExpense", "SellingGeneralAndAdministrativeExpense", "OperatingExpenses", "OperatingIncomeLoss", "NonoperatingIncomeExpense", "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest", "IncomeTaxExpenseBenefit", "NetIncomeLoss", "EarningsPerShareBasic", "EarningsPerShareDiluted", "WeightedAverageNumberOfSharesOutstandingBasic", "WeightedAverageNumberOfDilutedSharesOutstanding", "CommonStockDividendsPerShareDeclared"]
 
-# p appl_IS_2016
+# initialise final hash object
+appl_IS_2016 = {}
 
-on_click_phrases.each_with_index do |on_click, i|
-  cells = doc.xpath("//a[contains(@onclick, '#{on_click}')]/../../td[@class='nump']")
+# find cell which matches doc period end date
+# (meta data of filing) mavigate up the DOM
+# to capture statement column headers (dates)
+date_divs = doc.xpath("//div[text() = '#{document_period_end_date}']/../../th/div")
 
-  cells.each_with_index do |cell, j|
-    appl_IS_2016[date_divs[j].text[-4..-1].to_sym][on_click.to_sym] = {}
-    appl_IS_2016[date_divs[j].text[-4..-1].to_sym][on_click.to_sym][:title] = on_click
-    appl_IS_2016[date_divs[j].text[-4..-1].to_sym][on_click.to_sym][:value] = cell.text.gsub(/[^\d]/, '').to_i
+# get strings from array of column header nokogiri objects
+date_strings = date_divs.collect do |div|
+  div.text
+end
 
+# get '2016' from date strings
+date_symbols = date_strings.collect do |string|
+  string[-4..-1].to_sym
+end
+
+# push date_strings into dates array on final hash
+appl_IS_2016[:dates] = date_strings
+
+# push empty hash for each year into finished hash
+date_symbols.each do |symbol|
+  appl_IS_2016[symbol] = {}
+end
+
+# search html for each row using onclick labels
+on_click_phrases.each_with_index do |on_click_phrase, i|
+  # get nokogiri object for each value cell
+  nokogiri_objects = doc.xpath("//a[contains(@onclick, '#{on_click_phrase}')]/../../td[@class='nump']")
+
+  # push values from nokogiri_object and onclick titles
+  # into final hash under appropriate year and title
+  nokogiri_objects.each_with_index do |nokogiri_object, j|
+    appl_IS_2016[date_symbols[j]][on_click_phrase.to_sym] = {
+      title: on_click_phrase,
+      value: nokogiri_object.text.gsub(/[^\d]/, '').to_i
+    }
   end
 end
 
+# print out final hash in pretty colors
 Pry::ColorPrinter.pp(appl_IS_2016)
-
-# row_titles = ["Net sales", "Cost of sales", "Gross margin", "Research and development", "Selling, general and administrative", "Total operating expenses", "Operating income", "Other income/(expense), net", "Income before provision for income taxes", "Provision for income taxes", "Net income", "Basic (in dollars per share)", "Diluted (in dollars per share)", "Basic (in shares)", "Diluted (in shares)", "Cash dividends declared per share (in dollars per share)"]
-#
-# row_titles.each_with_index do |title, i|
-#   puts title
-#   columns = doc.xpath("//a[text() = '#{title}']/../../td[@class='nump']")
-#   columns.each_with_index do |column, j|
-#     puts dates_array[j] + ": " + column.text
-#   end
-# end
-
-
-# doc.xpath('//tr').each_with_index do |row, i|
-#   puts "\nTitle : "+row.xpath('//a')[i].text
-#   row.xpath('td')[1..-1].each_with_index do |column, j|
-#     puts "\nValue : "+column.text
-#   end
-# end
-
-# doc.xpath('//tr').each_with_index do |row, i|
-#   puts "\nTitle : "+row.xpath('//a')[i].text
-#   row.xpath('td')[1..-1].each_with_index do |column, j|
-#     puts "\nValue : "+column.text
-#   end
-# end
-
-# doc.xpath('//sitcom').each do |sitcom_element|
-#   puts "\nShow Name : "+sitcom_element.xpath('name').text
-#   count=1
-#   sitcom_element.xpath('characters/character').each do |character_element|
-#     puts "    #{count}.Charachter : " + character_element.text
-#     count=count+1
-#   end
-# end
