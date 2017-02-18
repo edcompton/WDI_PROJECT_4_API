@@ -15,6 +15,6 @@ stocks.each do |ticker|
   &callback="
 
   response = HTTParty.get(url)
-  priceHistory = p response['query']['results']['quote']
+  priceHistory = response['query']['results']['quote']
   puts priceHistory
 end
