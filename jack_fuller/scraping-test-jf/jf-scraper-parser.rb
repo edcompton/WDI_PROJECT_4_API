@@ -46,7 +46,6 @@ class HtmlParser
 
 end
 
-
 class IncomeStatementScraper < HtmlParser
 # Test on balance sheet and cash flow etc and move up class tree if generic
   def get_document_period_end_date
@@ -109,9 +108,9 @@ class IncomeStatementScraper < HtmlParser
     populate_data_hash onclick_values
     Pry::ColorPrinter.pp(@data)
   end
-
-
 end
+
+
 
 file = "/Users/jackfuller/development/WDI_PROJECT_4_API/raw_htmls/income_statements/apple_IS.html"
 

@@ -26,8 +26,8 @@ class HtmlParser
     @doc_to_scrape = Nokogiri::HTML.parse(@doc_to_parse)
   end
 
-  def initialize_data_array
-    @data = []
+  def initialize_data_hash
+    @data = {}
   end
 
   def get_nokogiri_objects query
@@ -47,6 +47,7 @@ class HtmlParser
 end
 
 
+
 class IncomeStatementScraper < HtmlParser
 # Test on balance sheet and cash flow etc and move up class tree if generic
   def get_document_period_end_date
@@ -60,9 +61,9 @@ class IncomeStatementScraper < HtmlParser
     @date_divs = @doc_to_scrape.xpath(query)
   end
 
-  # def set_date_array_on_data_hash
-  #   @data[:dates] = @date_strings
-  # end
+  def set_date_array_on_data_hash
+    @data[:dates] = @date_strings
+  end
 
   def set_year_hashes_on_data_hash
     @date_symbols.each do |symbol|
@@ -97,7 +98,7 @@ class IncomeStatementScraper < HtmlParser
   end
 
   def initialize file, onclick_values
-    initialize_data_array
+    initialize_data_hash
     open_file file
     parse_file
     get_document_period_end_date

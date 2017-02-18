@@ -129,7 +129,6 @@ class BalanceSheetParser
     nil
   end
 
-
 end
 
 BalanceSheetParser.find_years
