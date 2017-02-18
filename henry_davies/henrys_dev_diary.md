@@ -24,7 +24,7 @@ EBIT
 Finance and other expense = EBIT - PBT
 PBT
 Tax
-Other adjustments = net PBT - tax - net income
+Other adjustments = PBT - tax - net income
 Net income
 
 From here, we could use conditional logic to show the breakdown of opex, finance & other expense, and other adjustments - if provided. For example, breaking opex down into the usual cost fields of selling & marketing, research & development, and general & adminstrative. 
