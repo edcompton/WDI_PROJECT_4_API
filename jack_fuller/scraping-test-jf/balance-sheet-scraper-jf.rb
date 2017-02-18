@@ -1,38 +1,72 @@
 require 'nokogiri'
+require 'active_support'
+require 'active_support/core_ext'
 
 class BalanceSheetParser
 
-  @onclick_values = ["defref_us-gaap_AssetsCurrentAbstract"], ["defref_us-gaap_CashAndCashEquivalentsAtCarryingValue"],
-  ["defref_us-gaap_AvailableForSaleSecuritiesCurrent"],
-  ["defref_us-gaap_AccountsReceivableNetCurrent"],
-  ["defref_us-gaap_InventoryNet"],
-  ["defref_us-gaap_NontradeReceivablesCurrent"],
-  ["defref_us-gaap_OtherAssetsCurrent"],
-  ["defref_us-gaap_AssetsCurrent"],
-  ["defref_us-gaap_AvailableForSaleSecuritiesNoncurrent"],
-  ["defref_us-gaap_PropertyPlantAndEquipmentNet"],
-  ["defref_us-gaap_Goodwill"],
-  ["defref_us-gaap_IntangibleAssetsNetExcludingGoodwill"],
-  ["defref_us-gaap_OtherAssetsNoncurrent"],
-  ["defref_us-gaap_Assets"],
-  ["defref_us-gaap_LiabilitiesCurrentAbstract"],
-  ["defref_us-gaap_AccountsPayableCurrent"],
-  ["defref_us-gaap_AccruedLiabilitiesCurrent"],
-  ["defref_us-gaap_DeferredRevenueCurrent"],
-  ["defref_us-gaap_CommercialPaper"],
-  ["defref_us-gaap_LongTermDebtCurrent]",
-  ["defref_us-gaap_LiabilitiesCurrent"],
-  ["defref_us-gaap_DeferredRevenueNoncurrent"],
-  ["defref_us-gaap_LongTermDebtNoncurrent"],
-  ["defref_us-gaap_OtherLiabilitiesNoncurrent"],
-  ["defref_us-gaap_Liabilities"],
-  ["defref_us-gaap_CommitmentsAndContingencies"],
-  ["defref_us-gaap_StockholdersEquityAbstract"],
-  ["defref_us-gaap_CommonStocksIncludingAdditionalPaidInCapital"],
-  ["defref_us-gaap_RetainedEarningsAccumulatedDeficit"],
-  ["defref_us-gaap_AccumulatedOtherComprehensiveIncomeLossNetOfTax"],
-  ["defref_us-gaap_StockholdersEquity"],
-  ["defref_us-gaap_LiabilitiesAndStockholdersEquity"]
+  # @onclick_values = ["defref_us-gaap_AssetsCurrentAbstract"], ["defref_us-gaap_CashAndCashEquivalentsAtCarryingValue"],
+  # ["defref_us-gaap_AvailableForSaleSecuritiesCurrent"],
+  # ["defref_us-gaap_AccountsReceivableNetCurrent"],
+  # ["defref_us-gaap_InventoryNet"],
+  # ["defref_us-gaap_NontradeReceivablesCurrent"],
+  # ["defref_us-gaap_OtherAssetsCurrent"],
+  # ["defref_us-gaap_AssetsCurrent"],
+  # ["defref_us-gaap_AvailableForSaleSecuritiesNoncurrent"],
+  # ["defref_us-gaap_PropertyPlantAndEquipmentNet"],
+  # ["defref_us-gaap_Goodwill"],
+  # ["defref_us-gaap_IntangibleAssetsNetExcludingGoodwill"],
+  # ["defref_us-gaap_OtherAssetsNoncurrent"],
+  # ["defref_us-gaap_Assets"],
+  # ["defref_us-gaap_LiabilitiesCurrentAbstract"],
+  # ["defref_us-gaap_AccountsPayableCurrent"],
+  # ["defref_us-gaap_AccruedLiabilitiesCurrent"],
+  # ["defref_us-gaap_DeferredRevenueCurrent"],
+  # ["defref_us-gaap_CommercialPaper"],
+  # ["defref_us-gaap_LongTermDebtCurrent]",
+  # ["defref_us-gaap_LiabilitiesCurrent"],
+  # ["defref_us-gaap_DeferredRevenueNoncurrent"],
+  # ["defref_us-gaap_LongTermDebtNoncurrent"],
+  # ["defref_us-gaap_OtherLiabilitiesNoncurrent"],
+  # ["defref_us-gaap_Liabilities"],
+  # ["defref_us-gaap_CommitmentsAndContingencies"],
+  # ["defref_us-gaap_StockholdersEquityAbstract"],
+  # ["defref_us-gaap_CommonStocksIncludingAdditionalPaidInCapital"],
+  # ["defref_us-gaap_RetainedEarningsAccumulatedDeficit"],
+  # ["defref_us-gaap_AccumulatedOtherComprehensiveIncomeLossNetOfTax"],
+  # ["defref_us-gaap_StockholdersEquity"],
+  # ["defref_us-gaap_LiabilitiesAndStockholdersEquity"]
+  # ]
+  @onclick_values = ["defref_us-gaap_AssetsCurrentAbstract", "defref_us-gaap_CashAndCashEquivalentsAtCarryingValue",
+  "defref_us-gaap_AvailableForSaleSecuritiesCurrent",
+  "defref_us-gaap_AccountsReceivableNetCurrent",
+  "defref_us-gaap_InventoryNet",
+  "defref_us-gaap_NontradeReceivablesCurrent",
+  "defref_us-gaap_OtherAssetsCurrent",
+  "defref_us-gaap_AssetsCurrent",
+  "defref_us-gaap_AvailableForSaleSecuritiesNoncurrent",
+  "defref_us-gaap_PropertyPlantAndEquipmentNet",
+  "defref_us-gaap_Goodwill",
+  "defref_us-gaap_IntangibleAssetsNetExcludingGoodwill",
+  "defref_us-gaap_OtherAssetsNoncurrent",
+  "defref_us-gaap_Assets",
+  "defref_us-gaap_LiabilitiesCurrentAbstract",
+  "defref_us-gaap_AccountsPayableCurrent",
+  "defref_us-gaap_AccruedLiabilitiesCurrent",
+  "defref_us-gaap_DeferredRevenueCurrent",
+  "defref_us-gaap_CommercialPaper",
+  "defref_us-gaap_LongTermDebtCurrent",
+  "defref_us-gaap_LiabilitiesCurrent",
+  "defref_us-gaap_DeferredRevenueNoncurrent",
+  "defref_us-gaap_LongTermDebtNoncurrent",
+  "defref_us-gaap_OtherLiabilitiesNoncurrent",
+  "defref_us-gaap_Liabilities",
+  "defref_us-gaap_CommitmentsAndContingencies",
+  "defref_us-gaap_StockholdersEquityAbstract",
+  "defref_us-gaap_CommonStocksIncludingAdditionalPaidInCapital",
+  "defref_us-gaap_RetainedEarningsAccumulatedDeficit",
+  "defref_us-gaap_AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+  "defref_us-gaap_StockholdersEquity",
+  "defref_us-gaap_LiabilitiesAndStockholdersEquity"
   ]
   BS = {
     :dates => [
@@ -64,10 +98,7 @@ class BalanceSheetParser
   def self.find_onclicks
     onclicks = @doc_to_parse.xpath("//a//@onclick")
     onclicks.each_with_index do |onclick, index|
-      p @onclick_values[index]
-      p onclick.value.split(",")[1]
-      onclick.value.split(",")[1]
-      if @onclick_values[0].include? onclick.value.split(",")[1]
+      if @onclick_values.include? onclick.value.split(',')[1]
         p 'ping'
         # p onclick.value.split(',')[1]
         # find_values onclick
@@ -104,28 +135,3 @@ end
 
 BalanceSheetParser.find_years
 BalanceSheetParser.find_onclicks
-
-# BS = {
-#   dates: [],
-#   "2016": {
-#     Sales: {
-#       on_click_title: "",
-#       row_title: "",
-#       value: 0
-#     },
-#     COGS: {
-#       on_click_title: "CostOfGoodsAndServicesSold",
-#       value: 145000
-#     }
-#   },
-#   "2015": {
-#     Sales: {
-#       on_click_title: "SalesRevenueNet",
-#       value: 215678
-#     },
-#     COGS: {
-#       on_click_title: "CostOfGoodsAndServicesSold",
-#       value: 145000
-#     }
-#   }
-# }
