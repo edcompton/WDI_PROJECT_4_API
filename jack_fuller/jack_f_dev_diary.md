@@ -18,5 +18,9 @@ To test various scraping tools and approaches to get and parse the relevant data
 http://ruby.bastardsbook.com/chapters/web-scraping/
 
 #Saturday 17th February 2017
+
 ##Goals
 Finish the scrapers for cash flow, balance sheet and
+
+##Research
+http://vrybas.github.io/blog/2014/08/15/a-way-to-organize-poros-in-rails/

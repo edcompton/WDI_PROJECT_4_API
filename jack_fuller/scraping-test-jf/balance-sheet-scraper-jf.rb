@@ -87,11 +87,10 @@ class BalanceSheetParser
   @doc_to_parse = File.open("/Users/jackfuller/development/WDI_PROJECT_4_API/raw_htmls/balance_sheets/apple_BS.xml") { |f| Nokogiri::XML(f) }
 
   # Once a given onclick has been found to contain a relevant node, we can then extract the relvant values. The top one has
-  # def self.find_values xml_node
-  #   value_nodes = xml_node.xpath("./../../../td[@class = 'nump']")
-  #   p value_nodes[0].text.split(' ')[1]
-  #
-  # end
+  def self.find_values xml_node
+    value_nodes = xml_node.xpath("./../../../td[@class = 'nump']")
+    p value_nodes[0].text.split(' ')[1]
+  end
 
 
   # Finds all the onclicks, checks their values against the array of possibilities and finds the values.
