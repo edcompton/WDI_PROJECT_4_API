@@ -64,25 +64,38 @@ class IncomeStatementScraper < HtmlParser
     end
   end
 
-  def populate_data_hash array
-    array.each_with_index do |on_click_phrase, i|
-      # get nokogiri object for each value cell
-      nokogiri_objects = @doc_to_scrape.xpath("//a[contains(@onclick, '#{on_click_phrase}')]/../../td[@class='nump']")
-
-      # push values from nokogiri_object and onclick titles
-      # NOTE current regex expression removes decimal points!
-      # into final hash under appropriate year and title
-      nokogiri_objects.each_with_index do |nokogiri_object, j|
-        @appl_data[@date_symbols[j]][on_click_phrase.to_sym] = {
-          title: on_click_phrase,
-          value: nokogiri_object.text.gsub(/[^\d]/, '').to_i
-        }
+  def populate_data_hash hash
+    hash.each do |key, value|
+      value.each do |onclick_phrase|
+        nokogiri_objects = get_nokogiri_objects("//a[contains(@onclick, '#{onclick_phrase}')]/../../td[@class='nump']")
+        populate_data_hash_with_cells nokogiri_objects, onclick_phrase, key
       end
     end
   end
 
+  def get_nokogiri_objects query
+    @doc_to_scrape.xpath(query)
+  end
 
-  def initialize file
+  def populate_data_hash_with_cells nokogiri_objects, onclick_phrase, model_title
+    nokogiri_objects.each_with_index do |nokogiri_object, j|
+      populate_data_hash_with_cell nokogiri_object, j, onclick_phrase, model_title
+    end
+  end
+
+  def populate_data_hash_with_cell nokogiri_object, j, onclick_phrase, model_title
+    @appl_data[@date_symbols[j]][model_title] = create_cell_hash onclick_phrase, nokogiri_object
+  end
+
+  def create_cell_hash onclick_phrase, nokogiri_object
+    {
+      title: onclick_phrase,
+      value: nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+    }
+  end
+
+
+  def initialize file, onclick_values
     initialize_data_hash
     open_file file
     parse_file
@@ -92,8 +105,8 @@ class IncomeStatementScraper < HtmlParser
     get_date_symbols
     set_date_array_on_data_hash
     set_year_hashes_on_data_hash
-    populate_data_hash ["SalesRevenueNet", "CostOfGoodsAndServicesSold", "GrossProfit", "ResearchAndDevelopmentExpense", "SellingGeneralAndAdministrativeExpense", "OperatingExpenses", "OperatingIncomeLoss", "NonoperatingIncomeExpense", "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest", "IncomeTaxExpenseBenefit", "NetIncomeLoss", "EarningsPerShareBasic", "EarningsPerShareDiluted", "WeightedAverageNumberOfSharesOutstandingBasic", "WeightedAverageNumberOfDilutedSharesOutstanding", "CommonStockDividendsPerShareDeclared"]
-    p @appl_data
+    populate_data_hash onclick_values
+    Pry::ColorPrinter.pp(@appl_data)
   end
 
 
@@ -101,7 +114,7 @@ end
 
 file = "/Users/jackfuller/development/WDI_PROJECT_4_API/raw_htmls/income_statements/apple_IS.html"
 
-IS = IncomeStatementScraper.new(file)
+IS = IncomeStatementScraper.new file, onclick_values
 # IS.initialize_data_hash
 # IS.open_file file
 # IS.parse_file
