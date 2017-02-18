@@ -1,11 +1,11 @@
-SALES = ["SalesRevenueNet", "SalesRevenueGoodsNet","Revenues"]
-COGS = ["CostOfGoodsAndServicesSold","CostOfGoodsSold","CostOfRevenue"]
-EBIT = ["OperatingIncomeLoss"]
+SALES: ["SalesRevenueNet", "SalesRevenueGoodsNet","Revenues"]
+COGS: ["CostOfGoodsAndServicesSold","CostOfGoodsSold","CostOfRevenue"]
+EBIT: ["OperatingIncomeLoss"]
 
-PBT = ["IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest","IncomeLossFromContinuingOperationsBeforeIncomeTaxes","IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"]
+PBT: ["IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest","IncomeLossFromContinuingOperationsBeforeIncomeTaxes","IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"]
 
-TAX = ["IncomeTaxExpenseBenefit"]
-NET_INCOME = ["NetIncomeLoss","NetIncomeLossAvailableToCommonStockholdersBasic"]
+TAX: ["IncomeTaxExpenseBenefit"]
+NET_INCOME: ["NetIncomeLoss","NetIncomeLossAvailableToCommonStockholdersBasic"]
 
-BASIC_EPS = ["EarningsPerShareBasic"]
-DILUTED_EPS =["EarningsPerShareDiluted"]
+BASIC_EPS: ["EarningsPerShareBasic"]
+DILUTED_EPS: ["EarningsPerShareDiluted"]
