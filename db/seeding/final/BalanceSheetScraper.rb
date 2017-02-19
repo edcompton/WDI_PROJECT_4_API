@@ -13,7 +13,7 @@ class BalanceSheetScraper < ParserAndScraper
 
   def create_yearly_results_hash date, column_index
     {
-      IS_id: 1,
+      BS_id: 1,
       year: get_year_integer(date),
       date: date,
       UNIT: get_units,
