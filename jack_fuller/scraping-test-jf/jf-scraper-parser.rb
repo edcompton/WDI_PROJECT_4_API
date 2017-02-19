@@ -39,7 +39,7 @@ bs_title_values = {
   MARKETABLE_SECURITIES: ["Short-term marketable securities"],
   SHORT_TERM_INVESTMENTS: [],
   INVENTORY: ["Inventories"],
-  ACCOUNTS_RECIEVABLE: ["Accounts receivable"],
+  ACCOUNTS_RECIEVABLE: ["Accounts receivable, less allowances of $53 and $63, respectively"],
   TOTAL_CURRENT_ASSETS: ["Total current assets"],
   AVAIABLE_FOR_SALE_SECURITIES: ["Long-term marketable securities"],
   PPE_NET: ["Property, plant and equipment, net"],
@@ -53,7 +53,7 @@ bs_title_values = {
   CURRENT_DEFERRED_REVENUE: ["Deferred revenue, non-current"],
   TOTAL_CURRENT_LIABILITIES: ["Total current liabilities"],
   LONG_TERM_DEBT: ["Long-term debt"],
-  NON_CURRENT_DEFERRED_REVENUE: ["DeferredRevenueNoncurrent"],
+  NON_CURRENT_DEFERRED_REVENUE: ["Deferred revenue"],
   DEFERRED_TAX_LIABILITIES: [],
   TOTAL_LIABILITIES: ["Total liabilities"],
   COMMON_STOCKS_AND_PAID_IN_CAPITAL: ["Common stock and additional paid-in capital"],
@@ -126,7 +126,7 @@ class HtmlParser
   def populate_data_hash hash
     hash.each do |key, value|
       value.each do |onclick_phrase|
-        nokogiri_object = get_nokogiri_objects("//a[text() = '#{onclick_phrase}']/../../td[@class='nump']")
+        nokogiri_object = get_nokogiri_objects("//a[text() = '#{onclick_phrase}']/../../td[@class='nump']/../../td[@class='nump']")
         populate_data_hash_with_cells nokogiri_object, onclick_phrase, key
       end
     end
@@ -134,7 +134,6 @@ class HtmlParser
 
   def populate_data_hash_with_cells nokogiri_objects, onclick_phrase, model_title
     nokogiri_objects.each_with_index do |object, index|
-
       @data[index][model_title] = create_cell_hash onclick_phrase, object
     end
   end
@@ -158,15 +157,13 @@ class BalanceSheetScraper < HtmlParser
     get_date_strings
     get_date_symbols
     set_year_hashes_on_data_array
-    p @data
-    p @data.length
-    populate_data_hash bs_title_values
+    populate_data_hash bs_onclick_values
     Pry::ColorPrinter.pp(@data)
   end
 end
 
 file = "/Users/jackfuller/development/WDI_PROJECT_4_API/raw_htmls/balance_sheets/apple_BS.html"
 
-BS = BalanceSheetScraper.new file, bs_title_values
+BS = BalanceSheetScraper.new file, bs_onclick_values
 
 # Look throught the nodeset

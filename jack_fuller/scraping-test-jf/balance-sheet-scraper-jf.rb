@@ -99,11 +99,11 @@ class BalanceSheetParser
     onclicks.each_with_index do |onclick, index|
       if @onclick_values.include? onclick.value.split(',')[1]
         p 'ping'
-        # p onclick.value.split(',')[1]
-        # find_values onclick
-      # elsif onclick.value.include? "AvailableForSaleSecuritiesCurrent"
-        # p onclick.value.split(',')[1]
-        # find_values onclick
+        p onclick.value.split(',')[1]
+        find_values onclick
+      elsif onclick.value.include? "AvailableForSaleSecuritiesCurrent"
+        p onclick.value.split(',')[1]
+        find_values onclick
       end
     end
   end
