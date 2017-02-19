@@ -21,23 +21,24 @@ class SheetSelector
   attr_reader :ticker, :doc
   attr_accessor :sheet_urls, :statements
 
-  def initialize ticker
-    @ticker               = ticker
+  def initialize
     @sheet_urls           = []
-    run
+    @ticker               = ['AAPL', 'GOOG', 'KO', 'MMM', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'XOM', 'GE', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'MCD', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT']
+    @ticker.each do |tick|
+      @tick = tick
+      run
+      @sheet_urls         = []
+    end
   end
 
   def run
     create_ticker_folder
     update_filing_urls_with_r_number
-    find_entity_information
-    find_balance_sheets
-    find_income_statements
-    find_cash_flow
+    cycle_urls
   end
 
   def generate_url_for_query
-    "#{SEC_URL}?CIK=#{ticker}&Find=Search&owner=exclude&action=getcompany&output=atom&type=10-k"
+    "#{SEC_URL}?CIK=#{@tick}&Find=Search&owner=exclude&action=getcompany&output=atom&type=10-k"
   end
 
   def doc
@@ -50,13 +51,14 @@ class SheetSelector
         sheet_urls << add_r_number(url, i)
       end
     end
-    puts sheet_urls
+    # puts sheet_urls
   end
 
   def create_ticker_folder
-    dirname = "ed_compton/scraping/scraped_files/#{@ticker}"
+    dirname = "ed_compton/scraping/scraped_files/#{@tick}"
     unless File.directory?(dirname)
       FileUtils.mkdir_p(dirname)
+      # puts dirname
     end
   end
 
@@ -68,17 +70,14 @@ class SheetSelector
     url.text.gsub!("http", "https")
   end
 
-
-  def find_entity_information
+  def cycle_urls
     sheet_urls.each do |sheet_url|
       begin
         r_statement = Nokogiri::XML(open(sheet_url))
-        statement_title = r_statement.css("th[class=tl]").text.to_s
-        if statement_title.include? "Entity Information"
-          @statement_year = r_statement.xpath("//body//tr//th[@class='th']")[3].text.to_s[-4..-1]
-          create_folder_year
-          create_file(statement_title, r_statement)
-        end
+        find_entity_information r_statement
+        find_balance_sheets r_statement
+        find_cash_flow r_statement
+        find_income_statements r_statement
         sleep 2
       rescue OpenURI::HTTPError
         next
@@ -86,74 +85,72 @@ class SheetSelector
     end
   end
 
-  def find_balance_sheets
-    sheet_urls.each do |sheet_url|
-      begin
-        r_statement = Nokogiri::XML(open(sheet_url))
-        statement_title = r_statement.css("th[class=tl]").text.to_s
-        if statement_title.include? "BALANCE"
-          @statement_year = r_statement.css("th[class=th]")[0].text.to_s[-4..-1]
-          create_folder_year
-          create_file(statement_title, r_statement)
-        end
-        sleep 2
-      rescue OpenURI::HTTPError
-        next
+  def find_entity_information r_statement
+    statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
+    if statement_title.include? "document and entity information"
+      year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
+      p year_selector
+      @statement_year = year_selector[1]
+      title = "Entity Information"
+      create_folder_year
+      create_file(statement_title, r_statement, title)
+    end
+  end
+
+  def find_balance_sheets r_statement
+    statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
+    if statement_title.include? "balance"
+      if !(statement_title.include? "parenthetical")
+        year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
+        p year_selector
+        @statement_year = year_selector.max
+        title = "Balance Sheet"
+        create_folder_year
+        create_file(statement_title, r_statement, title)
       end
     end
   end
 
-  def find_income_statements
-    sheet_urls.each do |sheet_url|
-      begin
-        r_statement = Nokogiri::XML(open(sheet_url))
-        statement_title = r_statement.css("th[class=tl]").text.to_s
-        # if statement_title.exclude? "Parenthetical"
-        if statement_title.include? "INCOME" or statement_title.include? "EARNINGS" or statement_title.include? "OPERATIONS"
-          @statement_year = r_statement.css("th[class=th]")[1].text.to_s[-4..-1]
-          create_folder_year
-          create_file(statement_title, r_statement)
-        end
-        # end
-        sleep 2
-      rescue OpenURI::HTTPError
-        next
+  def find_income_statements r_statement
+    statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
+    if statement_title.include? "income" or statement_title.include? "earnings" or statement_title.include? "operations"
+      if !(statement_title.include? "parenthetical")
+        year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
+        p year_selector
+        @statement_year = year_selector.max
+        title = "Income Statement"
+        create_folder_year
+        create_file(statement_title, r_statement, title)
       end
     end
   end
 
-  def find_cash_flow
-    sheet_urls.each do |sheet_url|
-      begin
-        r_statement = Nokogiri::XML(open(sheet_url))
-        if r_statement != nil
-          statement_title = r_statement.css("th[class=tl]").text.to_s
-          if statement_title.include? "CASH"
-            @statement_year = r_statement.xpath("//body//tr//th[@class='th']")[1].text.to_s[-4..-1]
-            puts @statement_year
-            create_folder_year
-            create_file(statement_title, r_statement)
-          end
-        end
-        sleep 2
-      rescue OpenURI::HTTPError
-        next
+  def find_cash_flow r_statement
+    if r_statement != nil
+      statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
+      if statement_title.include? "cash"
+        year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
+        p year_selector
+        @statement_year = year_selector.max
+        title = "Cash Flow"
+        create_folder_year
+        create_file(statement_title, r_statement, title)
       end
     end
   end
 
   def create_folder_year
-    dirname = "ed_compton/scraping/scraped_files/#{@ticker}/#{@statement_year}"
+    dirname = "ed_compton/scraping/scraped_files/#{@tick}/#{@statement_year}"
     unless File.directory?(dirname)
       FileUtils.mkdir_p(dirname)
     end
   end
 
-  def create_file statement_title, r_statement
-    blank_file = File.new("ed_compton/scraping/scraped_files/#{@ticker}/#{@statement_year}/#{statement_title}.html", "w+")
+  def create_file statement_title, r_statement, title
+    blank_file = File.new("ed_compton/scraping/scraped_files/#{@tick}/#{@statement_year}/#{title}.html", "w+")
     blank_file.puts (r_statement)
   end
 end
 
 
-SheetSelector.new "GOOG"
+SheetSelector.new
