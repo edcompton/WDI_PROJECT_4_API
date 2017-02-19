@@ -63,4 +63,14 @@ class ParserAndScraper
     end
   end
 
+  def get_units
+    query = "//strong"
+    text = get_nokogiri_objects(query)[0].text
+    if text.include?(',')
+      text.split(',')[1].strip!
+    else
+      text.split(')')[1].strip!
+    end
+  end
+
 end

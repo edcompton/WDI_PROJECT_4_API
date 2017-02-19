@@ -48,12 +48,6 @@ class BalanceSheetScraper < ParserAndScraper
     }
   end
 
-  def get_units
-    query = "//tr/th/div/strong"
-    obj = get_nokogiri_objects(query)
-    obj = obj.text.split(')')[1].strip!
-  end
-
   def initialize file, onclick_terms
     @onclick_terms = onclick_terms
     open_file file
@@ -67,7 +61,10 @@ class BalanceSheetScraper < ParserAndScraper
   end
 end
 
-file = "./apple_BS.html"
+# file = "./htmls/google_BS.html"
+# file = "./htmls/apple_BS.html"
+# file = "./htmls/PG_BS.html"
+file = "./htmls/coke_BS.html"
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["balance_sheet"]

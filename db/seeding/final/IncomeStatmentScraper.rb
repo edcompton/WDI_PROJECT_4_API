@@ -6,6 +6,11 @@ load 'ParserAndScraper.rb'
 
 class IncomeStatementScraper < ParserAndScraper
 
+  def get_date_divs
+    query = "//body//tr//th[@class='th']"
+    @date_divs = get_nokogiri_objects(query)[1..-1]
+  end
+
   def create_yearly_results_hash date, column_index
     {
       IS_id: 1,
@@ -23,24 +28,8 @@ class IncomeStatementScraper < ParserAndScraper
     }
   end
 
-  def get_cell_float key_string, column_index
-    @onclick_values[key_string].each do |onclick_phrase|
-
-      query='//a[contains(@onclick, "' + onclick_phrase + '")]/../../td[@class="nump"]'
-
-      object = get_nokogiri_objects(query)[column_index]
-      next unless object
-      return nokogiri_object_to_float object
-    end
-  end
-
-  def get_units
-    query = "//strong"
-    get_nokogiri_objects(query)[0].text.split(',')[1].strip
-  end
-
-  def initialize file, onclick_values
-    @onclick_values = onclick_values
+  def initialize file, onclick_terms
+    @onclick_terms = onclick_terms
     open_file file
     parse_file
     initialize_data_array
@@ -53,7 +42,10 @@ class IncomeStatementScraper < ParserAndScraper
 
 end
 
-file = "./apple_IS.html"
+# file = "./htmls/google_IS.html"
+# file = "./htmls/apple_IS.html"
+# file = "./htmls/pg_IS.html"
+file = "./htmls/coke_IS.html"
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["income_statement"]
