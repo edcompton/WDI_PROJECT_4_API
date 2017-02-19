@@ -14,6 +14,7 @@ gem 'rack-cors'
 gem 'figaro'
 gem 'active_model_serializers'
 gem 'jwt'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'byebug', platform: :mri

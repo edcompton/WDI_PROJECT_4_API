@@ -41,3 +41,5 @@ Agreed to dry dev diary and dry code before end of today so we can present to ea
 12:00 - standup, trello todo list will be made. me and jack and ed continuing work on scraping.  Henry doing wire frames.
 
 until 14:15 - worked on making parent and child classes for parsers and scrapers.  refactors my code into a class with modular functions all triggered by an initialize. takes a file path spits out hash.
+
+17:00 - angualr authetication
