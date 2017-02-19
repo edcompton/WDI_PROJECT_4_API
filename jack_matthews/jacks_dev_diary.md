@@ -35,3 +35,15 @@ Also discussed testing and the above hash structure - what should be saved, disc
 Ed showed his html scraping progress.
 Alex suggested we store the array of possible row titles that we will need to be looking for in a yml file.  our passing methods should be generic and stored in a class and reference the yml file.
 Agreed to dry dev diary and dry code before end of today so we can present to each other tomorrow morning.
+
+##Saturday 18 February
+
+12:00 - standup, trello todo list will be made. me and jack and ed continuing work on scraping.  Henry doing wire frames.
+
+until 14:15 - worked on making parent and child classes for parsers and scrapers.  refactors my code into a class with modular functions all triggered by an initialize. takes a file path spits out hash.
+
+17:00 - angualr authetication
+
+##Sunday 19 February
+
+10:45 - back to scraping
