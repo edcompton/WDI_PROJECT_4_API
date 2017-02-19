@@ -16,7 +16,7 @@ onclick_values = {
   DILUTED_EPS: ["EarningsPerShareDiluted"]
 }
 
-class HtmlParser
+class ParserAndScraper
 
   def open_file file_name
     @doc_to_parse = File.open(file_name)
@@ -60,22 +60,13 @@ class HtmlParser
     end
   end
 
-  def get_cell_float key_symbol, column_index
-    @onclick_values[key_symbol].each do |onclick_phrase|
-      query = "//a[contains(@onclick, '#{onclick_phrase}')]/../../td[@class='nump']"
-      object = get_nokogiri_objects(query)[column_index]
-      next unless object
-      return nokogiri_object_to_float object
-    end
-  end
-
   def nokogiri_object_to_float nokogiri_object
     nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
   end
 
 end
 
-class IncomeStatementScraper < HtmlParser
+class IncomeStatementScraper < ParserAndScraper
 
   def create_yearly_results_hash date, column_index
     {
@@ -91,6 +82,15 @@ class IncomeStatementScraper < HtmlParser
       BASIC_EPS: get_cell_float(:BASIC_EPS, column_index),
       DILUTED_EPS: get_cell_float(:DILUTED_EPS, column_index)
     }
+  end
+
+  def get_cell_float key_symbol, column_index
+    @onclick_values[key_symbol].each do |onclick_phrase|
+      query = "//a[contains(@onclick, '#{onclick_phrase}')]/../../td[@class='nump']"
+      object = get_nokogiri_objects(query)[column_index]
+      next unless object
+      return nokogiri_object_to_float object
+    end
   end
 
   def initialize file, onclick_values
