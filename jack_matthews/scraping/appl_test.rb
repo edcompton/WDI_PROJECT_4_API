@@ -2,58 +2,111 @@ require 'nokogiri'
 require 'pp'
 require 'pry'
 
-html_file = File.open("apple_IS.html")
-doc = Nokogiri::HTML.parse(html_file)
+onclick_values = {
+  SALES: ["SalesRevenueNet", "SalesRevenueGoodsNet","Revenues"],
+  COGS: ["CostOfGoodsAndServicesSold","CostOfGoodsSold","CostOfRevenue"],
+  EBIT: ["OperatingIncomeLoss"],
 
-document_period_end_date = "Sep. 24, 2016"
+  PBT: ["IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest","IncomeLossFromContinuingOperationsBeforeIncomeTaxes","IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"],
 
-# array within an array / not really
-# make part of class
-# stick below array in a yml file
+  TAX: ["IncomeTaxExpenseBenefit"],
+  NET_INCOME: ["NetIncomeLoss","NetIncomeLossAvailableToCommonStockholdersBasic"],
 
-on_click_phrases = ["SalesRevenueNet", "CostOfGoodsAndServicesSold", "GrossProfit", "ResearchAndDevelopmentExpense", "SellingGeneralAndAdministrativeExpense", "OperatingExpenses", "OperatingIncomeLoss", "NonoperatingIncomeExpense", "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest", "IncomeTaxExpenseBenefit", "NetIncomeLoss", "EarningsPerShareBasic", "EarningsPerShareDiluted", "WeightedAverageNumberOfSharesOutstandingBasic", "WeightedAverageNumberOfDilutedSharesOutstanding", "CommonStockDividendsPerShareDeclared"]
+  BASIC_EPS: ["EarningsPerShareBasic"],
+  DILUTED_EPS: ["EarningsPerShareDiluted"]
+}
 
-# initialise final hash object
-appl_IS_2016 = {}
+class HtmlParser
 
-# find cell which matches doc period end date
-# (meta data of filing) mavigate up the DOM
-# to capture statement column headers (dates)
-date_divs = doc.xpath("//div[text() = '#{document_period_end_date}']/../../th/div")
+  def open_file file_name
+    @doc_to_parse = File.open(file_name)
+  end
 
-# get strings from array of column header nokogiri objects
-date_strings = date_divs.collect do |div|
-  div.text
+  def parse_file
+    @doc_to_scrape = Nokogiri::HTML.parse(@doc_to_parse)
+  end
+
+  def initialize_data_array
+    @data = []
+  end
+
+  def get_nokogiri_objects query
+    @doc_to_scrape.xpath(query)
+  end
+
+  def get_date_divs
+    query = "//body//tr//th[@class='th']"
+    @date_divs = get_nokogiri_objects(query)[1..-1]
+  end
+
+  def get_date_strings
+    @date_strings = @date_divs.collect do |div|
+      div.text.gsub(/\n/, "").strip
+    end
+  end
+
+  def get_year_integer date_string
+    date_string.gsub(/[^\d]/, '')[-4..-1].to_i
+  end
+
+  def get_document_period_end_date
+    query = "//body//tr//th[@class='th']"
+    @document_period_end_date = get_nokogiri_objects(query)[1].text
+  end
+
+  def populate_data_array_with_cells
+    @date_strings.each_with_index do |date, index|
+      @data[index] = create_yearly_results_hash date, index
+    end
+  end
+
+  def get_cell_float key_symbol, column_index
+    @onclick_values[key_symbol].each do |onclick_phrase|
+      query = "//a[contains(@onclick, '#{onclick_phrase}')]/../../td[@class='nump']"
+      object = get_nokogiri_objects(query)[column_index]
+      next unless object
+      return nokogiri_object_to_float object
+    end
+  end
+
+  def nokogiri_object_to_float nokogiri_object
+    nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+  end
+
 end
 
-# get '2016' from date strings
-date_symbols = date_strings.collect do |string|
-  string[-4..-1].to_sym
-end
+class IncomeStatementScraper < HtmlParser
 
-# push date_strings into dates array on final hash
-appl_IS_2016[:dates] = date_strings
-
-# push empty hash for each year into finished hash
-date_symbols.each do |symbol|
-  appl_IS_2016[symbol] = {}
-end
-
-# search html for each row using onclick labels
-on_click_phrases.each_with_index do |on_click_phrase, i|
-  # get nokogiri object for each value cell
-  nokogiri_objects = doc.xpath("//a[contains(@onclick, '#{on_click_phrase}')]/../../td[@class='nump']")
-
-  # push values from nokogiri_object and onclick titles
-  # NOTE current regex expression removes decimal points!
-  # into final hash under appropriate year and title
-  nokogiri_objects.each_with_index do |nokogiri_object, j|
-    appl_IS_2016[date_symbols[j]][on_click_phrase.to_sym] = {
-      title: on_click_phrase,
-      value: nokogiri_object.text.gsub(/[^\d]/, '').to_i
+  def create_yearly_results_hash date, column_index
+    {
+      IS_id: 1,
+      year: get_year_integer(date),
+      date: date,
+      SALES: get_cell_float(:SALES, column_index),
+      COGS: get_cell_float(:COGS, column_index),
+      EBIT: get_cell_float(:EBIT, column_index),
+      PBT: get_cell_float(:PBT, column_index),
+      TAX: get_cell_float(:TAX, column_index),
+      NET_INCOME: get_cell_float(:NET_INCOME, column_index),
+      BASIC_EPS: get_cell_float(:BASIC_EPS, column_index),
+      DILUTED_EPS: get_cell_float(:DILUTED_EPS, column_index)
     }
   end
+
+  def initialize file, onclick_values
+    @onclick_values = onclick_values
+    open_file file
+    parse_file
+    initialize_data_array
+    get_date_divs
+    get_date_strings
+    get_document_period_end_date
+    populate_data_array_with_cells
+    Pry::ColorPrinter.pp(@data)
+  end
+
 end
 
-# print out final hash in pretty colors
-Pry::ColorPrinter.pp(appl_IS_2016)
+file = "./apple_IS.html"
+
+IS = IncomeStatementScraper.new file, onclick_values

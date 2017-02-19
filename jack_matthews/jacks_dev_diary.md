@@ -43,3 +43,7 @@ Agreed to dry dev diary and dry code before end of today so we can present to ea
 until 14:15 - worked on making parent and child classes for parsers and scrapers.  refactors my code into a class with modular functions all triggered by an initialize. takes a file path spits out hash.
 
 17:00 - angualr authetication
+
+##Sunday 19 February
+
+10:45 - back to scraping
