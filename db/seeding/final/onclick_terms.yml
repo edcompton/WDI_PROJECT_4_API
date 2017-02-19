@@ -119,141 +119,104 @@ cashflow_statement: {
   NET_INCOME:	[
   "_NetIncomeLoss\'",
   "_ProfitLoss\'"
-  ]
-  D&A: [
+  ],
+  D_AND_A: [
   "_DepreciationAmortizationAndAccretionNet\'",
   "_DepreciationDepletionAndAmortization\'",
   "_DepreciationandImpairmentonDispositionofPropertyandEquipment\'"
-  ]
+  ],
   AMORTISATION: [
   "_AmortizationandImpairmentofIntangibleAssets\'"
-  ]
+  ],
   SHARE_COMPENSATION: [
-  "_ShareBasedCompensation\'",
-  "_ShareBasedCompensation\'",
-  "_ShareBasedCompensation\'",
   "_ShareBasedCompensation\'"
-  ]
+  ],
   DEFERRED_TAX: [
   "_DeferredIncomeTaxExpenseBenefit\'",
-  "_DeferredIncomeTaxExpenseBenefit\'",
-  "_DeferredIncomeTaxExpenseBenefit\'",
   "_DeferredIncomeTaxesAndTaxCredits\'"
-  ]
+  ],
   CHANGE_IN_OP_ASSETS_AND_LIABILITIES: [
   "_IncreaseDecreaseInOperatingCapital\'"
-  ]
+  ],
   INVENTORIES: [
-  "_IncreaseDecreaseInInventories\'",
   "_IncreaseDecreaseInInventories\'"
-  ]
+  ],
   RECEIVABLES: [
-  "_IncreaseDecreaseInAccountsReceivable\'",
-  "_IncreaseDecreaseInAccountsReceivable\'",
   "_IncreaseDecreaseInAccountsReceivable\'"
-  ]
+  ],
   PAYABLES: [
-  "_IncreaseDecreaseInAccountsPayable\'",
   "_IncreaseDecreaseInAccountsPayableAndAccruedLiabilities\'",
   "_IncreaseDecreaseInAccountsPayable\'"
-  ]
+  ],
   NET_CASH_FROM_OPERATING_ACTIVITIES: [
   "_NetCashProvidedByUsedInOperatingActivitiesContinuingOperations\'",
-  "_NetCashProvidedByUsedInOperatingActivities\'",
-  "_NetCashProvidedByUsedInOperatingActivities\'",
   "_NetCashProvidedByUsedInOperatingActivities\'"
-  ]
+  ],
   CAPEX: [
-  "_PaymentsToAcquirePropertyPlantAndEquipment\'",
-  "_PaymentsToAcquirePropertyPlantAndEquipment\'",
-  "_PaymentsToAcquirePropertyPlantAndEquipment\'",
   "_PaymentsToAcquirePropertyPlantAndEquipment\'"
-  ]
+  ],
   DISPOSAL_OF_PPE: [
-  "_ProceedsFromSaleOfPropertyPlantAndEquipment\'",
   "_ProceedsFromSaleOfPropertyPlantAndEquipment\'"
-  ]
+  ],
   PURCHASES_OF_MARKETABLE_SECURITIES: [
   "_PaymentsToAcquireAvailableForSaleSecurities\'",
   "_PaymentsToAcquireShortTermInvestments\'",
-  "_PaymentsToAcquireShortTermInvestments\'",
   "_PaymentsToAcquireMarketableSecurities\'"
-  ]
+  ],
   PROCEEDS_FROM_SALES_OF_MARKETABLE_SECURITIES: [
   "_ProceedsFromSaleOfAvailableForSaleSecurities\'",
-  "_ProceedsFromSaleOfShortTermInvestments\'",
   "_ProceedsFromSaleOfShortTermInvestments\'"
-  ]
+  ],
   PROCEEDS_FROM_MATURITIES_OF_MARKETABLE_SECURITIES: [
   "_ProceedsFromMaturitiesPrepaymentsAndCallsOfAvailableForSaleSecurities\'"
-  ]
+  ],
   ACQUISITIONS: [
   "_PaymentsToAcquireBusinessesNetOfCashAcquired\'",
   "_Acquisitionsofbusinessesequitymethodinvestmentsandnonmarketablesecurities\'",
-  "_PaymentsToAcquireBusinessesNetOfCashAcquired\'",
   "_AcquisitionsNetOfCashAcquiredAndPurchasesOfIntangibleAndOtherAssets\'"
-  ]
+  ],
   DISPOSALS: [
   "_ProceedsfromDisposalsofbusinessesequitymethodinvestmentsandnonmarketablesecurities\'",
-  "_ProceedsFromSaleOfProductiveAssets\'",
   "_ProceedsFromDivestitureOfBusinesses\'"
-  ]
+  ],
   NET_CASH_USED_IN_INVESTING_ACTIVITIES: [
   "_NetCashProvidedByUsedInInvestingActivitiesContinuingOperations\'",
-  "_NetCashProvidedByUsedInInvestingActivities\'",
-  "_NetCashProvidedByUsedInInvestingActivities\'",
   "_NetCashProvidedByUsedInInvestingActivities\'"
-  ]
+  ],
   ISSUANCE_OF_STOCK: [
-  "_ProceedsFromIssuanceOfCommonStock\'",
   "_ProceedsFromIssuanceOfCommonStock\'"
-  ]
+  ],
   TOTAL_DEBT_ISSUED: [
-  "_ProceedsFromIssuanceOfDebt\'",
   "_ProceedsFromIssuanceOfDebt\'"
-  ]
+  ],
   TOTAL_DEBT_REPAYMENTS: [
-  "_RepaymentsOfDebt\'",
   "_RepaymentsOfDebt\'"
-  ]
-  LONG-TERM_DEBT_RAISED: [
-  "_ProceedsFromIssuanceOfLongTermDebt\'",
+  ],
+  LONG_TERM_DEBT_RAISED: [
   "_ProceedsFromIssuanceOfLongTermDebt\'"
-  ]
-  LONG-TERM_DEBT_REPAYMENTS: [
+  ],
+  LONG_TERM_DEBT_REPAYMENTS: [
   "_RepaymentsOfLongTermDebt\'"
-  ]
-  NET_SHORT-TERM_DEBT_ISSUED: [
+  ],
+  NET_SHORT_TERM_DEBT_ISSUED: [
   "_ProceedsFromRepaymentsOfCommercialPaper\'",
   "_ProceedsFromRepaymentsOfShortTermDebt\'"
-  ]
+  ],
   PAYMENT_OF_DIVIDENDS: [
   "_PaymentsOfDividendsAndDividendEquivalentsOnCommonStockAndRestrictedStockUnits\'",
-  "_PaymentsOfDividends\'",
-  "_PaymentsOfDividends\'",
   "_PaymentsOfDividends\'"
-  ]
+  ],
   STOCK_REPURCHASES: [
-  "_PaymentsForRepurchaseOfCommonStock\'",
-  "_PaymentsForRepurchaseOfCommonStock\'",
-  "_PaymentsForRepurchaseOfCommonStock\'",
   "_PaymentsForRepurchaseOfCommonStock\'"
-  ]
+  ],
   NET_CASH_FROM_FINANCING_ACTIVITIES: [
   "_NetCashProvidedByUsedInFinancingActivitiesContinuingOperations\'",
-  "_NetCashProvidedByUsedInFinancingActivities\'",
-  "_NetCashProvidedByUsedInFinancingActivities\'",
   "_NetCashProvidedByUsedInFinancingActivities\'"
-  ]
+  ],
   EFFECT_OF_FX_ON_CASH_AND_CASH_EQUICALENTS: [
-  "_EffectOfExchangeRateOnCashAndCashEquivalents\'",
-  "_EffectOfExchangeRateOnCashAndCashEquivalents\'",
   "_EffectOfExchangeRateOnCashAndCashEquivalents\'"
-  ]
+  ],
   NET_CHANGE_IN_CASH: [
-  "_CashAndCashEquivalentsPeriodIncreaseDecrease\'",
-  "_CashAndCashEquivalentsPeriodIncreaseDecrease\'",
-  "_CashAndCashEquivalentsPeriodIncreaseDecrease\'",
   "_CashAndCashEquivalentsPeriodIncreaseDecrease\'"
   ]
 }
