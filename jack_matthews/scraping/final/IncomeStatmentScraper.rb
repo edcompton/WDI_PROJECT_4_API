@@ -6,6 +6,11 @@ load 'ParserAndScraper.rb'
 
 class IncomeStatementScraper < ParserAndScraper
 
+  def get_date_divs
+    query = "//body//tr//th[@class='th']"
+    @date_divs = get_nokogiri_objects(query)[1..-1]
+  end
+
   def create_yearly_results_hash date, column_index
     {
       IS_id: 1,
@@ -21,17 +26,6 @@ class IncomeStatementScraper < ParserAndScraper
       BASIC_EPS: get_cell_float("BASIC_EPS", column_index),
       DILUTED_EPS: get_cell_float("DILUTED_EPS", column_index)
     }
-  end
-
-  def get_cell_float key_string, column_index
-    @onclick_terms[key_string].each do |onclick_phrase|
-
-      query='//a[contains(@onclick, "' + onclick_phrase + '")]/../../td[@class="nump"]'
-
-      object = get_nokogiri_objects(query)[column_index]
-      next unless object
-      return nokogiri_object_to_float object
-    end
   end
 
   def get_units

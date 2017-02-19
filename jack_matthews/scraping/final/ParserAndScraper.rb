@@ -16,11 +16,6 @@ class ParserAndScraper
     @doc_to_scrape.xpath(query)
   end
 
-  def get_date_divs
-    query = "//body//tr//th[@class='th']"
-    @date_divs = get_nokogiri_objects(query)[1..-1]
-  end
-
   def get_date_strings
     @date_strings = @date_divs.collect do |div|
       div.text.gsub(/\n/, "").strip
@@ -44,6 +39,28 @@ class ParserAndScraper
 
   def nokogiri_object_to_float nokogiri_object
     nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+  end
+
+  def get_appropriate_sign_integer object
+    if negative_number? object
+      -(nokogiri_object_to_float(object))
+    else
+      nokogiri_object_to_float object
+    end
+  end
+
+  def negative_number? object
+    object.text.include?('(')
+  end
+
+  def get_cell_float key_symbol, column_index
+    @onclick_terms[key_symbol].each do |title_phrase|
+      query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
+      object = get_nokogiri_objects(query)[column_index]
+      # if the above returns an object then execute the rest of the method
+      next unless object
+      return get_appropriate_sign_integer object
+    end
   end
 
 end
