@@ -2,18 +2,67 @@ require 'nokogiri'
 require 'pp'
 require 'pry'
 
-onclick_values = {
-  SALES: ["SalesRevenueNet", "SalesRevenueGoodsNet","Revenues"],
-  COGS: ["CostOfGoodsAndServicesSold","CostOfGoodsSold","CostOfRevenue"],
-  EBIT: ["OperatingIncomeLoss"],
+bs_onclick_values = {
+  CCE: ["defref_us-gaap_CashAndCashEquivalentsAtCarryingValue"],
+  MARKETABLE_SECURITIES: ["defref_us-gaap_AvailableForSaleSecuritiesCurrent"],
+  SHORT_TERM_INVESTMENTS: [],
+  INVENTORY: ["defref_us-gaap_InventoryNet"],
+  ACCOUNTS_RECIEVABLE: ["defref_us-gaap_AccountsReceivableNetCurrent"],
+  TOTAL_CURRENT_ASSETS: ["defref_us-gaap_AssetsCurrent"],
+  AVAIABLE_FOR_SALE_SECURITIES: ["defref_us-gaap_AvailableForSaleSecuritiesNoncurrent"],
+  PPE_NET: ["defref_us-gaap_PropertyPlantAndEquipmentNet"],
+  GOODWILL: ["Goodwill"],
+  OTHER_INTANGIBLE_ASSETS: ["IntangibleAssetsNetExcludingGoodwill"],
+  TOTAL_ASSETS: ["Assets"],
+  ACCOUNTS_PAYABLE: ["AccountsPayableCurrent"],
+  ACCRUED_EXPENSES: ["AccruedLiabilitiesCurrent"],
+  SHORT_TERM_DEBT: ["CommercialPaper"],
+  CURRENT_PORTION_OF_LONG_TERM_DEBT: ["LongTermDebtCurrent"],
+  CURRENT_DEFERRED_REVENUE: ["DeferredRevenueNoncurrent"],
+  TOTAL_CURRENT_LIABILITIES: ["LiabilitiesCurrent"],
+  LONG_TERM_DEBT: ["LongTermDebtNoncurrent"],
+  NON_CURRENT_DEFERRED_REVENUE: ["DeferredRevenueNoncurrent"],
+  DEFERRED_TAX_LIABILITIES: [],
+  TOTAL_LIABILITIES: ["Liabilities"],
+  COMMON_STOCKS_AND_PAID_IN_CAPITAL: ["CommonStocksIncludingAdditionalPaidInCapital"],
+  RETAINED_EARNINGS: ["RetainedEarningsAccumulatedDeficit"],
+  ACCUMULATED_OTHER_COMPREHENSIVE_INCOME: ["AccumulatedOtherComprehensiveIncomeLossNetOfTax"],
+  TREASURY_STOCK: [],
+  MINORITY_INTEREST: [],
+  TOTAL_EQUITY: ["StockholdersEquity"],
+  TOTAL_LIABILITIES_AND_EQUITY: ["LiabilitiesAndStockholdersEquity"]
+}
 
-  PBT: ["IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest","IncomeLossFromContinuingOperationsBeforeIncomeTaxes","IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"],
 
-  TAX: ["IncomeTaxExpenseBenefit"],
-  NET_INCOME: ["NetIncomeLoss","NetIncomeLossAvailableToCommonStockholdersBasic"],
-
-  BASIC_EPS: ["EarningsPerShareBasic"],
-  DILUTED_EPS: ["EarningsPerShareDiluted"]
+bs_title_values = {
+  CCE: ["Cash and cash equivalents"],
+  MARKETABLE_SECURITIES: ["Short-term marketable securities"],
+  SHORT_TERM_INVESTMENTS: [],
+  INVENTORY: ["Inventories"],
+  ACCOUNTS_RECIEVABLE: ["Accounts receivable"],
+  TOTAL_CURRENT_ASSETS: ["Total current assets"],
+  AVAIABLE_FOR_SALE_SECURITIES: ["Long-term marketable securities"],
+  PPE_NET: ["Property, plant and equipment, net"],
+  GOODWILL: ["Goodwill"],
+  OTHER_INTANGIBLE_ASSETS: ["Acquired intangible assets, net"],
+  TOTAL_ASSETS: ["Total assets"],
+  ACCOUNTS_PAYABLE: ["Accounts payable"],
+  ACCRUED_EXPENSES: ["Accrued expenses"],
+  SHORT_TERM_DEBT: ["Commercial paper"],
+  CURRENT_PORTION_OF_LONG_TERM_DEBT: ["Current portion of long-term debt"],
+  CURRENT_DEFERRED_REVENUE: ["Deferred revenue, non-current"],
+  TOTAL_CURRENT_LIABILITIES: ["Total current liabilities"],
+  LONG_TERM_DEBT: ["Long-term debt"],
+  NON_CURRENT_DEFERRED_REVENUE: ["DeferredRevenueNoncurrent"],
+  DEFERRED_TAX_LIABILITIES: [],
+  TOTAL_LIABILITIES: ["Total liabilities"],
+  COMMON_STOCKS_AND_PAID_IN_CAPITAL: ["Common stock and additional paid-in capital"],
+  RETAINED_EARNINGS: ["Retained earnings"],
+  ACCUMULATED_OTHER_COMPREHENSIVE_INCOME: ["Accumulated other comprehensive income/(loss)"],
+  TREASURY_STOCK: [],
+  MINORITY_INTEREST: [],
+  TOTAL_EQUITY: ["Total shareholders&#8217; equity"],
+  TOTAL_LIABILITIES_AND_EQUITY: ["Total liabilities and shareholders"]
 }
 
 class HtmlParser
@@ -38,54 +87,56 @@ class HtmlParser
     @date_strings = @date_divs.collect{ |div| div.text}
   end
 
-  def get_date_symbols
-    @date_symbols = @date_strings.collect do |string|
-      string[-4..-1].to_sym
-    end
+  def is_integer? string
+    string.to_i.to_s == string
   end
 
-end
+  def get_date_symbols
+    @date_strings.each_with_index do |date, index|
+      if is_integer? date
+        @date_strings.delete_at(index)
+      end
+    end
+    @date_symbols = @date_strings.collect do |string|
+      string[-4..-1].to_sym
+    end.sort!
+  end
 
-class IncomeStatementScraper < HtmlParser
-# Test on balance sheet and cash flow etc and move up class tree if generic
   def get_document_period_end_date
     query = "//body//tr//th[@class='th']"
     @document_period_end_date = @doc_to_scrape.xpath(query)[1].text
   end
 
-  # Test on balance sheet and cash flow etc and move up class tree if generic
   def get_date_divs
-    query = "//div[text() = '#{@document_period_end_date}']/../../th/div"
+    query = "//body//tr//th[@class='th']"
     @date_divs = @doc_to_scrape.xpath(query)
+    @date_divs
   end
 
-  # def set_date_array_on_data_hash
-  #   @data[:dates] = @date_strings
-  # end
-
-  def set_year_hashes_on_data_hash
+  def set_year_hashes_on_data_array
     @date_symbols.each do |symbol|
-      @data[symbol] = {}
+      year = symbol
+      symbol = Hash.new(year: year)
+      @data.push(symbol)
     end
+
   end
 
+# Loop over the hashes, find the relvant noko object and extract the data.
   def populate_data_hash hash
     hash.each do |key, value|
       value.each do |onclick_phrase|
-        nokogiri_objects = get_nokogiri_objects("//a[contains(@onclick, '#{onclick_phrase}')]/../../td[@class='nump']")
-        populate_data_hash_with_cells nokogiri_objects, onclick_phrase, key
+        nokogiri_object = get_nokogiri_objects("//a[text() = '#{onclick_phrase}']/../../td[@class='nump']")
+        populate_data_hash_with_cells nokogiri_object, onclick_phrase, key
       end
     end
   end
 
   def populate_data_hash_with_cells nokogiri_objects, onclick_phrase, model_title
-    nokogiri_objects.each_with_index do |nokogiri_object, j|
-      populate_data_hash_with_cell nokogiri_object, j, onclick_phrase, model_title
-    end
-  end
+    nokogiri_objects.each_with_index do |object, index|
 
-  def populate_data_hash_with_cell nokogiri_object, j, onclick_phrase, model_title
-    @data[@date_symbols[j]][model_title] = create_cell_hash onclick_phrase, nokogiri_object
+      @data[index][model_title] = create_cell_hash onclick_phrase, object
+    end
   end
 
   def create_cell_hash onclick_phrase, nokogiri_object
@@ -95,7 +146,10 @@ class IncomeStatementScraper < HtmlParser
     }
   end
 
-  def initialize file, onclick_values
+end
+
+class BalanceSheetScraper < HtmlParser
+  def initialize file, bs_title_values
     initialize_data_array
     open_file file
     parse_file
@@ -103,15 +157,16 @@ class IncomeStatementScraper < HtmlParser
     get_date_divs
     get_date_strings
     get_date_symbols
-    set_date_array_on_data_hash
-    set_year_hashes_on_data_hash
-    populate_data_hash onclick_values
+    set_year_hashes_on_data_array
+    p @data
+    p @data.length
+    populate_data_hash bs_title_values
     Pry::ColorPrinter.pp(@data)
   end
 end
 
+file = "/Users/jackfuller/development/WDI_PROJECT_4_API/raw_htmls/balance_sheets/apple_BS.html"
 
+BS = BalanceSheetScraper.new file, bs_title_values
 
-file = "/Users/jackfuller/development/WDI_PROJECT_4_API/raw_htmls/income_statements/apple_IS.html"
-
-IS = IncomeStatementScraper.new file, onclick_values
+# Look throught the nodeset
