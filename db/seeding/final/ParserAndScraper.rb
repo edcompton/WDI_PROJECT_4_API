@@ -58,13 +58,8 @@ class ParserAndScraper
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
       object = get_nokogiri_objects(query)[column_index]
       # if the above returns an object then execute the rest of the method
-      # next unless object
-      # return get_appropriate_sign_integer object
-      if object
-        return get_appropriate_sign_integer object
-      else
-        return NIL
-      end
+      next unless object
+      return get_appropriate_sign_integer object
     end
   end
 
