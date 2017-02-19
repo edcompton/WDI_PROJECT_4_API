@@ -47,15 +47,9 @@ class ParserAndScraper
     @doc_to_scrape.xpath(query)
   end
 
-
-  # def get_date_divs
-  #   query = "//body//tr//th[@class='th']"
-  #   @date_divs = get_nokogiri_objects(query)[1..-1]
-  # end
   def get_date_divs
     query = "//body//tr//th[@class='th']"
     @date_divs = @doc_to_scrape.xpath(query)
-    @date_divs
   end
 
 
@@ -67,16 +61,21 @@ class ParserAndScraper
   def get_year_integer date_string
     date_string.gsub(/[^\d]/, '')[-4..-1].to_i
   end
+
+
   def get_document_period_end_date
     query = "//body//tr//th[@class='th']"
-    @document_period_end_date = get_nokogiri_objects(query)[1].text
+    @document_period_end_date = @doc_to_scrape.xpath(query)[1].text
   end
+
+
   def populate_data_array_with_cells
     @date_strings.each_with_index do |date, index|
       @data[index] = create_yearly_results_hash date, index
     end
   end
   def nokogiri_object_to_float nokogiri_object
+
     nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
   end
 
@@ -132,10 +131,10 @@ class BalanceSheetScraper < ParserAndScraper
   def get_cell_float key_symbol, column_index
     @bs_onclick_values[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[@class="nump"]'
-      object = get_nokogiri_objects(query)
-      p object
-      next unless object
-      nokogiri_object_to_float object
+      objects = get_nokogiri_objects(query)
+      next if objects.length == 0
+      p objects.length, "hi"
+      objects.each{|object| p object.text}
       return nokogiri_object_to_float object
     end
   end
