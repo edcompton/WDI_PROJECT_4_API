@@ -70,8 +70,8 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       ENTITY_CURRENT_REPORTING_STATUS: get_boolean_info("ENTITY_CURRENT_REPORTING_STATUS", 1),
       ENTITY_VOLUNTARY_FILERS: get_boolean_info("ENTITY_VOLUNTARY_FILERS", 1),
       ENTITY_FILER_CATEGORY: get_string_info("ENTITY_FILER_CATEGORY", 1),
-      ENTITY_COMMON_STOCK_SHARES_OUTSTANDING: get_float_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
-      ENTITY_PUBLIC_FLOAT: get_float_info("ENTITY_PUBLIC_FLOAT", 3)
+      ENTITY_COMMON_STOCK_SHARES_OUTSTANDING: get_int_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
+      ENTITY_PUBLIC_FLOAT: get_int_info("ENTITY_PUBLIC_FLOAT", 3)
     }
   end
 
@@ -127,6 +127,10 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       next unless object
       return nokogiri_object_to_int object
     end
+  end
+
+  def method_name
+
   end
 
   def initialize file, onclick_terms
