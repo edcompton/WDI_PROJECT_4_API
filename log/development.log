@@ -1120,3 +1120,134 @@ FOREIGN KEY ("filing_id")
   [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mFiling Load (0.9ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" ASC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 1]]
+Started GET "/" for 127.0.0.1 at 2017-02-20 22:03:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Jack/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jack/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (25.6ms)
+Completed 200 OK in 56ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-20 22:03:27 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Jack/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jack/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-02-20 22:03:27 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:03:31 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/companies"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies/index" for 127.0.0.1 at 2017-02-20 22:03:43 +0000
+Processing by CompaniesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:04:05 +0000
+Processing by CompaniesController#index as HTML
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:04:08 +0000
+Processing by CompaniesController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:04:30 +0000
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+No serializer found for resource: #<Company id: 1, ticker: "AAPL", name: "Apple", sector: "World Domination", created_at: "2017-02-20 20:52:36", updated_at: "2017-02-20 20:52:36">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Company::ActiveRecord_Relation (0.51ms)
+Completed 200 OK in 34ms (Views: 17.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:06:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.11ms)
+Completed 200 OK in 82ms (Views: 52.3ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:06:58 +0000
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (77.62ms)
+Completed 200 OK in 95ms (Views: 76.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:07:18 +0000
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.88ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-20 22:08:19 +0000
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.3ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.9ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (133.92ms)
+Completed 200 OK in 158ms (Views: 117.5ms | ActiveRecord: 28.6ms)
+
+
