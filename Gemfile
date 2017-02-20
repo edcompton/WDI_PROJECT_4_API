@@ -16,6 +16,7 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'nokogiri'
 gem 'pry'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug', platform: :mri
