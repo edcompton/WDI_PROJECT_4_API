@@ -91,7 +91,7 @@ class SheetSelector
       year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
       p year_selector
       @statement_year = year_selector[1]
-      title = "Entity Information"
+      title = "#{@tick}_#{@statement_year}_DEI"
       create_folder_year
       create_file(statement_title, r_statement, title)
     end
@@ -104,7 +104,7 @@ class SheetSelector
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
-        title = "Balance Sheet"
+        title = "#{@tick}_#{@statement_year}_BS"
         create_folder_year
         create_file(statement_title, r_statement, title)
       end
@@ -114,11 +114,11 @@ class SheetSelector
   def find_income_statements r_statement
     statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
     if statement_title.include? "income" or statement_title.include? "earnings" or statement_title.include? "operations"
-      if !(statement_title.include? "parenthetical")
+      if !(statement_title.include? "parenthetical") and !(statement_title.include? "equity")
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
-        title = "Income Statement"
+        title = "#{@tick}_#{@statement_year}_IS"
         create_folder_year
         create_file(statement_title, r_statement, title)
       end
@@ -132,7 +132,7 @@ class SheetSelector
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
-        title = "Cash Flow"
+        title = "#{@tick}_#{@statement_year}_CF"
         create_folder_year
         create_file(statement_title, r_statement, title)
       end
