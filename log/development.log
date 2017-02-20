@@ -3409,3 +3409,1293 @@ FOREIGN KEY ("filing_id")
   [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "companies_watchlists" ON "companies"."id" = "companies_watchlists"."company_id" WHERE "companies_watchlists"."watchlist_id" = $1[0m  [["watchlist_id", 1]]
   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
   [1m[36mCfYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5045.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (137.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (132.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (360.0ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (261.7ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:07:48 UTC], ["updated_at", 2017-02-20 19:07:48 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (132.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (128.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (269.0ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (264.5ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:07:57 UTC], ["updated_at", 2017-02-20 19:07:57 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$f81J4ufHQgtop.Z8BXv/wu76UTbYb2ATcWOmv.FjYB7etP0tNiRPW"], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:07:58 UTC], ["updated_at", 2017-02-20 19:07:58 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:07:58 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:07:58 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:07:58 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 AND ("filings"."id" != $2) LIMIT $3[0m  [["accession_id", "000162828016020309"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "filings" SET "company_id" = $1, "updated_at" = $2 WHERE "filings"."id" = $3[0m  [["company_id", 1], ["updated_at", 2017-02-20 19:07:58 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Apple"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (133.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (130.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (269.7ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (267.2ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$8X7z8NyP5DNqGMAWXDXUj.dz44avqX8vijGbLzGn74khVyz0MeZry"], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:09:33 UTC], ["updated_at", 2017-02-20 19:09:33 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:09:33 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:09:33 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:09:33 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (132.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (127.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (260.0ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (258.4ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$NqNgQJ6xtKpRnTyWgRiHo.wE.mt45YlxWKGI9M7ROkWPWFZ/v2q7."], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:09:54 UTC], ["updated_at", 2017-02-20 19:09:54 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:09:55 UTC], ["updated_at", 2017-02-20 19:09:55 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:09:55 UTC], ["updated_at", 2017-02-20 19:09:55 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:09:55 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:09:55 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:09:55 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (134.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (129.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (265.4ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (265.5ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$qZI3ipYW2vSRPcH2XOhtLOKz/Y/pZOuwGLHEy13eWkWagsQikb9zW"], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:10:14 UTC], ["updated_at", 2017-02-20 19:10:14 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:10:14 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:10:14 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:10:14 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "dei_statements" SET "filing_id" = $1, "updated_at" = $2 WHERE "dei_statements"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:10:14 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 AND ("filings"."id" != $2) LIMIT $3[0m  [["accession_id", "000162828016020309"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "filings" SET "company_id" = $1, "updated_at" = $2 WHERE "filings"."id" = $3[0m  [["company_id", 1], ["updated_at", 2017-02-20 19:10:14 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Apple"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "companies_watchlists" ON "companies"."id" = "companies_watchlists"."company_id" WHERE "companies_watchlists"."watchlist_id" = $1[0m  [["watchlist_id", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mCfYearlyResult Load (1.8ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "companies_watchlists" ON "companies"."id" = "companies_watchlists"."company_id" WHERE "companies_watchlists"."watchlist_id" = $1[0m  [["watchlist_id", 1]]
+  [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (0.8ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.9ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements"[0m
+  [1m[36mDeiStatement Load (0.6ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" ORDER BY "dei_statements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDeiStatement Load (1.1ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" ORDER BY "dei_statements"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWatchlist Load (0.8ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (2.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "companies_watchlists" ON "companies"."id" = "companies_watchlists"."company_id" WHERE "companies_watchlists"."watchlist_id" = $1[0m  [["watchlist_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 1]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (282.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (258.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (373.3ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (266.0ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:51:09 UTC], ["updated_at", 2017-02-20 19:51:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$AB5bdJbkLkxJqvGoV3O2TuYT2rOm4nExjOcYk.ts7YG1kDS93vd.6"], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:51:10 UTC], ["updated_at", 2017-02-20 19:51:10 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:51:10 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:51:10 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:51:10 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "dei_statements" SET "filing_id" = $1, "updated_at" = $2 WHERE "dei_statements"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:51:10 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 AND ("filings"."id" != $2) LIMIT $3[0m  [["accession_id", "000162828016020309"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "filings" SET "company_id" = $1, "updated_at" = $2 WHERE "filings"."id" = $3[0m  [["company_id", 1], ["updated_at", 2017-02-20 19:51:10 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Apple"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBsYearlyResult Load (1.4ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (134.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (128.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (264.6ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (265.8ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (79.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$139nTTRftP2CxW7TPS0Z9.shwvyMesZ15Nswm41B2NFORmbwXCiiO"], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:53:30 UTC], ["updated_at", 2017-02-20 19:53:30 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:53:31 UTC], ["updated_at", 2017-02-20 19:53:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:53:31 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:53:31 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:53:31 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeiStatement Load (0.7ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "dei_statements" SET "filing_id" = $1, "updated_at" = $2 WHERE "dei_statements"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:53:31 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 AND ("filings"."id" != $2) LIMIT $3[0m  [["accession_id", "000162828016020309"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "filings" SET "company_id" = $1, "updated_at" = $2 WHERE "filings"."id" = $3[0m  [["company_id", 1], ["updated_at", 2017-02-20 19:53:31 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Apple"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (133.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (129.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (270.3ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (265.2ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (11.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$RrS9C7K0C6j1b0AaY6hG7O8p4tqDlTiqmATEJZLgV8Go6U9qCibXC"], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:54:22 UTC], ["updated_at", 2017-02-20 19:54:22 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:22 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:22 UTC], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:22 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "dei_statements" SET "filing_id" = $1, "updated_at" = $2 WHERE "dei_statements"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:22 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 AND ("filings"."id" != $2) LIMIT $3[0m  [["accession_id", "000162828016020309"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "filings" SET "company_id" = $1, "updated_at" = $2 WHERE "filings"."id" = $3[0m  [["company_id", 1], ["updated_at", 2017-02-20 19:54:22 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Apple"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (135.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_development"[0m
+  [1m[35m (129.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wdi_project_4_api_test"[0m
+  [1m[35m (267.6ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (270.5ms)[0m  [1m[35mCREATE DATABASE "wdi_project_4_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170216121054)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170216121054"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNamesToUser (20170220122207)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220122207"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchlists (20170220123120)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" serial primary key, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0dc1a4cbcb"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_watchlists_on_user_id" ON "watchlists"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123120"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170220123528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "ticker" character varying, "name" character varying, "sector" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123528"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCompaniesWatchlists (20170220123753)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "companies_watchlists" ("company_id" integer NOT NULL, "watchlist_id" integer NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_company_id_and_watchlist_id" ON "companies_watchlists"  ("company_id", "watchlist_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_companies_watchlists_on_watchlist_id_and_company_id" ON "companies_watchlists"  ("watchlist_id", "company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220123753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFilings (20170220142913)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "filings" ("id" serial primary key, "accession_id" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9600c3cba3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_filings_on_company_id" ON "filings"  ("company_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220142913"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBsYearlyResults (20170220145655)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "bs_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "cce" float, "marketable_securities" float, "short_term_investments" float, "inventory" float, "accounts_recievable" float, "total_current_assets" float, "avaiable_for_sale_securities" float, "ppe_net" float, "goodwill" float, "other_intangible_assets" float, "total_assets" float, "accounts_payable" float, "accrued_expenses" float, "short_term_debt" float, "current_portion_of_long_term_debt" float, "current_deferred_revenue" float, "total_current_liabilities" float, "long_term_debt" float, "non_current_deferred_revenue" float, "deferred_tax_liabilities" float, "total_liabilities" float, "common_stocks_and_paid_in_capital" float, "retained_earnings" float, "accumulated_other_comprehensive_income" float, "treasury_stock" float, "minority_interest" float, "total_equity" float, "total_liabilities_and_equity" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e21cbc64cb"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_bs_yearly_results_on_filing_id" ON "bs_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220145655"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsYearlyResults (20170220152213)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "is_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "sales" float, "cogs" float, "ebit" float, "pbt" float, "tax" float, "net_income" float, "basic_eps" float, "diluted_eps" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_acec051d39"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_is_yearly_results_on_filing_id" ON "is_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152213"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCfYearlyResults (20170220152730)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "cf_yearly_results" ("id" serial primary key, "filing_id" integer, "year" integer, "date" character varying, "unit" character varying, "net_income" float, "d_and_a" float, "amortisation" float, "share_compensation" float, "deferred_tax" float, "change_in_op_assets_and_liabilities" float, "inventories" float, "receivables" float, "payables" float, "net_cash_from_operating_activities" float, "capex" float, "disposal_of_ppe" float, "purchases_of_marketable_securities" float, "proceeds_from_sales_of_marketable_securities" float, "proceeds_from_maturities_of_marketable_securities" float, "acquisitions" float, "disposals" float, "net_cash_used_in_investing_activities" float, "issuance_of_stock" float, "total_debt_issued" float, "total_debt_repayments" float, "long_term_debt_raised" float, "long_term_debt_repayments" float, "net_short_term_debt_issued" float, "payment_of_dividends" float, "stock_repurchases" float, "net_cash_from_financing_activities" float, "effect_of_fx_on_cash_and_cash_equicalents" float, "net_change_in_cash" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1965ce9d3b"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_cf_yearly_results_on_filing_id" ON "cf_yearly_results"  ("filing_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220152730"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDeiStatements (20170220153442)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "dei_statements" ("id" serial primary key, "filing_id" integer, "year" integer, "share_units" character varying, "monetary_units" character varying, "document_type" character varying, "amendment_flag" boolean, "document_period_end_date" character varying, "document_fiscal_year_focus" integer, "document_fiscal_period_focus" character varying, "trading_symbol" character varying, "entity_registrant_name" character varying, "entity_central_index_key" integer, "current_fiscal_year_end_date" character varying, "entity_well_known_seasoned_issuer" boolean, "entity_current_reporting_status" boolean, "entity_voluntary_filers" boolean, "entity_filer_category" character varying, "entity_common_stock_shares_outstanding" float, "entity_public_float" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_08a38c4b7c"
+FOREIGN KEY ("filing_id")
+  REFERENCES "filings" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_dei_statements_on_filing_id" ON "dei_statements"  ("filing_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170220153442"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jackhkmatthews@gmail.com"], ["password_digest", "$2a$10$wnNAASopSnCPKq7fhAxUvOyEkUuZiS5qitdp/djeiezO5ypiBiH52"], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC], ["first_name", "Jack"], ["last_name", "Matthews"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 LIMIT $2[0m  [["name", "Apple"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("ticker", "name", "sector", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ticker", "AAPL"], ["name", "Apple"], ["sector", "World Domination"], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 LIMIT $2[0m  [["accession_id", "000162828016020309"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "filings" ("accession_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["accession_id", "000162828016020309"], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bs_yearly_results" ("cce", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["cce", -345.0], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "is_yearly_results" ("sales", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["sales", 2000.0], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "cf_yearly_results" ("net_income", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["net_income", 2345.0], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "dei_statements" ("year", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["year", 2016], ["created_at", 2017-02-20 19:54:59 UTC], ["updated_at", 2017-02-20 19:54:59 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "bs_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "bs_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:59 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "is_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "is_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:59 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cf_yearly_results" SET "filing_id" = $1, "updated_at" = $2 WHERE "cf_yearly_results"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:59 UTC], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "dei_statements" SET "filing_id" = $1, "updated_at" = $2 WHERE "dei_statements"."id" = $3[0m  [["filing_id", 1], ["updated_at", 2017-02-20 19:54:59 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFiling Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "filings" WHERE "filings"."accession_id" = $1 AND ("filings"."id" != $2) LIMIT $3[0m  [["accession_id", "000162828016020309"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "filings" SET "company_id" = $1, "updated_at" = $2 WHERE "filings"."id" = $3[0m  [["company_id", 1], ["updated_at", 2017-02-20 19:54:59 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Apple"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m

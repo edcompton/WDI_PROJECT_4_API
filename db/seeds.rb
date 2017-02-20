@@ -40,9 +40,14 @@ cf1 = CfYearlyResult.create({
   net_income: 2345
   })
 
+dei1 = DeiStatement.create({
+  year: 2016
+  })
+
 f1.bs_yearly_results << bs1
 f1.is_yearly_results << is1
 f1.cf_yearly_results << cf1
+f1.dei_statement = dei1
 
 c1.filings << f1
 

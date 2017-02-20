@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220152730) do
+ActiveRecord::Schema.define(version: 20170220153442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,31 @@ ActiveRecord::Schema.define(version: 20170220152730) do
     t.index ["watchlist_id", "company_id"], name: "index_companies_watchlists_on_watchlist_id_and_company_id", using: :btree
   end
 
+  create_table "dei_statements", force: :cascade do |t|
+    t.integer  "filing_id"
+    t.integer  "year"
+    t.string   "share_units"
+    t.string   "monetary_units"
+    t.string   "document_type"
+    t.boolean  "amendment_flag"
+    t.string   "document_period_end_date"
+    t.integer  "document_fiscal_year_focus"
+    t.string   "document_fiscal_period_focus"
+    t.string   "trading_symbol"
+    t.string   "entity_registrant_name"
+    t.integer  "entity_central_index_key"
+    t.string   "current_fiscal_year_end_date"
+    t.boolean  "entity_well_known_seasoned_issuer"
+    t.boolean  "entity_current_reporting_status"
+    t.boolean  "entity_voluntary_filers"
+    t.string   "entity_filer_category"
+    t.float    "entity_common_stock_shares_outstanding"
+    t.float    "entity_public_float"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.index ["filing_id"], name: "index_dei_statements_on_filing_id", using: :btree
+  end
+
   create_table "filings", force: :cascade do |t|
     t.string   "accession_id"
     t.integer  "company_id"
@@ -151,6 +176,7 @@ ActiveRecord::Schema.define(version: 20170220152730) do
 
   add_foreign_key "bs_yearly_results", "filings"
   add_foreign_key "cf_yearly_results", "filings"
+  add_foreign_key "dei_statements", "filings"
   add_foreign_key "filings", "companies"
   add_foreign_key "is_yearly_results", "filings"
   add_foreign_key "watchlists", "users"
