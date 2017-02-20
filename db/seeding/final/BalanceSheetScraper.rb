@@ -16,7 +16,7 @@ class BalanceSheetScraper < ParserAndScraper
       BS_id: 1,
       year: get_year_integer(date),
       date: date,
-      UNIT: get_units,
+      UNIT: is_millions?(get_units),
       CCE: get_cell_float("CCE", column_index),
       MARKETABLE_SECURITIES: get_cell_float("MARKETABLE_SECURITIES", column_index),
       SHORT_TERM_INVESTMENTS: get_cell_float("SHORT_TERM_INVESTMENTS", column_index),
@@ -63,8 +63,8 @@ end
 
 # file = "./htmls/google_BS.html"
 # file = "./htmls/apple_BS.html"
-# file = "./htmls/PG_BS.html"
-file = "./htmls/coke_BS.html"
+file = "./htmls/PG_BS.html"
+# file = "./htmls/coke_BS.html"
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["balance_sheet"]

@@ -53,6 +53,13 @@ class ParserAndScraper
     object.text.include?('(')
   end
 
+  def is_millions? unit_string
+    if unit_string.include? 'Million'
+      @millions = true
+    end
+    unit_string
+  end
+
   def get_cell_float key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'

@@ -37,9 +37,10 @@ balance_sheet: {
   "_CashAndCashEquivalentsAtCarryingValue\'"
   ],
   MARKETABLE_SECURITIES: [
-  "_AvailableForSaleSecuritiesCurrent\'"
+  "_AvailableForSaleSecuritiesCurrent\'", "_MarketableSecuritiesCurrent\'", "_AvailableForSaleSecurities\'"
   ],
   SHORT_TERM_INVESTMENTS: [
+  "_OtherShortTermInvestments\'"
   ],
   INVENTORY: [
   "_InventoryNet\'"

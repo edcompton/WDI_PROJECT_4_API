@@ -33,6 +33,8 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     end
   end
 
+
+
   def get_share_units_dei
     query = "//strong//br"
     text = get_nokogiri_objects(query).text
@@ -56,7 +58,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       DEI_id: 1,
       year: get_year_integer(date),
       SHARE_UNITS: get_share_units_dei,
-      MONETARY_UNITS: get_monetary_units_dei,
+      MONETARY_UNITS: is_millions?(get_monetary_units_dei),
       DOCUMENT_TYPE: get_string_info("DOCUMENT_TYPE", 1),
       AMENDMENT_FLAG: get_boolean_info("AMENDMENT_FLAG", 1),
       DOCUMENT_PERIOD_END_DATE: @document_period_end_date,
@@ -129,9 +131,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     end
   end
 
-  def method_name
 
-  end
 
   def initialize file, onclick_terms
     @onclick_terms = onclick_terms
