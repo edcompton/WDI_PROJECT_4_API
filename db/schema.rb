@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220123753) do
+ActiveRecord::Schema.define(version: 20170220142913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20170220123753) do
     t.index ["watchlist_id", "company_id"], name: "index_companies_watchlists_on_watchlist_id_and_company_id", using: :btree
   end
 
+  create_table "filings", force: :cascade do |t|
+    t.string   "accession_id"
+    t.integer  "company_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["company_id"], name: "index_filings_on_company_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -46,5 +54,6 @@ ActiveRecord::Schema.define(version: 20170220123753) do
     t.index ["user_id"], name: "index_watchlists_on_user_id", using: :btree
   end
 
+  add_foreign_key "filings", "companies"
   add_foreign_key "watchlists", "users"
 end

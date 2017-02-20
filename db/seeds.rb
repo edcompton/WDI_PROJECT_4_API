@@ -18,10 +18,16 @@ w1 = Watchlist.create({
   user_id: u1.id
   })
 
-c1 = {
+c1 = Company.create({
   ticker: 'AAPL',
   name: 'Apple',
   sector: 'World Domination'
-  }
+  })
 
-w1.companies.create(c1)
+f1 = Filing.create({
+  accession_id: "000162828016020309"
+})
+
+c1.filings << f1
+
+w1.companies << c1
