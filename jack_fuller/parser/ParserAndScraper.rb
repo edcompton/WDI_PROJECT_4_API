@@ -53,51 +53,20 @@ class ParserAndScraper
     object.text.include?('(')
   end
 
-  def is_millions? unit_string
-    if unit_string.include? 'Million'
-      @millions = true
-    end
-    unit_string
-  end
-
   def get_cell_float key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
       object = get_nokogiri_objects(query)[column_index]
       # if the above returns an object then execute the rest of the method
-      next unless object
-      return get_appropriate_sign_integer object
-      # Check logic for cash flow - look at payables and why theis sometimes returns nil when it shouldn't.
-      # if object
-      #   return get_appropriate_sign_integer object
-      # else
-      #   return NIL
-      # end
+      if object
+        return get_appropriate_sign_integer object
+      else
+        return NIL
+      end
+
+      # next unless object
+      # return get_appropriate_sign_integer object
     end
-  end
-
-  def nokogiri_object_to_float nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-  end
-
-  def nokogiri_object_to_int nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
-  end
-
-  def nokogiri_object_to_bool nokogiri_object
-    truthy = ["true", "yes", "Yes"]
-    if truthy.include? nokogiri_object.text.gsub(/\n/, "").strip
-      return true
-    else return false
-    end
-  end
-
-  def nokogiri_object_to_date nokogiri_object
-    return nokogiri_object.text.gsub(/\-/, " ").strip
-  end
-
-  def nokogiri_object_to_text nokogiri_object
-    return nokogiri_object.text.gsub(/\n/, "").strip
   end
 
   def get_units

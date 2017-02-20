@@ -17,6 +17,7 @@ gem 'jwt'
 gem 'nokogiri'
 gem 'pry'
 gem "rails-erd"
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug', platform: :mri
