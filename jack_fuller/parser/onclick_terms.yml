@@ -1,0 +1,161 @@
+income_statement: {
+  SALES: [
+    "_SalesRevenueNet\'",
+    "_SalesRevenueGoodsNet\'",
+    "_Revenues\'"
+  ],
+  COGS: [
+    "_CostOfGoodsAndServicesSold\'",
+    "_CostOfGoodsSold\'",
+    "_CostOfRevenue\'"
+  ],
+  EBIT: [
+    "_OperatingIncomeLoss\'"
+  ],
+  PBT: [
+    "_IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest\'",
+    "_IncomeLossFromContinuingOperationsBeforeIncomeTaxes\'",
+    "_IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments\'"
+  ],
+  TAX: [
+    "_IncomeTaxExpenseBenefit\'"
+  ],
+  NET_INCOME: [
+    "_NetIncomeLoss\'",
+    "_NetIncomeLossAvailableToCommonStockholdersBasic\'"
+  ],
+  BASIC_EPS: [
+    "_EarningsPerShareBasic\'"
+  ],
+  DILUTED_EPS: [
+    "_EarningsPerShareDiluted\'"
+  ]
+}
+
+balance_sheet: {
+  CCE: [
+    "_CashAndCashEquivalentsAtCarryingValue\'"
+  ],
+  MARKETABLE_SECURITIES: [
+    "_AvailableForSaleSecuritiesCurrent\'"
+  ],
+  SHORT_TERM_INVESTMENTS: [
+  ],
+  INVENTORY: [
+    "_InventoryNet\'"
+  ],
+  ACCOUNTS_RECIEVABLE: [
+    "_AccountsReceivableNetCurrent\'"
+  ],
+  TOTAL_CURRENT_ASSETS: [
+    "_AssetsCurrent\'"
+  ],
+  AVAIABLE_FOR_SALE_SECURITIES: [
+    "_AvailableForSaleSecuritiesNoncurrent\'"
+  ],
+  PPE_NET: [
+    "_PropertyPlantAndEquipmentNet\'"
+  ],
+  GOODWILL: [
+    "_Goodwill\'"
+  ],
+  OTHER_INTANGIBLE_ASSETS: [
+    "_IntangibleAssetsNetExcludingGoodwill\'"
+  ],
+  TOTAL_ASSETS: [
+    "_Assets\'"
+  ],
+  ACCOUNTS_PAYABLE: [
+    "_AccountsPayableCurrent\'"
+  ],
+  ACCRUED_EXPENSES: [
+    "_AccruedLiabilitiesCurrent\'"
+  ],
+  SHORT_TERM_DEBT: [
+    "_CommercialPaper\'"
+  ],
+  CURRENT_PORTION_OF_LONG_TERM_DEBT: [
+    "_LongTermDebtCurrent\'"
+  ],
+  CURRENT_DEFERRED_REVENUE: [
+    "_DeferredRevenueNoncurrent\'"
+  ],
+  TOTAL_CURRENT_LIABILITIES: [
+    "_LiabilitiesCurrent\'"
+  ],
+  LONG_TERM_DEBT: [
+    "_LongTermDebtNoncurrent\'"
+  ],
+  NON_CURRENT_DEFERRED_REVENUE: [
+    "_DeferredRevenueNoncurrent\'"
+  ],
+  DEFERRED_TAX_LIABILITIES: [
+  ],
+  TOTAL_LIABILITIES: [
+    "_Liabilities\'"
+  ],
+  COMMON_STOCKS_AND_PAID_IN_CAPITAL: [
+    "_CommonStocksIncludingAdditionalPaidInCapital\'"
+  ],
+  RETAINED_EARNINGS: [
+    "_RetainedEarningsAccumulatedDeficit\'"
+  ],
+  ACCUMULATED_OTHER_COMPREHENSIVE_INCOME: [
+    "_AccumulatedOtherComprehensiveIncomeLossNetOfTax\'"
+  ],
+  TREASURY_STOCK: [
+  ],
+  MINORITY_INTEREST: [
+  ],
+  TOTAL_EQUITY: [
+    "_StockholdersEquity\'"
+  ],
+  TOTAL_LIABILITIES_AND_EQUITY: [
+    "_LiabilitiesAndStockholdersEquity\'"
+  ]
+}
+
+cover_sheet: {
+  DOCUMENT_TYPE: [
+    "_DocumentType\'"
+  ],
+  AMENDMENT_FLAG: [
+    "_AmendmentFlag\'"
+  ],
+  DOCUMENT_FISCAL_YEAR_FOCUS: [
+    "_DocumentFiscalYearFocus\'"
+  ],
+  DOCUMENT_FISCAL_PERIOD_FOCUS: [
+    "_DocumentFiscalPeriodFocus\'"
+  ],
+  TRADING_SYMBOL: [
+    "_TradingSymbol\'"
+  ],
+  ENTITY_REGISTRANT_NAME: [
+    "_EntityRegistrantName\'"
+  ],
+  ENTITY_CENTRAL_INDEX_KEY: [
+    "_EntityCentralIndexKey\'"
+  ],
+  CURRENT_FISCAL_YEAR_END_DATE: [
+    "_CurrentFiscalYearEndDate\'"
+  ],
+  ENTITY_WELL_KNOWN_SEASONED_ISSUER: [
+    "_EntityWellKnownSeasonedIssuer\'"
+  ],
+  ENTITY_CURRENT_REPORTING_STATUS: [
+    "_EntityCurrentReportingStatus\'"
+  ],
+  ENTITY_VOLUNTARY_FILERS: [
+    "_EntityVoluntaryFilers\'"
+  ],
+  ENTITY_FILER_CATEGORY: [
+    "_EntityFilerCategory\'"
+  ],
+  ENTITY_COMMON_STOCK_SHARES_OUTSTANDING: [
+    "_EntityCommonStockSharesOutstanding\'"
+  ],
+  ENTITY_PUBLIC_FLOAT: [
+    "_EntityPublicFloat\'"
+  ]
+}
