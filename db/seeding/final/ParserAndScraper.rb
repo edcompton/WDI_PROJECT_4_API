@@ -60,6 +60,12 @@ class ParserAndScraper
       # if the above returns an object then execute the rest of the method
       next unless object
       return get_appropriate_sign_integer object
+      # Check logic for cash flow - look at payables and why theis sometimes returns nil when it shouldn't.
+      # if object
+      #   return get_appropriate_sign_integer object
+      # else
+      #   return NIL
+      # end
     end
   end
 

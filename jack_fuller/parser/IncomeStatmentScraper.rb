@@ -50,4 +50,4 @@ file = "./htmls/coke_IS.html"
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["income_statement"]
 
-# IS = IncomeStatementScraper.new file, onclick_terms
+IS = IncomeStatementScraper.new file, onclick_terms

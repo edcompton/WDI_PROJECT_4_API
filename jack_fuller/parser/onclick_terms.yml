@@ -114,3 +114,48 @@ balance_sheet: {
     "_LiabilitiesAndStockholdersEquity\'"
   ]
 }
+
+cover_sheet: {
+  DOCUMENT_TYPE: [
+    "_DocumentType\'"
+  ],
+  AMENDMENT_FLAG: [
+    "_AmendmentFlag\'"
+  ],
+  DOCUMENT_FISCAL_YEAR_FOCUS: [
+    "_DocumentFiscalYearFocus\'"
+  ],
+  DOCUMENT_FISCAL_PERIOD_FOCUS: [
+    "_DocumentFiscalPeriodFocus\'"
+  ],
+  TRADING_SYMBOL: [
+    "_TradingSymbol\'"
+  ],
+  ENTITY_REGISTRANT_NAME: [
+    "_EntityRegistrantName\'"
+  ],
+  ENTITY_CENTRAL_INDEX_KEY: [
+    "_EntityCentralIndexKey\'"
+  ],
+  CURRENT_FISCAL_YEAR_END_DATE: [
+    "_CurrentFiscalYearEndDate\'"
+  ],
+  ENTITY_WELL_KNOWN_SEASONED_ISSUER: [
+    "_EntityWellKnownSeasonedIssuer\'"
+  ],
+  ENTITY_CURRENT_REPORTING_STATUS: [
+    "_EntityCurrentReportingStatus\'"
+  ],
+  ENTITY_VOLUNTARY_FILERS: [
+    "_EntityVoluntaryFilers\'"
+  ],
+  ENTITY_FILER_CATEGORY: [
+    "_EntityFilerCategory\'"
+  ],
+  ENTITY_COMMON_STOCK_SHARES_OUTSTANDING: [
+    "_EntityCommonStockSharesOutstanding\'"
+  ],
+  ENTITY_PUBLIC_FLOAT: [
+    "_EntityPublicFloat\'"
+  ]
+}
