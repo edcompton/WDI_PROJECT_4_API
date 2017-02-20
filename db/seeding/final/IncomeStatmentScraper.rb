@@ -42,12 +42,18 @@ class IncomeStatementScraper < ParserAndScraper
 
 end
 
-# file = "./htmls/google_IS.html"
-# file = "./htmls/apple_IS.html"
-# file = "./htmls/pg_IS.html"
-file = "./htmls/coke_IS.html"
+file = "./htmls/google_IS.html"
+file1 = "./htmls/apple_IS.html"
+file2 = "./htmls/pg_IS.html"
+file3 = "./htmls/coke_IS.html"
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["income_statement"]
-
+p 'GOOGLE 2016 IS'
 IS = IncomeStatementScraper.new file, onclick_terms
+p 'APPLE 2016 IS'
+IS = IncomeStatementScraper.new file1, onclick_terms
+p 'PG 2016 IS'
+IS = IncomeStatementScraper.new file2, onclick_terms
+p 'COKE 2016 IS'
+IS = IncomeStatementScraper.new file3, onclick_terms
