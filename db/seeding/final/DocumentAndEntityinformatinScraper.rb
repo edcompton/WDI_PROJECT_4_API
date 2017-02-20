@@ -6,11 +6,7 @@ load 'ParserAndScraper.rb'
 
 class DocumentAndEntityInformationScraper < ParserAndScraper
 
-  def get_nokogiri_objects query
-    @doc_to_scrape.xpath(query)
-  end
-
-  def get_main_date_div
+  def get_main_date_div_dei
     query = "//body//tr/th[@class = 'th'][1][1]"
     p @date_divs = get_nokogiri_objects(query)[1..-1]
   end
@@ -26,7 +22,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     date_string.gsub(/[^\d]/, '')[-4..-1].to_i
   end
 
-  def get_document_period_end_date
+  def get_document_period_end_date_dei
     query = "//a[contains(@onclick, 'DocumentPeriodEndDate')]/../..//td[@class='text']"
     @document_period_end_date = get_nokogiri_objects(query).text.gsub(/\n/, "")
   end
@@ -82,7 +78,6 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     end
   end
 
-
   def get_boolean_info key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
@@ -116,50 +111,8 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       object = get_nokogiri_objects(query)
 
       next unless object
-
       return nokogiri_object_to_int object
     end
-  end
-
-
-  def get_appropriate_sign_integer object
-    if object.text =~ /\d/
-      if negative_number? object
-        -(nokogiri_object_to_float(object))
-      else
-        nokogiri_object_to_float object
-      end
-    else
-      nokogiri_object_to_text object
-    end
-  end
-
-  def nokogiri_object_to_float nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-  end
-
-  def nokogiri_object_to_int nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
-  end
-
-  def nokogiri_object_to_bool nokogiri_object
-    truthy = ["true", "yes", "Yes"]
-    if truthy.include? nokogiri_object.text.gsub(/\n/, "").strip
-      return true
-    else return false
-    end
-  end
-
-  def nokogiri_object_to_date nokogiri_object
-    return nokogiri_object.text.gsub(/\-/, " ").strip
-  end
-
-  def nokogiri_object_to_text nokogiri_object
-    return nokogiri_object.text.gsub(/\n/, "").strip
-  end
-
-  def negative_number? object
-    object.text.include?('(')
   end
 
   def initialize file, onclick_terms
@@ -167,7 +120,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     open_file file
     parse_file
     initialize_data_array
-    get_main_date_div
+    get_main_date_div_dei
     get_date_strings
     get_document_period_end_date
     populate_data_array_with_cells
@@ -178,6 +131,6 @@ end
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["cover_sheet"]
-file = "../scraped_files/AAPL/2016/entity_information.html"
+file = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2016/Entity\ Information.html"
 
 DI = DocumentAndEntityInformationScraper.new file, onclick_terms

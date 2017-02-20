@@ -69,6 +69,30 @@ class ParserAndScraper
     end
   end
 
+  def nokogiri_object_to_float nokogiri_object
+    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+  end
+
+  def nokogiri_object_to_int nokogiri_object
+    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
+  end
+
+  def nokogiri_object_to_bool nokogiri_object
+    truthy = ["true", "yes", "Yes"]
+    if truthy.include? nokogiri_object.text.gsub(/\n/, "").strip
+      return true
+    else return false
+    end
+  end
+
+  def nokogiri_object_to_date nokogiri_object
+    return nokogiri_object.text.gsub(/\-/, " ").strip
+  end
+
+  def nokogiri_object_to_text nokogiri_object
+    return nokogiri_object.text.gsub(/\n/, "").strip
+  end
+
   def get_units
     query = "//strong"
     text = get_nokogiri_objects(query)[0].text
