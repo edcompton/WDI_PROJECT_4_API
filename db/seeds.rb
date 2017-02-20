@@ -28,6 +28,12 @@ f1 = Filing.create({
   accession_id: "000162828016020309"
 })
 
+bs1 = BsYearlyResult.create({
+  cce: -345
+  })
+
+f1.bs_yearly_results << bs1
+
 c1.filings << f1
 
 w1.companies << c1
