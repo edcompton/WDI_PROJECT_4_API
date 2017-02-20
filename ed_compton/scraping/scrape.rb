@@ -51,14 +51,12 @@ class SheetSelector
         sheet_urls << add_r_number(url, i)
       end
     end
-    # puts sheet_urls
   end
 
   def create_ticker_folder
     dirname = "ed_compton/scraping/scraped_files/#{@tick}"
     unless File.directory?(dirname)
       FileUtils.mkdir_p(dirname)
-      # puts dirname
     end
   end
 
@@ -73,11 +71,12 @@ class SheetSelector
   def cycle_urls
     sheet_urls.each do |sheet_url|
       begin
+        @session_id = sheet_url.split('/')[7]
         r_statement = Nokogiri::XML(open(sheet_url))
-        find_entity_information r_statement
-        find_balance_sheets r_statement
-        find_cash_flow r_statement
-        find_income_statements r_statement
+        find_entity_information(r_statement, @session_id)
+        find_balance_sheets(r_statement, @session_id)
+        find_cash_flow(r_statement, @session_id)
+        find_income_statements(r_statement, @session_id)
         sleep 2
       rescue OpenURI::HTTPError
         next
@@ -85,54 +84,54 @@ class SheetSelector
     end
   end
 
-  def find_entity_information r_statement
+  def find_entity_information r_statement, session_id
     statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
     if statement_title.include? "document and entity information"
       year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
       p year_selector
       @statement_year = year_selector[1]
-      title = "#{@tick}_#{@statement_year}_DEI"
+      title = "#{@tick}_#{@statement_year}_#{session_id}_DEI"
       create_folder_year
       create_file(statement_title, r_statement, title)
     end
   end
 
-  def find_balance_sheets r_statement
+  def find_balance_sheets r_statement, session_id
     statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
     if statement_title.include? "balance"
       if !(statement_title.include? "parenthetical")
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
-        title = "#{@tick}_#{@statement_year}_BS"
+        title = "#{@tick}_#{@statement_year}_#{session_id}_BS"
         create_folder_year
         create_file(statement_title, r_statement, title)
       end
     end
   end
 
-  def find_income_statements r_statement
+  def find_income_statements r_statement, session_id
     statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
     if statement_title.include? "income" or statement_title.include? "earnings" or statement_title.include? "operations"
       if !(statement_title.include? "parenthetical") and !(statement_title.include? "equity")
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
-        title = "#{@tick}_#{@statement_year}_IS"
+        title = "#{@tick}_#{@statement_year}_#{session_id}_IS"
         create_folder_year
         create_file(statement_title, r_statement, title)
       end
     end
   end
 
-  def find_cash_flow r_statement
+  def find_cash_flow r_statement, session_id
     if r_statement != nil
       statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
       if statement_title.include? "cash"
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
-        title = "#{@tick}_#{@statement_year}_CF"
+        title = "#{@tick}_#{@statement_year}_#{session_id}_CF"
         create_folder_year
         create_file(statement_title, r_statement, title)
       end
