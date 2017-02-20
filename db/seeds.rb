@@ -32,7 +32,17 @@ bs1 = BsYearlyResult.create({
   cce: -345
   })
 
+is1 = IsYearlyResult.create({
+  sales: 2000
+  })
+
+cf1 = CfYearlyResult.create({
+  net_income: 2345
+  })
+
 f1.bs_yearly_results << bs1
+f1.is_yearly_results << is1
+f1.cf_yearly_results << cf1
 
 c1.filings << f1
 

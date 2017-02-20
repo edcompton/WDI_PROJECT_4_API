@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220145655) do
+ActiveRecord::Schema.define(version: 20170220152730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,45 @@ ActiveRecord::Schema.define(version: 20170220145655) do
     t.index ["filing_id"], name: "index_bs_yearly_results_on_filing_id", using: :btree
   end
 
+  create_table "cf_yearly_results", force: :cascade do |t|
+    t.integer  "filing_id"
+    t.integer  "year"
+    t.string   "date"
+    t.string   "unit"
+    t.float    "net_income"
+    t.float    "d_and_a"
+    t.float    "amortisation"
+    t.float    "share_compensation"
+    t.float    "deferred_tax"
+    t.float    "change_in_op_assets_and_liabilities"
+    t.float    "inventories"
+    t.float    "receivables"
+    t.float    "payables"
+    t.float    "net_cash_from_operating_activities"
+    t.float    "capex"
+    t.float    "disposal_of_ppe"
+    t.float    "purchases_of_marketable_securities"
+    t.float    "proceeds_from_sales_of_marketable_securities"
+    t.float    "proceeds_from_maturities_of_marketable_securities"
+    t.float    "acquisitions"
+    t.float    "disposals"
+    t.float    "net_cash_used_in_investing_activities"
+    t.float    "issuance_of_stock"
+    t.float    "total_debt_issued"
+    t.float    "total_debt_repayments"
+    t.float    "long_term_debt_raised"
+    t.float    "long_term_debt_repayments"
+    t.float    "net_short_term_debt_issued"
+    t.float    "payment_of_dividends"
+    t.float    "stock_repurchases"
+    t.float    "net_cash_from_financing_activities"
+    t.float    "effect_of_fx_on_cash_and_cash_equicalents"
+    t.float    "net_change_in_cash"
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.index ["filing_id"], name: "index_cf_yearly_results_on_filing_id", using: :btree
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string   "ticker"
     t.string   "name"
@@ -76,6 +115,24 @@ ActiveRecord::Schema.define(version: 20170220145655) do
     t.index ["company_id"], name: "index_filings_on_company_id", using: :btree
   end
 
+  create_table "is_yearly_results", force: :cascade do |t|
+    t.integer  "filing_id"
+    t.integer  "year"
+    t.string   "date"
+    t.string   "unit"
+    t.float    "sales"
+    t.float    "cogs"
+    t.float    "ebit"
+    t.float    "pbt"
+    t.float    "tax"
+    t.float    "net_income"
+    t.float    "basic_eps"
+    t.float    "diluted_eps"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["filing_id"], name: "index_is_yearly_results_on_filing_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -93,6 +150,8 @@ ActiveRecord::Schema.define(version: 20170220145655) do
   end
 
   add_foreign_key "bs_yearly_results", "filings"
+  add_foreign_key "cf_yearly_results", "filings"
   add_foreign_key "filings", "companies"
+  add_foreign_key "is_yearly_results", "filings"
   add_foreign_key "watchlists", "users"
 end
