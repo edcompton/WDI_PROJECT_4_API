@@ -4,19 +4,7 @@ require 'pry'
 require 'yaml'
 load 'ParserAndScraper.rb'
 
-class DocumentAndEntityInformationScraper
-
-  def open_file file_name
-    @doc_to_parse = File.open(file_name)
-  end
-
-  def parse_file
-    @doc_to_scrape = Nokogiri::HTML.parse(@doc_to_parse)
-  end
-
-  def initialize_data_array
-    @data = []
-  end
+class DocumentAndEntityInformationScraper < ParserAndScraper
 
   def get_nokogiri_objects query
     @doc_to_scrape.xpath(query)
