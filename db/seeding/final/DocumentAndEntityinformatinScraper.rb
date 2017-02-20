@@ -149,16 +149,16 @@ end
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["cover_sheet"]
-file = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2016/Entity\ Information.html"
+file = "./htmls/EntityInformation.html"
 file2 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2014/Entity\ Information.html"
 file3 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2015/Entity\ Information.html"
 file4 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2013/Entity\ Information.html"
 
 p "APPL 2016 ENTITY INFORMATION"
 DI = DocumentAndEntityInformationScraper.new file, onclick_terms
-p "APPL 2015 ENTITY INFORMATION"
-DI2 = DocumentAndEntityInformationScraper.new file3, onclick_terms
-p "APPL 2014 ENTITY INFORMATION"
-DI3 = DocumentAndEntityInformationScraper.new file2, onclick_terms
-p "APPLE 2013 ENTITY INFORMATION"
-DI4 = DocumentAndEntityInformationScraper.new file4, onclick_terms
+# p "APPL 2015 ENTITY INFORMATION"
+# DI2 = DocumentAndEntityInformationScraper.new file3, onclick_terms
+# p "APPL 2014 ENTITY INFORMATION"
+# DI3 = DocumentAndEntityInformationScraper.new file2, onclick_terms
+# p "APPLE 2013 ENTITY INFORMATION"
+# DI4 = DocumentAndEntityInformationScraper.new file4, onclick_terms

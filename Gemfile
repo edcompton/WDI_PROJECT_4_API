@@ -16,7 +16,6 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'nokogiri'
 gem 'pry'
-gem "rails-erd"
 gem 'httparty'
 
 group :development, :test do
