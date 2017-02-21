@@ -88,12 +88,9 @@ class ParserAndScraper
     @onclick_terms[key_symbol].each do |title_phrase|
       if column_index == 2 || column_index == 3
         query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
-      else
-        query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
-      end
+      else query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
       object = get_nokogiri_objects(query)
-      next unless object
-      return nokogiri_object_to_float object
+      next unless object return nokogiri_object_to_float object
     end
   end
 
@@ -101,21 +98,18 @@ class ParserAndScraper
     @onclick_terms[key_symbol].each do |title_phrase|
       if column_index == 2 || column_index == 3
         query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
-      else query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
-      end
+      else query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
       object = get_nokogiri_objects(query)
-      next unless object
-
-      return nokogiri_object_to_int object
+      next unless object return nokogiri_object_to_int object
     end
   end
 
-  def nokogiri_object_to_float nokogiri_object
-    if (@millions)
-      return ((nokogiri_object.text.gsub(/[^\d|.]/, '').to_f) * 10**6)
-    else
-      return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-    end
+  def nokogiri_object_to_float nokogiri_object, key_symbol
+    unless key_symbol.include? "SHARE"
+      if (@millions) then return ((nokogiri_object.text.gsub(/[^\d|.]/, '').to_f) * 10**6)
+      else return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f end
+      return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f end
+    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
   end
 
   def nokogiri_object_to_int nokogiri_object

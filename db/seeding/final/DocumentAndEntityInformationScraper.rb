@@ -26,7 +26,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
 
   def get_share_units_dei
     query = "//strong"
-    text = get_nokogiri_objects(query).text.split('-')[1]
+    text = get_nokogiri_objects(query).text.split('-')
     p text
   end
 
@@ -39,7 +39,6 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     {
       dei_id: 1,
       year: get_year_integer(date),
-      share_units: get_share_units_dei,
       monetary_units: is_millions?(get_monetary_units_dei),
       document_type: get_string_info("DOCUMENT_TYPE", 1),
       amendment_flag: get_boolean_info("AMENDMENT_FLAG", 1),
