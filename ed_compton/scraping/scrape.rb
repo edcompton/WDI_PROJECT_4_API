@@ -21,9 +21,11 @@ class SheetSelector
   attr_reader :ticker, :doc
   attr_accessor :sheet_urls, :r_statement
 
+# 'AAPL', 'GOOG', 'KO', 'MMM', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'XOM',
+
   def initialize
     @sheet_urls           = []
-    @ticker               = ['AAPL', 'GOOG', 'KO', 'MMM', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'XOM', 'GE', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'MCD', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT']
+    @ticker               = ['GE', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'MCD', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT']
     @ticker.each do |tick|
       @tick = tick
       run
@@ -43,7 +45,7 @@ class SheetSelector
   end
 
   def doc
-    @doc ||= Nokogiri::XML(open(generate_url_for_query))
+    @doc = Nokogiri::XML(open(generate_url_for_query))
   end
 
   def update_filing_urls_with_r_number
@@ -51,10 +53,12 @@ class SheetSelector
     puts @tick
     doc.css('filing-href').each do |url|
       R_NUMBERS.each do |i|
+        if !(change_to_https(url).split('/')[-1].include? 'l')
         @sheet_urls << add_r_number(url, i)
+        end
       end
     end
-    puts @sheet_urls
+    p @sheet_urls
   end
 
   def create_ticker_folder
@@ -65,7 +69,7 @@ class SheetSelector
   end
 
   def add_r_number url, i
-    (change_to_https(url).split('/')[0..-2] << "R#{i}.htm").join('/')
+      (change_to_https(url).split('/')[0..-2] << "R#{i}.htm").join('/')
   end
 
   def change_to_https url
