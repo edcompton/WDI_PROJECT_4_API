@@ -19,7 +19,7 @@ class SheetSelector
   R_NUMBERS = (1..9)
 
   attr_reader :ticker, :doc
-  attr_accessor :sheet_urls, :statements
+  attr_accessor :sheet_urls, :r_statement
 
   def initialize
     @sheet_urls           = []
@@ -28,6 +28,7 @@ class SheetSelector
       @tick = tick
       run
       @sheet_urls         = []
+      p @sheet_urls
     end
   end
 
@@ -46,11 +47,14 @@ class SheetSelector
   end
 
   def update_filing_urls_with_r_number
+    puts generate_url_for_query
+    puts @tick
     doc.css('filing-href').each do |url|
       R_NUMBERS.each do |i|
-        sheet_urls << add_r_number(url, i)
+        @sheet_urls << add_r_number(url, i)
       end
     end
+    puts @sheet_urls
   end
 
   def create_ticker_folder
@@ -69,7 +73,7 @@ class SheetSelector
   end
 
   def cycle_urls
-    sheet_urls.each do |sheet_url|
+    @sheet_urls.each do |sheet_url|
       begin
         @session_id = sheet_url.split('/')[7]
         r_statement = Nokogiri::XML(open(sheet_url))
