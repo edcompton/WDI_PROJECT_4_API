@@ -37,18 +37,6 @@ class ParserAndScraper
     end
   end
 
-  def nokogiri_object_to_float nokogiri_object
-    nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-  end
-
-  def get_appropriate_sign_integer object
-    if negative_number? object
-      -(nokogiri_object_to_float(object))
-    else
-      nokogiri_object_to_float object
-    end
-  end
-
   def negative_number? object
     object.text.include?('(')
   end
@@ -60,24 +48,60 @@ class ParserAndScraper
     unit_string
   end
 
+  # The cell float function runs on the multi column, number only data sets like balance sheet.
   def get_cell_float key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
       object = get_nokogiri_objects(query)[column_index]
       # if the above returns an object then execute the rest of the method
+      # next unless object
+      if object then return get_appropriate_sign_integer object
+      else return nil end
+
+    end
+  end
+
+  def get_appropriate_sign_integer object
+    if negative_number? object then -(nokogiri_object_to_float(object))
+    else nokogiri_object_to_float object end
+  end
+
+  def get_boolean_info key_symbol, column_index
+    @onclick_terms[key_symbol].each do |title_phrase|
+      query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
+      object = get_nokogiri_objects(query)
       next unless object
-      return get_appropriate_sign_integer object
-      # Check logic for cash flow - look at payables and why theis sometimes returns nil when it shouldn't.
-      # if object
-      #   return get_appropriate_sign_integer object
-      # else
-      #   return NIL
-      # end
+      return nokogiri_object_to_bool object end
+  end
+
+  def get_float_info key_symbol, column_index
+    @onclick_terms[key_symbol].each do |title_phrase|
+      if column_index == 2 || column_index == 3
+        query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
+      else query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
+      object = get_nokogiri_objects(query)
+      next unless object
+        return nokogiri_object_to_float object
+    end
+  end
+
+  def get_int_info key_symbol, column_index
+    @onclick_terms[key_symbol].each do |title_phrase|
+      if column_index == 2 || column_index == 3
+        query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
+      else
+        query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
+      end
+      object = get_nokogiri_objects(query)
+      next unless object
+        return nokogiri_object_to_int object
     end
   end
 
   def nokogiri_object_to_float nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+    value = nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+    if @millions then return (value * 10**6) end
+    return value
   end
 
   def nokogiri_object_to_int nokogiri_object
@@ -86,10 +110,8 @@ class ParserAndScraper
 
   def nokogiri_object_to_bool nokogiri_object
     truthy = ["true", "yes", "Yes"]
-    if truthy.include? nokogiri_object.text.gsub(/\n/, "").strip
-      return true
-    else return false
-    end
+    if truthy.include? nokogiri_object.text.gsub(/\n/, "").strip then return true
+    else return false end
   end
 
   def nokogiri_object_to_date nokogiri_object
@@ -103,11 +125,7 @@ class ParserAndScraper
   def get_units
     query = "//strong"
     text = get_nokogiri_objects(query)[0].text
-    if text.include?(',')
-      text.split(',')[1].strip!
-    else
-      text.split(')')[1].strip!
-    end
+    if text.include?(',') then text.split(',')[1].strip!
+    else text.split(')')[1].strip! end
   end
-
 end

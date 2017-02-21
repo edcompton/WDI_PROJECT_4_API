@@ -21,11 +21,11 @@ class SheetSelector
   attr_reader :ticker, :doc
   attr_accessor :sheet_urls, :r_statement
 
-
+  # 'AAPL', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'GE', 'GOOG', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM',
 
   def initialize
     @sheet_urls           = []
-    @ticker               = ['AAPL', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'GE', 'GOOG', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT', 'XOM']
+    @ticker               = ['MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT', 'XOM']
     @ticker.each do |tick|
       @tick = tick
       run
@@ -54,7 +54,7 @@ class SheetSelector
     doc.css('filing-href').each do |url|
       R_NUMBERS.each do |i|
         if !(change_to_https(url).split('/')[-1].include? 'l')
-        @sheet_urls << add_r_number(url, i)
+          @sheet_urls << add_r_number(url, i)
         end
       end
     end
@@ -69,7 +69,7 @@ class SheetSelector
   end
 
   def add_r_number url, i
-      (change_to_https(url).split('/')[0..-2] << "R#{i}.htm").join('/')
+    (change_to_https(url).split('/')[0..-2] << "R#{i}.htm").join('/')
   end
 
   def change_to_https url
@@ -85,7 +85,7 @@ class SheetSelector
         find_balance_sheets(r_statement, @session_id)
         find_cash_flow(r_statement, @session_id)
         find_income_statements(r_statement, @session_id)
-        sleep 2
+        sleep 1
       rescue OpenURI::HTTPError
         next
       end
@@ -121,7 +121,7 @@ class SheetSelector
   def find_income_statements r_statement, session_id
     statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
     if statement_title.include? "income" or statement_title.include? "earnings" or statement_title.include? "operations"
-      if !(statement_title.include? "parenthetical") and !(statement_title.include? "equity")
+      if !(statement_title.include? "parenthetical") and !(statement_title.include? "equity") and !(statement_title.include? "comprehensive") and !(statement_title.include? "accounting") and !(statement_title.include? "nature")
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
         @statement_year = year_selector.max
@@ -136,12 +136,14 @@ class SheetSelector
     if r_statement != nil
       statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
       if statement_title.include? "cash"
-        year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
-        p year_selector
-        @statement_year = year_selector.max
-        title = "#{@tick}_#{@statement_year}_#{session_id}_CF"
-        create_folder_year
-        create_file(statement_title, r_statement, title)
+        if !(statement_title.include? "parenthetical")
+          year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
+          p year_selector
+          @statement_year = year_selector.max
+          title = "#{@tick}_#{@statement_year}_#{session_id}_CF"
+          create_folder_year
+          create_file(statement_title, r_statement, title)
+        end
       end
     end
   end
