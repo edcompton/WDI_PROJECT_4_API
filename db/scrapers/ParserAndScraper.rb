@@ -49,10 +49,15 @@ class ParserAndScraper
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
       object = get_nokogiri_objects(query)[column_index]
+      # p object
       # if the above returns an object then execute the rest of the method
       # next unless object
-      if object then return get_appropriate_sign_integer object
-      else return nil end
+      if object
+        return get_appropriate_sign_integer object
+      else
+        return nil
+        next
+      end
     end
   end
 
@@ -125,5 +130,9 @@ class ParserAndScraper
     text = get_nokogiri_objects(query)[0].text
     if text.include?(',') then text.split(',')[1].strip!
     else text.split(')')[1].strip! end
+  end
+
+  def return_data
+    @data
   end
 end

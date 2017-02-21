@@ -1,3 +1,4 @@
+# yaml syntax / format
 income_statement: {
   SALES: [
   "_SalesRevenueNet\'",

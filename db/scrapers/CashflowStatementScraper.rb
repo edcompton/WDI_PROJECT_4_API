@@ -51,6 +51,5 @@ class CashflowStatementScraper < ParserAndScraper
     get_date_strings
     get_document_period_end_date
     populate_data_array_with_cells
-    Pry::ColorPrinter.pp(@data)
   end
 end
