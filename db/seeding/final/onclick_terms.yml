@@ -37,7 +37,7 @@ balance_sheet: {
   "_CashAndCashEquivalentsAtCarryingValue\'"
   ],
   MARKETABLE_SECURITIES: [
-  "_AvailableForSaleSecuritiesCurrent\'", "_MarketableSecuritiesCurrent\'", "_AvailableForSaleSecurities\'"
+  "_MarketableSecuritiesCurrent'", "_AvailableForSaleSecuritiesCurrent\'"
   ],
   SHORT_TERM_INVESTMENTS: [
   "_OtherShortTermInvestments\'"
@@ -46,13 +46,14 @@ balance_sheet: {
   "_InventoryNet\'"
   ],
   ACCOUNTS_RECIEVABLE: [
-  "_AccountsReceivableNetCurrent\'"
+  "_AccountsReceivableNetCurrent\'",
+  "_AccountsNotesAndLoansReceivableNetCurrent\'"
   ],
   TOTAL_CURRENT_ASSETS: [
   "_AssetsCurrent\'"
   ],
   AVAIABLE_FOR_SALE_SECURITIES: [
-  "_AvailableForSaleSecuritiesNoncurrent\'"
+  "_AvailableForSaleSecuritiesNoncurrent\'", "_AvailableForSaleSecurities\'", "_AvailableForSaleSecuritiesAndCostMethodInvestments\'"
   ],
   PPE_NET: [
   "_PropertyPlantAndEquipmentNet\'"
@@ -73,7 +74,7 @@ balance_sheet: {
   "_AccruedLiabilitiesCurrent\'"
   ],
   SHORT_TERM_DEBT: [
-  "_CommercialPaper\'"
+  "_CommercialPaper\'", "_ShortTermBorrowings\'"
   ],
   CURRENT_PORTION_OF_LONG_TERM_DEBT: [
   "_LongTermDebtCurrent\'"
