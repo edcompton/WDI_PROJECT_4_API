@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -6280,3 +6281,5 @@ Completed 204 No Content in 2117ms (ActiveRecord: 30.4ms)
 =======
 >>>>>>> 65008ec09901198b87bcca1b15270554fd415c5a
 >>>>>>> f20fba4b2040fd7ff0d074745d282f2399b3057e
+=======
+>>>>>>> 9e2226731469cbb2217ca8fcfb8cfaeaaf7a20fd
