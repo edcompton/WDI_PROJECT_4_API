@@ -6,6 +6,7 @@ load 'ParserAndScraper.rb'
 
 class DocumentAndEntityInformationScraper < ParserAndScraper
 
+  # Unique dei variations on main class. The monetary units/share units etc are more varied on the dei, so the logic is here to avoid polluting the main Parser and Scraper.
   def get_main_date_div_dei
     query = "//body//tr/th[@class = 'th'][1][1]"
     @date_divs = get_nokogiri_objects(query)[1..-1]
@@ -24,8 +25,8 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
   end
 
   def get_share_units_dei
-    query = "//strong//br"
-    text = get_nokogiri_objects(query).text
+    query = "//strong"
+    text = get_nokogiri_objects(query).text.split('-')[1]
     p text
   end
 
@@ -44,7 +45,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       amendment_flag: get_boolean_info("AMENDMENT_FLAG", 1),
       document_period_end_date: @document_period_end_date,
       document_fiscal_year_focus: get_int_info("DOCUMENT_FISCAL_YEAR_FOCUS", 1),
-      DOCUMENT_FISCAL_PERIOD_FOCUS: get_string_info("DOCUMENT_FISCAL_PERIOD_FOCUS", 1),
+      document_fiscal_period_focus: get_string_info("DOCUMENT_FISCAL_PERIOD_FOCUS", 1),
       trading_symbol: get_string_info("TRADING_SYMBOL", 1),
       entity_registrant_name: get_string_info("ENTITY_REGISTRANT_NAME", 1),
       entity_central_index_key: get_int_info("ENTITY_CENTRAL_INDEX_KEY", 1),
@@ -63,18 +64,10 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
       object = get_nokogiri_objects(query)
       next unless object
-      # is_date? key_symbol, object
       if key_symbol == "CURRENT_FISCAL_YEAR_END_DATE"
         return nokogiri_object_to_date object
+      else return nokogiri_object_to_text object
       end
-      return nokogiri_object_to_text object
-    end
-  end
-
-# Trying to split date checker into another function- needs fix. Possibly room for a general exception checker function if edge cases demand it.
-  def is_date? key_symbol, object
-    if key_symbol == "CURRENT_FISCAL_YEAR_END_DATE"
-      return nokogiri_object_to_date object
     end
   end
 
