@@ -69,4 +69,7 @@ file4 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scr
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["balance_sheet"]
 
+
 IS = BalanceSheetScraper.new file4, onclick_terms
+
+p User.all
