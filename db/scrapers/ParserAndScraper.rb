@@ -1,11 +1,15 @@
 class ParserAndScraper
 
-  def open_file file_name
-    @doc_to_parse = File.open(file_name)
-  end
+  # def open_file file_name
+  #   @doc_to_parse = File.open(file_name)
+  # end
 
-  def parse_file
-    @doc_to_scrape = Nokogiri::HTML.parse(@doc_to_parse)
+  # def parse_file
+  #   @doc_to_scrape = Nokogiri::HTML.parse(@doc_to_parse)
+  # end
+
+  def parse_file doc_to_parse
+    @doc_to_scrape = Nokogiri::HTML.parse(doc_to_parse)
   end
 
   def initialize_data_array
@@ -36,10 +40,6 @@ class ParserAndScraper
       @data[index] = create_yearly_results_hash date, index
     end
   end
-
-  # def nokogiri_object_to_float nokogiri_object
-  #   nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
-  # end
 
   def get_appropriate_sign_integer object
     if negative_number? object
@@ -90,7 +90,8 @@ class ParserAndScraper
         query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
       else query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
       object = get_nokogiri_objects(query)
-      next unless object return nokogiri_object_to_float object
+      next unless object
+      return nokogiri_object_to_float object
     end
   end
 
@@ -100,15 +101,17 @@ class ParserAndScraper
         query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
       else query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
       object = get_nokogiri_objects(query)
-      next unless object return nokogiri_object_to_int object
+      next unless object
+      return nokogiri_object_to_int object
     end
   end
 
-  def nokogiri_object_to_float nokogiri_object, key_symbol
-    unless key_symbol.include? "SHARE"
-      if (@millions) then return ((nokogiri_object.text.gsub(/[^\d|.]/, '').to_f) * 10**6)
-      else return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f end
-      return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f end
+  def nokogiri_object_to_float nokogiri_object
+    if (@millions)
+      return ((nokogiri_object.text.gsub(/[^\d|.]/, '').to_f) * 10**6)
+    else
+      return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+    end
     return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
   end
 

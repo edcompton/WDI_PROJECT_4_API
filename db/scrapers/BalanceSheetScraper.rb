@@ -44,8 +44,7 @@ class BalanceSheetScraper < ParserAndScraper
 
   def initialize file, onclick_terms
     @onclick_terms = onclick_terms
-    open_file file
-    parse_file
+    parse_file file
     initialize_data_array
     get_date_divs
     get_date_strings

@@ -66,8 +66,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
 
   def initialize file, onclick_terms
     @onclick_terms = onclick_terms
-    open_file file
-    parse_file
+    parse_file file
     initialize_data_array
     get_main_date_div_dei
     get_date_strings
