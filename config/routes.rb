@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'companies', to: "companies#index"
+
+  get 'companies/:id', to: "companies#show"
+
   # setting routes with form shown below
   # VERB(URL, to: CONTROLLER#METHOD)
   post 'register', to: "authentications#register"

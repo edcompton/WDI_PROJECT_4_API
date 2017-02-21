@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filing: one
+  year: 1
+
+two:
+  filing: two
+  year: 1
