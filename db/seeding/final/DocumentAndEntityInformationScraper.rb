@@ -6,7 +6,7 @@ load 'ParserAndScraper.rb'
 
 class DocumentAndEntityInformationScraper < ParserAndScraper
 
-  # Unique dei variations on main class. The monetary units/share units etc are more varied on the dei, so the logic is here to avoid polluting the main Parser and Scraper.
+  # Unique dei variations on main class. The monetary units/share units etc are more varied on the dei, so the logic is here to avoid polluting the main ParserAndScraper class.
   def get_main_date_div_dei
     query = "//body//tr/th[@class = 'th'][1][1]"
     @date_divs = get_nokogiri_objects(query)[1..-1]
@@ -54,8 +54,8 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       entity_current_reporting_status: get_boolean_info("ENTITY_CURRENT_REPORTING_STATUS", 1),
       entity_voluntary_filers: get_boolean_info("ENTITY_VOLUNTARY_FILERS", 1),
       entity_filer_category: get_string_info("ENTITY_FILER_CATEGORY", 1),
-      entity_common_stock_shares_outstanding: get_int_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
-      entity_public_float: get_int_info("ENTITY_PUBLIC_FLOAT", 3)
+      entity_common_stock_shares_outstanding: get_float_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
+      entity_public_float: get_float_info("ENTITY_PUBLIC_FLOAT", 3)
     }
   end
 

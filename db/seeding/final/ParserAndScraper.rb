@@ -37,9 +37,9 @@ class ParserAndScraper
     end
   end
 
-  def nokogiri_object_to_float nokogiri_object
-    nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
-  end
+  # def nokogiri_object_to_float nokogiri_object
+  #   nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
+  # end
 
   def get_appropriate_sign_integer object
     if negative_number? object
@@ -60,6 +60,7 @@ class ParserAndScraper
     unit_string
   end
 
+  # The cell float function runs on the multi column, number only data sets like balance sheet.
   def get_cell_float key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
@@ -104,16 +105,21 @@ class ParserAndScraper
       end
       object = get_nokogiri_objects(query)
       next unless object
+
       return nokogiri_object_to_int object
     end
   end
 
   def nokogiri_object_to_float nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+    if (@millions)
+      return ((nokogiri_object.text.gsub(/[^\d|.]/, '').to_f) * 10**6)
+    else
+      return nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
+    end
   end
 
   def nokogiri_object_to_int nokogiri_object
-    return nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
+      return nokogiri_object.text.gsub(/[^\d|.]/, '').to_i
   end
 
   def nokogiri_object_to_bool nokogiri_object
@@ -141,5 +147,4 @@ class ParserAndScraper
       text.split(')')[1].strip!
     end
   end
-
 end

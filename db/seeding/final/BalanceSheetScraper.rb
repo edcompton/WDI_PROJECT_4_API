@@ -70,6 +70,7 @@ onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["balance_sheet"]
 
 
+IS = BalanceSheetScraper.new file, onclick_terms
 IS = BalanceSheetScraper.new file4, onclick_terms
 
 # p User.all
