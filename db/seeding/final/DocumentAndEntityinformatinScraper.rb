@@ -11,16 +11,6 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     @date_divs = get_nokogiri_objects(query)[1..-1]
   end
 
-  def get_date_strings
-    @date_strings = @date_divs.collect do |div|
-      div.text.gsub(/\n/, "").strip
-    end
-  end
-
-  def get_year_integer date_string
-    date_string.gsub(/[^\d]/, '')[-4..-1].to_i
-  end
-
   def get_monetary_units_dei
     query = "//strong"
     text = get_nokogiri_objects(query)[0].text
@@ -33,8 +23,6 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     end
   end
 
-
-
   def get_share_units_dei
     query = "//strong//br"
     text = get_nokogiri_objects(query).text
@@ -46,34 +34,27 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     @document_period_end_date = get_nokogiri_objects(query).text.gsub(/\n/, "")
   end
 
-  def populate_data_array_with_cells
-    @date_strings.each_with_index do |date, index|
-      p @date
-      @data[index] = create_yearly_results_hash date, index
-    end
-  end
-
   def create_yearly_results_hash date, index
     {
-      DEI_id: 1,
+      dei_id: 1,
       year: get_year_integer(date),
-      SHARE_UNITS: get_share_units_dei,
-      MONETARY_UNITS: is_millions?(get_monetary_units_dei),
-      DOCUMENT_TYPE: get_string_info("DOCUMENT_TYPE", 1),
-      AMENDMENT_FLAG: get_boolean_info("AMENDMENT_FLAG", 1),
-      DOCUMENT_PERIOD_END_DATE: @document_period_end_date,
-      DOCUMENT_FISCAL_YEAR_FOCUS: get_int_info("DOCUMENT_FISCAL_YEAR_FOCUS", 1),
+      share_units: get_share_units_dei,
+      monetary_units: is_millions?(get_monetary_units_dei),
+      document_type: get_string_info("DOCUMENT_TYPE", 1),
+      amendment_flag: get_boolean_info("AMENDMENT_FLAG", 1),
+      document_period_end_date: @document_period_end_date,
+      document_fiscal_year_focus: get_int_info("DOCUMENT_FISCAL_YEAR_FOCUS", 1),
       DOCUMENT_FISCAL_PERIOD_FOCUS: get_string_info("DOCUMENT_FISCAL_PERIOD_FOCUS", 1),
-      TRADING_SYMBOL: get_string_info("TRADING_SYMBOL", 1),
-      ENTITY_REGISTRANT_NAME: get_string_info("ENTITY_REGISTRANT_NAME", 1),
-      ENTITY_CENTRAL_INDEX_KEY: get_int_info("ENTITY_CENTRAL_INDEX_KEY", 1),
-      CURRENT_FISCAL_YEAR_END_DATE: get_string_info("CURRENT_FISCAL_YEAR_END_DATE", 1),
-      ENTITY_WELL_KNOWN_SEASONED_ISSUER: get_boolean_info("ENTITY_WELL_KNOWN_SEASONED_ISSUER", 1),
-      ENTITY_CURRENT_REPORTING_STATUS: get_boolean_info("ENTITY_CURRENT_REPORTING_STATUS", 1),
-      ENTITY_VOLUNTARY_FILERS: get_boolean_info("ENTITY_VOLUNTARY_FILERS", 1),
-      ENTITY_FILER_CATEGORY: get_string_info("ENTITY_FILER_CATEGORY", 1),
-      ENTITY_COMMON_STOCK_SHARES_OUTSTANDING: get_int_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
-      ENTITY_PUBLIC_FLOAT: get_int_info("ENTITY_PUBLIC_FLOAT", 3)
+      trading_symbol: get_string_info("TRADING_SYMBOL", 1),
+      entity_registrant_name: get_string_info("ENTITY_REGISTRANT_NAME", 1),
+      entity_central_index_key: get_int_info("ENTITY_CENTRAL_INDEX_KEY", 1),
+      current_fiscal_year_end_date: get_string_info("CURRENT_FISCAL_YEAR_END_DATE", 1),
+      entity_well_known_seasoned_issuer: get_boolean_info("ENTITY_WELL_KNOWN_SEASONED_ISSUER", 1),
+      entity_current_reporting_status: get_boolean_info("ENTITY_CURRENT_REPORTING_STATUS", 1),
+      entity_voluntary_filers: get_boolean_info("ENTITY_VOLUNTARY_FILERS", 1),
+      entity_filer_category: get_string_info("ENTITY_FILER_CATEGORY", 1),
+      entity_common_stock_shares_outstanding: get_int_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
+      entity_public_float: get_int_info("ENTITY_PUBLIC_FLOAT", 3)
     }
   end
 
@@ -108,23 +89,12 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     populate_data_array_with_cells
     Pry::ColorPrinter.pp(@data)
   end
-
 end
 
 onclick_terms_file = YAML.load_file('onclick_terms.yml')
 onclick_terms = onclick_terms_file["cover_sheet"]
 
 file = "./htmls/EntityInformation.html"
-file2 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2014/Entity\ Information.html"
-file3 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2015/Entity\ Information.html"
-file4 = "/Users/jackfuller/development/WDI_PROJECT_4_API/ed_compton/scraping/scraped_files/AAPL/2013/Entity\ Information.html"
 
 p "APPL 2016 ENTITY INFORMATION"
 DI = DocumentAndEntityInformationScraper.new file, onclick_terms
-# p "APPL 2015 ENTITY INFORMATION"
-# DI2 = DocumentAndEntityInformationScraper.new file3, onclick_terms
-# p "APPL 2014 ENTITY INFORMATION"
-# DI3 = DocumentAndEntityInformationScraper.new file2, onclick_terms
-# p "APPLE 2013 ENTITY INFORMATION"
-# DI4 = DocumentAndEntityInformationScraper.new file4, onclick_terms
->>>>>>> e3ba09a9716f5b6341e5c1d40daffb4ab1b65dfd
