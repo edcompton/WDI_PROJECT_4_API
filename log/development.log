@@ -3541,3 +3541,520 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms)
 
 
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:00:30 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:00:30 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:00:30 +0000
+Processing by RssfilingsController#filing_feed as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Filter chain halted as :authenticate_user! rendered or redirected
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:00:37 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 120ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:00:37 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:00:38 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.42ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:00:39 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:00:39 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:00:39 +0000
+Processing by RssfilingsController#filing_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.69ms)
+Completed 200 OK in 293ms (Views: 4.5ms | ActiveRecord: 13.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (41.19ms)
+Completed 200 OK in 1688ms (Views: 43.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:00:40 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:00:40 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:00:40 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.16ms)
+Completed 200 OK in 238ms (Views: 6.0ms | ActiveRecord: 3.3ms)
+
+
+Completed 204 No Content in 2257ms (ActiveRecord: 0.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (150.03ms)
+Completed 200 OK in 1463ms (Views: 152.3ms | ActiveRecord: 0.5ms)
+
+
+Completed 204 No Content in 2313ms (ActiveRecord: 1.7ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:01:47 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:01:47 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:01:47 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:01:48 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:01:48 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:01:48 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Processing by HistoricalpricesController#historical_prices as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Completed 401 Unauthorized in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:01:53 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 78ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:01:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.51ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:01:57 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:01:57 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:01:57 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:02:06 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:02:06 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:02:06 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:02:06 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:02:06 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:02:06 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:02:11 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 100ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:02:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:02:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.4ms)
+Completed 200 OK in 57ms (Views: 49.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:04:07 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 131ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 15ms (Views: 2.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:04:24 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 120ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:24 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:04:31 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 109ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:04:34 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 141ms (Views: 4.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:34 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.56ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:35 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.68ms)
+Completed 200 OK in 61ms (Views: 58.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:04:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.51ms)
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:05:26 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:05:36 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 100ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:05:36 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.56ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:05:37 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:05:37 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:05:37 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.9ms)
+Completed 200 OK in 271ms (Views: 12.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:05:37 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.51ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (39.86ms)
+Completed 200 OK in 1616ms (Views: 42.1ms | ActiveRecord: 1.1ms)
+
+
+Completed 204 No Content in 2341ms (ActiveRecord: 2.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-21 20:15:37 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jack@jack.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jack@jack.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jack@jack.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 90ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:15:38 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:15:38 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:15:38 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by RssfilingsController#filing_feed as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:15:38 +0000
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 14.7ms | ActiveRecord: 7.9ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (34.99ms)
+Completed 200 OK in 356ms (Views: 35.5ms | ActiveRecord: 13.1ms)
+
+
+Completed 204 No Content in 2206ms (ActiveRecord: 3.4ms)
+
+
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (52.46ms)
+Completed 200 OK in 1436ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-21 20:20:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:21:00 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:21:00 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:21:00 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.59ms)
+Completed 200 OK in 233ms (Views: 3.2ms | ActiveRecord: 0.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (87.81ms)
+Completed 200 OK in 2186ms (Views: 89.3ms | ActiveRecord: 1.0ms)
+
+
+Completed 204 No Content in 3020ms (ActiveRecord: 19.7ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 20:25:32 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 20:25:32 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 20:25:32 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
