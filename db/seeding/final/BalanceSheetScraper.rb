@@ -21,7 +21,7 @@ class BalanceSheetScraper < ParserAndScraper
       marketable_securities: get_cell_float("MARKETABLE_SECURITIES", column_index),
       short_term_investments: get_cell_float("SHORT_TERM_INVESTMENTS", column_index),
       inventory: get_cell_float("INVENTORY", column_index),
-      accounts_recievable: get_cell_float("ACCOUNTS_RECIEVABLE", column_index),
+      accounts_receivable: get_cell_float("ACCOUNTS_RECIEVABLE", column_index),
       total_current_assets: get_cell_float("TOTAL_CURRENT_ASSETS", column_index),
       avaiable_for_sale_securities: get_cell_float("AVAIABLE_FOR_SALE_SECURITIES", column_index),
       ppe_net: get_cell_float("PPE_NET", column_index),
