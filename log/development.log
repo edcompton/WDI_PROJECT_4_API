@@ -2048,3 +2048,1281 @@ Completed 204 No Content in 1169ms (ActiveRecord: 1.7ms)
 Completed 200 OK in 16212ms (Views: 224.5ms | ActiveRecord: 1.0ms)
 
 
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:22:13 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:22:13 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:22:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RssfilingsController#filing_feed as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.1ms)
+Completed 200 OK in 341ms (Views: 8.9ms | ActiveRecord: 6.1ms)
+
+
+Completed 204 No Content in 1618ms (ActiveRecord: 23.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (196.55ms)
+Completed 200 OK in 16075ms (Views: 197.0ms | ActiveRecord: 23.5ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:26:24 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:26:24 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:26:25 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by RssfilingsController#filing_feed as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.17ms)
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Completed 200 OK in 213ms (Views: 97.6ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:26:25 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:26:25 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.77ms)
+Completed 200 OK in 120ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:26:25 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1173ms (ActiveRecord: 1.4ms)
+
+
+Completed 204 No Content in 1181ms (ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (229.91ms)
+Completed 200 OK in 12768ms (Views: 230.4ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (248.67ms)
+Completed 200 OK in 15272ms (Views: 249.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:26:42 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:26:42 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:26:42 +0000
+Processing by RssfilingsController#filing_feed as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:26:43 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:26:43 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.07ms)
+Completed 200 OK in 122ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.72ms)
+Completed 200 OK in 411ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:26:43 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1650ms (ActiveRecord: 1.1ms)
+
+
+Completed 204 No Content in 2130ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:26:52 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:26:52 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:26:52 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (38.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.78ms)
+Completed 200 OK in 101ms (Views: 3.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:26:53 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "historicalprice"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1665ms (ActiveRecord: 1.2ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:26:54 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1574ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:26:56 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.28ms)
+Completed 200 OK in 150ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (292.49ms)
+Completed 200 OK in 14463ms (Views: 293.2ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (179.3ms)
+Completed 200 OK in 14152ms (Views: 179.9ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (227.69ms)
+Completed 200 OK in 15371ms (Views: 228.3ms | ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (201.23ms)
+Completed 200 OK in 17673ms (Views: 201.8ms | ActiveRecord: 38.3ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:33:48 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:33:48 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:33:48 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.98ms)
+Completed 200 OK in 167ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:33:48 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:33:48 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:33:48 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.34ms)
+Completed 200 OK in 164ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Completed 204 No Content in 1118ms (ActiveRecord: 14.1ms)
+
+
+Completed 204 No Content in 962ms (ActiveRecord: 1.9ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.6ms)
+Completed 200 OK in 1308ms (Views: 22.1ms | ActiveRecord: 0.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.5ms)
+Completed 200 OK in 1319ms (Views: 20.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:33:59 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:33:59 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:33:59 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.32ms)
+Completed 200 OK in 136ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:34:00 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:34:00 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.4ms)
+Completed 200 OK in 102ms (Views: 25.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:34:00 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (36.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 820ms (ActiveRecord: 15.0ms)
+
+
+Completed 204 No Content in 957ms (ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (84.15ms)
+Completed 200 OK in 1279ms (Views: 84.6ms | ActiveRecord: 0.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (165.52ms)
+Completed 200 OK in 1409ms (Views: 166.1ms | ActiveRecord: 36.4ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:34:28 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:34:28 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:34:28 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+Processing by RssfilingsController#filing_feed as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:34:29 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:34:29 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.72ms)
+Completed 200 OK in 323ms (Views: 3.6ms | ActiveRecord: 1.1ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.04ms)
+Completed 200 OK in 160ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:34:29 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (20.11ms)
+Completed 200 OK in 1526ms (Views: 20.7ms | ActiveRecord: 0.5ms)
+
+
+Completed 204 No Content in 1558ms (ActiveRecord: 1.9ms)
+
+
+Completed 204 No Content in 1378ms (ActiveRecord: 15.2ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (89.39ms)
+Completed 200 OK in 1372ms (Views: 90.1ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:34:57 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:34:57 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:34:57 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.09ms)
+Completed 200 OK in 274ms (Views: 2.7ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.31ms)
+Completed 200 OK in 1509ms (Views: 19.9ms | ActiveRecord: 12.6ms)
+
+
+Completed 204 No Content in 1849ms (ActiveRecord: 2.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:36:22 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:36:22 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:36:22 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.71ms)
+Completed 200 OK in 128ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Completed 204 No Content in 936ms (ActiveRecord: 1.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (100.71ms)
+Completed 200 OK in 1447ms (Views: 104.6ms | ActiveRecord: 18.5ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:06 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:06 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:06 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:06 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:06 +0000
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.74ms)
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Completed 200 OK in 319ms (Views: 161.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.3ms)
+Completed 200 OK in 135ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:06 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1343ms (ActiveRecord: 15.2ms)
+
+
+Completed 204 No Content in 1029ms (ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.69ms)
+Completed 200 OK in 1610ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (24.89ms)
+Completed 200 OK in 1177ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:10 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:10 +0000
+Processing by RssfilingsController#filing_feed as HTML
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:10 +0000
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:10 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:10 +0000
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.11ms)
+Processing by NewsfeedsController#watchlist_feed as HTML
+Completed 200 OK in 206ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+
+
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (16.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:11 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.65ms)
+Completed 200 OK in 243ms (Views: 2.0ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (27.63ms)
+Completed 200 OK in 1363ms (Views: 29.1ms | ActiveRecord: 16.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (38.71ms)
+Completed 204 No Content in 1293ms (ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 1715ms (Views: 40.2ms | ActiveRecord: 0.7ms)
+
+
+Completed 204 No Content in 1750ms (ActiveRecord: 2.9ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:23 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:23 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:23 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:24 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:24 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.4ms)
+Completed 200 OK in 332ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.55ms)
+Completed 200 OK in 197ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:24 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (44.53ms)
+Completed 200 OK in 1343ms (Views: 45.7ms | ActiveRecord: 6.0ms)
+
+
+Completed 204 No Content in 1374ms (ActiveRecord: 0.2ms)
+
+
+Completed 204 No Content in 1257ms (ActiveRecord: 1.1ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (44.22ms)
+Completed 200 OK in 1100ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:36 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:36 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:36 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:37:36 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:37:36 +0000
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.04ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Completed 200 OK in 427ms (Views: 212.3ms | ActiveRecord: 1.1ms)
+
+
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:37:36 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.14ms)
+Completed 200 OK in 222ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Completed 204 No Content in 1656ms (ActiveRecord: 2.9ms)
+
+
+Completed 204 No Content in 1226ms (ActiveRecord: 0.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (71.14ms)
+Completed 200 OK in 1427ms (Views: 71.8ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (55.5ms)
+Completed 200 OK in 1802ms (Views: 56.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:38:08 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:38:08 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:38:08 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.51ms)
+Completed 200 OK in 188ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:38:09 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:38:09 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.98ms)
+Completed 200 OK in 162ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:38:09 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1098ms (ActiveRecord: 0.2ms)
+
+
+Completed 204 No Content in 1106ms (ActiveRecord: 15.8ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (24.39ms)
+Completed 200 OK in 1512ms (Views: 25.0ms | ActiveRecord: 0.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.25ms)
+Completed 200 OK in 3042ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:38:30 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:38:30 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:38:30 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:38:30 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:38:30 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.15ms)
+Completed 200 OK in 205ms (Views: 25.7ms | ActiveRecord: 1.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.99ms)
+Completed 200 OK in 129ms (Views: 5.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:38:30 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (73.1ms)
+Completed 200 OK in 1532ms (Views: 73.6ms | ActiveRecord: 0.4ms)
+
+
+Completed 204 No Content in 1606ms (ActiveRecord: 0.5ms)
+
+
+Completed 204 No Content in 1889ms (ActiveRecord: 16.1ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (34.94ms)
+Completed 200 OK in 2401ms (Views: 35.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:40:33 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:40:33 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:40:33 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+Processing by RssfilingsController#filing_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (16.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (16.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:40:33 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:40:33 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.35ms)
+Completed 200 OK in 150ms (Views: 2.9ms | ActiveRecord: 1.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.16ms)
+Completed 200 OK in 163ms (Views: 2.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:40:33 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 204 No Content in 1647ms (ActiveRecord: 16.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (81.92ms)
+Completed 200 OK in 1373ms (Views: 82.5ms | ActiveRecord: 1.1ms)
+
+
+Completed 204 No Content in 1656ms (ActiveRecord: 14.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (27.17ms)
+Completed 200 OK in 1857ms (Views: 28.8ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-21 11:41:03 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/edmundcompton/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edmundcompton/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.8ms)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-02-21 11:41:03 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:41:46 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:41:46 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (19.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:41:46 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.52ms)
+Completed 200 OK in 286ms (Views: 9.1ms | ActiveRecord: 19.9ms)
+
+
+Completed 204 No Content in 1236ms (ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (31.36ms)
+Completed 200 OK in 1525ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:42:10 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:42:10 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:42:10 +0000
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (31.01ms)
+Completed 200 OK in 215ms (Views: 31.5ms | ActiveRecord: 1.3ms)
+
+
+Completed 204 No Content in 936ms (ActiveRecord: 1.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (36.42ms)
+Completed 200 OK in 1530ms (Views: 36.9ms | ActiveRecord: 26.1ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:42:29 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:42:29 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:42:29 +0000
+Processing by RssfilingsController#filing_feed as HTML
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.08ms)
+Completed 200 OK in 152ms (Views: 3.0ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:42:30 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:42:30 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:42:30 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.33ms)
+Completed 200 OK in 344ms (Views: 8.9ms | ActiveRecord: 0.6ms)
+
+
+Completed 204 No Content in 1544ms (ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (52.42ms)
+Completed 200 OK in 1569ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Completed 204 No Content in 1292ms (ActiveRecord: 0.2ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.96ms)
+Completed 200 OK in 1741ms (Views: 23.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:43:09 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:43:09 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:43:09 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (23.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (38.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.34ms)
+Completed 200 OK in 165ms (Views: 4.5ms | ActiveRecord: 2.5ms)
+
+
+Completed 204 No Content in 1447ms (ActiveRecord: 23.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.12ms)
+Completed 200 OK in 1985ms (Views: 28.6ms | ActiveRecord: 38.6ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:45:51 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:45:51 +0000
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by RssfilingsController#filing_feed as HTML
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:45:51 +0000
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.18ms)
+Completed 200 OK in 130ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (50.9ms)
+Completed 200 OK in 1495ms (Views: 52.1ms | ActiveRecord: 15.6ms)
+
+
+Completed 204 No Content in 3008ms (ActiveRecord: 1.5ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:46:10 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:46:10 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:46:10 +0000
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (20.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.54ms)
+Completed 200 OK in 132ms (Views: 7.7ms | ActiveRecord: 5.5ms)
+
+
+Completed 204 No Content in 1159ms (ActiveRecord: 20.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (43.57ms)
+Completed 200 OK in 2107ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:48:40 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:48:40 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:48:40 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.82ms)
+Completed 200 OK in 147ms (Views: 2.3ms | ActiveRecord: 15.8ms)
+
+
+Completed 204 No Content in 1188ms (ActiveRecord: 1.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.82ms)
+Completed 200 OK in 1298ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:49:00 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:49:00 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:49:00 +0000
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.22ms)
+Completed 200 OK in 115ms (Views: 1.6ms | ActiveRecord: 13.7ms)
+
+
+Completed 204 No Content in 908ms (ActiveRecord: 0.8ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.58ms)
+Completed 200 OK in 1608ms (Views: 22.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:49:36 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:49:36 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:49:36 +0000
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (29.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.35ms)
+Completed 200 OK in 189ms (Views: 1.7ms | ActiveRecord: 2.8ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (53.15ms)
+Completed 200 OK in 1280ms (Views: 53.8ms | ActiveRecord: 0.6ms)
+
+
+Completed 204 No Content in 1553ms (ActiveRecord: 29.6ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:50:27 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:50:27 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (18.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:50:27 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.61ms)
+Completed 200 OK in 138ms (Views: 3.6ms | ActiveRecord: 18.4ms)
+
+
+Completed 204 No Content in 1147ms (ActiveRecord: 2.9ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.34ms)
+Completed 200 OK in 1305ms (Views: 21.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:50:41 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:50:41 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:50:41 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.92ms)
+Completed 200 OK in 165ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+
+
+Completed 204 No Content in 1273ms (ActiveRecord: 2.9ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.58ms)
+Completed 200 OK in 1639ms (Views: 23.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:51:34 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:51:34 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:51:34 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (20.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (37.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 197ms (Views: 9.5ms | ActiveRecord: 2.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.5ms)
+Completed 200 OK in 1430ms (Views: 27.6ms | ActiveRecord: 37.7ms)
+
+
+Completed 204 No Content in 1483ms (ActiveRecord: 20.7ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:51:47 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:51:47 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:51:47 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.49ms)
+Completed 200 OK in 173ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Completed 204 No Content in 936ms (ActiveRecord: 2.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (32.06ms)
+Completed 200 OK in 1617ms (Views: 32.6ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:52:01 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:52:01 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:52:01 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (24.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 181ms (Views: 3.4ms | ActiveRecord: 5.0ms)
+
+
+Completed 204 No Content in 1013ms (ActiveRecord: 24.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (20.07ms)
+Completed 200 OK in 1295ms (Views: 20.7ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:53:22 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:53:22 +0000
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:53:22 +0000
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.33ms)
+Completed 200 OK in 167ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (24.44ms)
+Completed 200 OK in 1111ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Completed 204 No Content in 1142ms (ActiveRecord: 1.3ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:54:22 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:54:22 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:54:22 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.93ms)
+Completed 200 OK in 159ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Completed 204 No Content in 1188ms (ActiveRecord: 1.8ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.67ms)
+Completed 200 OK in 2615ms (Views: 29.3ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:55:20 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:55:20 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:55:20 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (21.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (33.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.9ms)
+Completed 200 OK in 215ms (Views: 23.5ms | ActiveRecord: 2.2ms)
+
+
+Completed 204 No Content in 1374ms (ActiveRecord: 21.1ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.79ms)
+Completed 200 OK in 1523ms (Views: 27.3ms | ActiveRecord: 33.3ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:55:44 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:55:44 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:55:44 +0000
+Processing by RssfilingsController#filing_feed as HTML
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.33ms)
+Completed 200 OK in 207ms (Views: 15.8ms | ActiveRecord: 13.8ms)
+
+
+Completed 204 No Content in 1367ms (ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.84ms)
+Completed 200 OK in 1814ms (Views: 23.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 11:55:55 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 11:55:55 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 11:55:55 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (29.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (29.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.14ms)
+Completed 200 OK in 224ms (Views: 15.7ms | ActiveRecord: 29.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.05ms)
+Completed 200 OK in 1246ms (Views: 22.7ms | ActiveRecord: 29.9ms)
+
+
+Completed 204 No Content in 1444ms (ActiveRecord: 5.7ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 12:00:53 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 12:00:53 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 12:00:53 +0000
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (26.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.19ms)
+Completed 200 OK in 263ms (Views: 2.7ms | ActiveRecord: 3.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.5ms)
+Completed 200 OK in 1209ms (Views: 23.1ms | ActiveRecord: 0.5ms)
+
+
+Completed 204 No Content in 2638ms (ActiveRecord: 26.6ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 12:01:37 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 12:01:37 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 12:01:37 +0000
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.53ms)
+Completed 200 OK in 181ms (Views: 9.2ms | ActiveRecord: 15.0ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (29.96ms)
+Completed 200 OK in 1315ms (Views: 30.6ms | ActiveRecord: 1.3ms)
+
+
+Completed 204 No Content in 1546ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 12:05:24 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 12:05:24 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 12:05:24 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.8ms)
+Completed 200 OK in 191ms (Views: 20.0ms | ActiveRecord: 5.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.66ms)
+Completed 200 OK in 2004ms (Views: 23.2ms | ActiveRecord: 20.8ms)
+
+
+Completed 204 No Content in 2482ms (ActiveRecord: 24.4ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 12:05:37 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 12:05:37 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 12:05:37 +0000
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.76ms)
+Completed 200 OK in 202ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.35ms)
+Completed 200 OK in 1554ms (Views: 23.1ms | ActiveRecord: 3.3ms)
+
+
+Completed 204 No Content in 1938ms (ActiveRecord: 3.0ms)
+
+
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-21 12:06:09 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-21 12:06:09 +0000
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-21 12:06:09 +0000
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>["GOOG"], "historicalprice"=>{"_json"=>["GOOG"]}}
+  [1m[36mUser Load (30.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.88ms)
+Completed 200 OK in 231ms (Views: 2.4ms | ActiveRecord: 4.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (84.6ms)
+Completed 200 OK in 1320ms (Views: 85.0ms | ActiveRecord: 3.5ms)
+
+
+Completed 204 No Content in 2117ms (ActiveRecord: 30.4ms)
+
+

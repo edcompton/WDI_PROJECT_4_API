@@ -21,11 +21,11 @@ class SheetSelector
   attr_reader :ticker, :doc
   attr_accessor :sheet_urls, :r_statement
 
-# 'AAPL', 'GOOG', 'KO', 'MMM', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'XOM',
+
 
   def initialize
     @sheet_urls           = []
-    @ticker               = ['GE', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'MCD', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT']
+    @ticker               = ['AAPL', 'AXP', 'BA', 'CAT', 'CVX', 'CSCO', 'DIS', 'DD', 'GE', 'GOOG', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT', 'XOM']
     @ticker.each do |tick|
       @tick = tick
       run
@@ -106,7 +106,7 @@ class SheetSelector
 
   def find_balance_sheets r_statement, session_id
     statement_title = r_statement.css("th[class=tl]").text.to_s.downcase
-    if statement_title.include? "balance"
+    if statement_title.include? "balance" or statement_title.include? "financial condition" or statement_title.include? "financial position"
       if !(statement_title.include? "parenthetical")
         year_selector = r_statement.css("th[class=th]").text.split(', ').map(&:to_i)
         p year_selector
