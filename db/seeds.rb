@@ -14,9 +14,9 @@ require_relative './scrapers/IncomeStatementScraper'
 onclick_terms_file = YAML.load_file(File.open('./scrapers/onclick_terms.yml'))
 
 directory_path = './../ed_compton/scraping/scraped_files/'
-file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_BS.html'
-file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_CF.html'
-file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_DEI.html'
+# file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_BS.html'
+# file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_CF.html'
+# file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_DEI.html'
 file_path = directory_path + 'AAPL/2016/AAPL_2016_000162828016020309_IS.html'
 file = File.open file_path
 

@@ -11,7 +11,7 @@ class BalanceSheetScraper < ParserAndScraper
       year: get_year_integer(date),
       date: date,
       unit: is_millions?(get_units),
-      cce: get_int_info("CCE", column_index),
+      cce: get_cell_float("CCE", column_index),
       marketable_securities: get_cell_float("MARKETABLE_SECURITIES", column_index),
       short_term_investments: get_cell_float("SHORT_TERM_INVESTMENTS", column_index),
       inventory: get_cell_float("INVENTORY", column_index),

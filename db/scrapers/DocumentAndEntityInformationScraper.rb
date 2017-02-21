@@ -47,7 +47,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
       entity_current_reporting_status: get_boolean_info("ENTITY_CURRENT_REPORTING_STATUS", 1),
       entity_voluntary_filers: get_boolean_info("ENTITY_VOLUNTARY_FILERS", 1),
       entity_filer_category: get_string_info("ENTITY_FILER_CATEGORY", 1),
-      entity_common_stock_shares_outstanding: get_float_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
+      # entity_common_stock_shares_outstanding: get_float_info("ENTITY_COMMON_STOCK_SHARES_OUTSTANDING", 2),
       entity_public_float: get_float_info("ENTITY_PUBLIC_FLOAT", 3)
     }
   end

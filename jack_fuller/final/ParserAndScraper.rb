@@ -1,11 +1,7 @@
 class ParserAndScraper
 
-  def open_file file_name
-    @doc_to_parse = File.open(file_name)
-  end
-
-  def parse_file
-    @doc_to_scrape = Nokogiri::HTML.parse(@doc_to_parse)
+  def parse_file doc_to_parse
+    @doc_to_scrape = Nokogiri::HTML.parse(doc_to_parse)
   end
 
   def initialize_data_array
@@ -57,9 +53,20 @@ class ParserAndScraper
       # next unless object
       if object then return get_appropriate_sign_integer object
       else return nil end
-
     end
   end
+
+  def get_float_info key_symbol, column_index
+    @onclick_terms[key_symbol].each do |title_phrase|
+      if column_index == 2 || column_index == 3
+        query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[contains(@class, "num")]'
+      else query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
+        object = get_nokogiri_objects(query)
+        if object then return get_appropriate_sign_integer object
+        else return nil end
+      end
+  end
+
 
   def get_appropriate_sign_integer object
     if negative_number? object then -(nokogiri_object_to_float(object))
@@ -68,22 +75,13 @@ class ParserAndScraper
 
   def get_boolean_info key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
-      query='//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
+      query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
       object = get_nokogiri_objects(query)
       next unless object
       return nokogiri_object_to_bool object end
   end
 
-  def get_float_info key_symbol, column_index
-    @onclick_terms[key_symbol].each do |title_phrase|
-      if column_index == 2 || column_index == 3
-        query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[@class ="nump"]'
-      else query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
-      object = get_nokogiri_objects(query)
-      next unless object
-        return nokogiri_object_to_float object
-    end
-  end
+
 
   def get_int_info key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
