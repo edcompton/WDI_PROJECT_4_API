@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'companies', to: "companies#index"
+  # get 'companies', to: "companies#index"
+  #
+  # get 'companies/:id', to: "companies#show"
 
-  get 'companies/:id', to: "companies#show"
+  get 'companies/model', to: "companies#model_show"
 
-  # setting routes with form shown below
-  # VERB(URL, to: CONTROLLER#METHOD)
   post 'register', to: "authentications#register"
   post 'login', to: "authentications#login"
   post 'watchlistfeed', to: "newsfeeds#watchlist_feed"

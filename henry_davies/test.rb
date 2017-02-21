@@ -6,7 +6,7 @@ ticker = 'AAPL'
 url = "https://finance.yahoo.com/quote/#{ticker}/analysts"
 
 
-page = Nokogiri::HTML(open(url))
+page = Nokogiri::XML(open(url))
 
 puts page
 
