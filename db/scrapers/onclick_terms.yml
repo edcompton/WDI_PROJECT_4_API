@@ -93,6 +93,7 @@ balance_sheet: {
   "_DeferredRevenueNoncurrent\'"
   ],
   DEFERRED_TAX_LIABILITIES: [
+  "_PLACEHOLDER\'"
   ],
   TOTAL_LIABILITIES: [
   "_Liabilities\'"
@@ -107,8 +108,10 @@ balance_sheet: {
   "_AccumulatedOtherComprehensiveIncomeLossNetOfTax\'"
   ],
   TREASURY_STOCK: [
+    "_PLACEHOLDER\'"
   ],
   MINORITY_INTEREST: [
+    "_PLACEHOLDER\'"
   ],
   TOTAL_EQUITY: [
   "_StockholdersEquity\'"

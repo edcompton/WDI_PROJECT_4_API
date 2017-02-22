@@ -2,7 +2,7 @@ class BsYearlyResult < ApplicationRecord
   belongs_to :filing
   has_one :company, through: :filing
 
-  before_save :log_out_missing_fields
+  # before_save :log_out_missing_fields
 
   private
     def log_out_missing_fields
