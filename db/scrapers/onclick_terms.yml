@@ -122,9 +122,9 @@ balance_sheet: {
   STOCK_VALUE: [
   "_CommonStockValue\'",
   "_CommonStocksIncludingAdditionalPaidInCapital\'"
-  ]
+  ],
   PREFERRED_STOCK_VALUE: [ "_ConvertiblePreferredStockNonredeemableOrRedeemableIssuerOptionValue\'"
-  ]
+  ],
   ADDITIONAL_PAID_IN_CAPITAL: [
   "_AdditionalPaidInCapitalCommonStock\'",
   "_AdditionalPaidInCapital\'"
