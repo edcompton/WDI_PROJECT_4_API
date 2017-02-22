@@ -118,6 +118,16 @@ balance_sheet: {
   ],
   TOTAL_LIABILITIES_AND_EQUITY: [
   "_LiabilitiesAndStockholdersEquity\'"
+  ],
+  STOCK_VALUE: [
+  "_CommonStockValue\'",
+  "_CommonStocksIncludingAdditionalPaidInCapital\'"
+  ],
+  PREFERRED_STOCK_VALUE: [ "_ConvertiblePreferredStockNonredeemableOrRedeemableIssuerOptionValue\'"
+  ],
+  ADDITIONAL_PAID_IN_CAPITAL: [
+  "_AdditionalPaidInCapitalCommonStock\'",
+  "_AdditionalPaidInCapital\'"
   ]
 }
 

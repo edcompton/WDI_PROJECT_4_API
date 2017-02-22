@@ -8,8 +8,8 @@ class CompaniesController < ApplicationController
 
   def model_show
     ticker = params['ticker']
-    company = Company.find_by ticker: ticker
-    render json: company
+    show_model_hash = Company.get_show_model_hash ticker
+    render json: show_model_hash
   end
 
 end

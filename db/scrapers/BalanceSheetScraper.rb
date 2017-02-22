@@ -39,7 +39,10 @@ class BalanceSheetScraper < ParserAndScraper
       treasury_stock: get_cell_float("TREASURY_STOCK", column_index),
       minority_interest: get_cell_float("MINORITY_INTEREST", column_index),
       total_equity: get_cell_float("TOTAL_EQUITY", column_index),
-      total_liabilities_and_equity: get_cell_float("TOTAL_LIABILITIES_AND_EQUITY", column_index)
+      total_liabilities_and_equity: get_cell_float("TOTAL_LIABILITIES_AND_EQUITY", column_index),
+      stock_value: get_cell_float("STOCK_VALUE", column_index),
+      preferred_stock_value: get_cell_float("PREFERRED_STOCK_VALUE", column_index),
+      additional_paid_in_capital: get_cell_float("ADDITIONAL_PAID_IN_CAPITAL", column_index),
     }
   end
 

@@ -23,6 +23,7 @@ class Seeder
 
   def save_company_filing_and_docs
     @company.save
+    p @filing
     @company.filings << @filing
     @filing.dei_statement = @dei
     @filing.bs_yearly_results << @bs_yearly_results
@@ -151,6 +152,7 @@ class Seeder
       p filing_year_directory
       set_details filing_year_directory
       set_comp_and_filing
+      # next if !@filing
       set_files_and_parse
       set_comp_name
       save_company_filing_and_docs
