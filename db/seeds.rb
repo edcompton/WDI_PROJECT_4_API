@@ -16,8 +16,8 @@ require_relative './scrapers/IncomeStatementScraper'
 # p Dir["ed_compton/scraping/scraped_files/AAPL/2016/*"]
 # p Dir["ed_compton/scraping/scraped_files/*/*"]
 
-filing_year_directories = ["ed_compton/scraping/scraped_files/AAPL/2016"]
-# filing_year_directories = Dir["ed_compton/scraping/scraped_files/*/*"][0..1]
+# filing_year_directories = ["ed_compton/scraping/scraped_files/AAPL/2016"]
+filing_year_directories = Dir["ed_compton/scraping/scraped_files/*/*"]
 
 class Seeder
 
@@ -154,7 +154,7 @@ class Seeder
       set_files_and_parse
       set_comp_name
       save_company_filing_and_docs
-      print_company_filing_and_docs
+      # print_company_filing_and_docs
     end
   end
 

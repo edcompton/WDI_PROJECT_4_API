@@ -24,7 +24,11 @@ class ParserAndScraper
 
   def get_document_period_end_date
     query = "//body//tr//th[@class='th']"
-    @document_period_end_date = get_nokogiri_objects(query)[1].text
+    if get_nokogiri_objects(query)[1]
+      @document_period_end_date = get_nokogiri_objects(query)[1].text
+    else
+      @document_period_end_date = get_nokogiri_objects(query)[0].text
+    end
   end
 
   def populate_data_array_with_cells
@@ -38,7 +42,11 @@ class ParserAndScraper
   end
 
   def is_millions? unit_string
-    !!unit_string.include?('Million')
+    !!unit_string.downcase.include?('million')
+  end
+
+  def is_thousands? unit_string
+    !!unit_string.downcase.include?('thousand')
   end
 
   # The cell float function runs on the multi column, number only data sets like balance sheet.
@@ -90,7 +98,7 @@ class ParserAndScraper
       else
         query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
       end
-      object = get_nokogiri_objects(query)
+      object = get_nokogiri_objects(query)[0]
       next unless object
         return nokogiri_object_to_int object
     end
@@ -98,8 +106,11 @@ class ParserAndScraper
 
   def nokogiri_object_to_float nokogiri_object
     value = nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-    return (value * @factor) if @factor
-    return value
+    if @factor
+      return (value * @factor)
+    else
+      return value
+    end
   end
 
   def nokogiri_object_to_int nokogiri_object
@@ -123,6 +134,7 @@ class ParserAndScraper
   def set_unit unit_string
     if unit_string
       @factor = 1000000 if is_millions? unit_string
+      @factor = 1000 if is_thousands? unit_string
     else
       puts "no unit_string found:"
       p unit_string
@@ -137,12 +149,7 @@ class ParserAndScraper
 
   def get_unit_string
     query = "//strong"
-    text = get_nokogiri_objects(query)[0].text
-    if text.include?(',')
-      text.split(',')[1].strip!
-    else
-      text.split(')')[1].strip!
-    end
+    get_nokogiri_objects(query)[0].text
   end
 
   def return_data
