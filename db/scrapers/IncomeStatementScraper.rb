@@ -7,18 +7,18 @@ class IncomeStatementScraper < ParserAndScraper
 
   def create_yearly_results_hash date, column_index
     {
-      IS_id: 1,
+      # IS_id: 1,
       year: get_year_integer(date),
       date: date,
-      UNITS: get_units,
-      SALES: get_cell_float("SALES", column_index),
-      COGS: get_cell_float("COGS", column_index),
-      EBIT: get_cell_float("EBIT", column_index),
-      PBT: get_cell_float("PBT", column_index),
-      TAX: get_cell_float("TAX", column_index),
-      NET_INCOME: get_cell_float("NET_INCOME", column_index),
-      BASIC_EPS: get_cell_float("BASIC_EPS", column_index),
-      DILUTED_EPS: get_cell_float("DILUTED_EPS", column_index)
+      unit: get_and_set_unit,
+      sales: get_cell_float("SALES", column_index),
+      cogs: get_cell_float("COGS", column_index),
+      ebit: get_cell_float("EBIT", column_index),
+      pbt: get_cell_float("PBT", column_index),
+      tax: get_cell_float("TAX", column_index),
+      net_income: get_cell_float("NET_INCOME", column_index),
+      basic_eps: get_cell_float("BASIC_EPS", column_index),
+      diluted_eps: get_cell_float("DILUTED_EPS", column_index)
     }
   end
 
@@ -30,7 +30,6 @@ class IncomeStatementScraper < ParserAndScraper
     get_date_strings
     get_document_period_end_date
     populate_data_array_with_cells
-    Pry::ColorPrinter.pp(@data)
   end
 
 end

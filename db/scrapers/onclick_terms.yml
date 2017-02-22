@@ -1,3 +1,4 @@
+# yaml syntax / format
 income_statement: {
   SALES: [
   "_SalesRevenueNet\'",
@@ -92,6 +93,7 @@ balance_sheet: {
   "_DeferredRevenueNoncurrent\'"
   ],
   DEFERRED_TAX_LIABILITIES: [
+  "_PLACEHOLDER\'"
   ],
   TOTAL_LIABILITIES: [
   "_Liabilities\'"
@@ -106,14 +108,26 @@ balance_sheet: {
   "_AccumulatedOtherComprehensiveIncomeLossNetOfTax\'"
   ],
   TREASURY_STOCK: [
+    "_PLACEHOLDER\'"
   ],
   MINORITY_INTEREST: [
+    "_PLACEHOLDER\'"
   ],
   TOTAL_EQUITY: [
   "_StockholdersEquity\'"
   ],
   TOTAL_LIABILITIES_AND_EQUITY: [
   "_LiabilitiesAndStockholdersEquity\'"
+  ],
+  STOCK_VALUE: [
+  "_CommonStockValue\'",
+  "_CommonStocksIncludingAdditionalPaidInCapital\'"
+  ]
+  PREFERRED_STOCK_VALUE: [ "_ConvertiblePreferredStockNonredeemableOrRedeemableIssuerOptionValue\'"
+  ]
+  ADDITIONAL_PAID_IN_CAPITAL: [
+  "_AdditionalPaidInCapitalCommonStock\'",
+  "_AdditionalPaidInCapital\'"
   ]
 }
 

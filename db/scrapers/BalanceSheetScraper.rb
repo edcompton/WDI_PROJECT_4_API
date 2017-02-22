@@ -7,10 +7,11 @@ class BalanceSheetScraper < ParserAndScraper
 
   def create_yearly_results_hash date, column_index
     {
-      bs_id: 1,
+      # bs_id: 1,
       year: get_year_integer(date),
       date: date,
-      unit: is_millions?(get_units),
+      # unit: is_millions?(get_units),
+      unit: get_and_set_unit,
       cce: get_cell_float("CCE", column_index),
       marketable_securities: get_cell_float("MARKETABLE_SECURITIES", column_index),
       short_term_investments: get_cell_float("SHORT_TERM_INVESTMENTS", column_index),
@@ -38,7 +39,10 @@ class BalanceSheetScraper < ParserAndScraper
       treasury_stock: get_cell_float("TREASURY_STOCK", column_index),
       minority_interest: get_cell_float("MINORITY_INTEREST", column_index),
       total_equity: get_cell_float("TOTAL_EQUITY", column_index),
-      total_liabilities_and_equity: get_cell_float("TOTAL_LIABILITIES_AND_EQUITY", column_index)
+      total_liabilities_and_equity: get_cell_float("TOTAL_LIABILITIES_AND_EQUITY", column_index),
+      stock_value: get_cell_float("STOCK_VALUE", column_index),
+      preferred_stock_value: get_cell_float("PREFERRED_STOCK_VALUE", column_index),
+      additional_paid_in_capital: get_cell_float("ADDITIONAL_PAID_IN_CAPITAL", column_index),
     }
   end
 
@@ -50,6 +54,6 @@ class BalanceSheetScraper < ParserAndScraper
     get_date_strings
     get_document_period_end_date
     populate_data_array_with_cells
-    Pry::ColorPrinter.pp(@data)
   end
+
 end

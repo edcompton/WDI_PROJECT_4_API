@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'users/:id', to: "users#show"
+
+  get 'companies/:id', to: "companies#show"
+
   # COMPANIES
   get 'companies', to: "companies#index"
   # USERS

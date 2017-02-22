@@ -24,7 +24,11 @@ class ParserAndScraper
 
   def get_document_period_end_date
     query = "//body//tr//th[@class='th']"
-    @document_period_end_date = get_nokogiri_objects(query)[1].text
+    if get_nokogiri_objects(query)[1]
+      @document_period_end_date = get_nokogiri_objects(query)[1].text
+    else
+      @document_period_end_date = get_nokogiri_objects(query)[0].text
+    end
   end
 
   def populate_data_array_with_cells
@@ -38,10 +42,11 @@ class ParserAndScraper
   end
 
   def is_millions? unit_string
-    if unit_string.include? 'Million'
-      @millions = true
-    end
-    unit_string
+    !!unit_string.downcase.include?('million')
+  end
+
+  def is_thousands? unit_string
+    !!unit_string.downcase.include?('thousand')
   end
 
   # The cell float function runs on the multi column, number only data sets like balance sheet.
@@ -49,10 +54,15 @@ class ParserAndScraper
     @onclick_terms[key_symbol].each do |title_phrase|
       query='//a[contains(@onclick, "'+ title_phrase + '")]/../../td[contains(@class, "num")]'
       object = get_nokogiri_objects(query)[column_index]
+      # p object
       # if the above returns an object then execute the rest of the method
       # next unless object
-      if object then return get_appropriate_sign_integer object
-      else return nil end
+      if object
+        return get_appropriate_sign_integer object
+      else
+        return nil
+        next
+      end
     end
   end
 
@@ -81,8 +91,6 @@ class ParserAndScraper
       return nokogiri_object_to_bool object end
   end
 
-
-
   def get_int_info key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       if column_index == 2 || column_index == 3
@@ -90,7 +98,7 @@ class ParserAndScraper
       else
         query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]'
       end
-      object = get_nokogiri_objects(query)
+      object = get_nokogiri_objects(query)[0]
       next unless object
         return nokogiri_object_to_int object
     end
@@ -98,8 +106,11 @@ class ParserAndScraper
 
   def nokogiri_object_to_float nokogiri_object
     value = nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-    if @millions then return (value * 10**6) end
-    return value
+    if @factor
+      return (value * @factor)
+    else
+      return value
+    end
   end
 
   def nokogiri_object_to_int nokogiri_object
@@ -120,10 +131,28 @@ class ParserAndScraper
     return nokogiri_object.text.gsub(/\n/, "").strip
   end
 
-  def get_units
+  def set_unit unit_string
+    if unit_string
+      @factor = 1000000 if is_millions? unit_string
+      @factor = 1000 if is_thousands? unit_string
+    else
+      puts "no unit_string found:"
+      p unit_string
+    end
+  end
+
+  def get_and_set_unit
+    unit_string = get_unit_string
+    set_unit unit_string
+    unit_string
+  end
+
+  def get_unit_string
     query = "//strong"
-    text = get_nokogiri_objects(query)[0].text
-    if text.include?(',') then text.split(',')[1].strip!
-    else text.split(')')[1].strip! end
+    get_nokogiri_objects(query)[0].text
+  end
+
+  def return_data
+    @data
   end
 end
