@@ -5259,3 +5259,806 @@ Completed 204 No Content in 4564ms (ActiveRecord: 0.2ms)
 
 
 >>>>>>> df58c50c1d2201ef0ea32c2d04036ee2ef8d46d3
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:18:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/companies/model/AAPL"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies/model/GOOG" for 127.0.0.1 at 2017-02-22 15:19:27 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/companies/model/GOOG"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies/model/GOOG" for 127.0.0.1 at 2017-02-22 15:19:37 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/companies/model/GOOG"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies/model/GOOG" for 127.0.0.1 at 2017-02-22 15:19:43 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/companies/model/GOOG"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies" for 127.0.0.1 at 2017-02-22 15:23:35 +0000
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.8ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.2ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.8ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.4ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.9ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (400.73ms)
+Completed 500 Internal Server Error in 444ms (ActiveRecord: 46.4ms)
+
+
+  
+TypeError (nil can't be coerced into Float):
+  
+app/models/bs_yearly_result.rb:26:in `-'
+app/models/bs_yearly_result.rb:26:in `total_liabilities'
+app/controllers/companies_controller.rb:6:in `index'
+Started GET "/companies" for 127.0.0.1 at 2017-02-22 15:23:59 +0000
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (2.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.8ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.8ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (226.7ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 20.2ms)
+
+
+  
+TypeError (nil can't be coerced into Float):
+  
+app/models/bs_yearly_result.rb:26:in `-'
+app/models/bs_yearly_result.rb:26:in `total_liabilities'
+app/controllers/companies_controller.rb:6:in `index'
+Started GET "/companies" for 127.0.0.1 at 2017-02-22 15:24:55 +0000
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.1ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.3ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.1ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.1ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.3ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.0ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.4ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1357.36ms)
+Completed 200 OK in 1381ms (Views: 1256.4ms | ActiveRecord: 114.1ms)
+
+
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:25:58 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.7ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007fa2c6de5e48>):
+  
+app/controllers/companies_controller.rb:29:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:26:34 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007fa2cafc0d68>):
+  
+app/controllers/companies_controller.rb:30:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:27:05 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `filings' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:29:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:28:14 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007fa2c6d4de90>):
+  
+app/controllers/companies_controller.rb:30:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:28:25 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.9ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007fa2cac93e10>):
+  
+app/controllers/companies_controller.rb:30:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:30:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 15.2ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007fc4a759ee80>):
+  
+app/controllers/companies_controller.rb:30:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:33:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 8.3ms)
+
+
+  
+NoMethodError (undefined method `last' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:29:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:34:26 +0000
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:34:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.9ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 15.9ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007f9d9f2454c0>):
+  
+app/controllers/companies_controller.rb:30:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:37:33 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<Filing::ActiveRecord_Associations_CollectionProxy:0x007f9d9cd84c30>):
+  
+app/controllers/companies_controller.rb:29:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:37:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 12.6ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<Filing::ActiveRecord_Associations_CollectionProxy:0x007fcff132e470>):
+  
+app/controllers/companies_controller.rb:29:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:39:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 14.6ms)
+
+
+  
+NoMethodError (undefined method `bs_yearly_results' for #<Filing::ActiveRecord_Associations_CollectionProxy:0x007f92e3bfe2a8>):
+  
+app/controllers/companies_controller.rb:28:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:50:10 +0000
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 15:50:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 14.2ms)
+
+
+  
+NoMethodError (undefined method `filings' for #<ActionDispatch::Response:0x007fcfdbeea770>):
+  
+app/controllers/companies_controller.rb:31:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:08:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `show_model_hash' for #<Class:0x007ff6dba17898>):
+  
+app/controllers/companies_controller.rb:11:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:08:39 +0000
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:08:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.7ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 4], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 3], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 4]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 2]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (116.32ms)
+Completed 200 OK in 265ms (Views: 109.3ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-02-22 16:18:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+[active_model_serializers]   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (2.2ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (2.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mDeiStatement Load (2.0ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.3ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.3ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 2]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mDeiStatement Load (1.0ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 3]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.8ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 4]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.9ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 5]]
+[active_model_serializers]   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.8ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 6]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 7]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.3ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 8]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.7ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 9]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 10]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 11]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 12]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 13]]
+[active_model_serializers]   [1m[36mFiling Load (0.7ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 14]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 15]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 16]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 17]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.6ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 18]]
+[active_model_serializers]   [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 19]]
+[active_model_serializers]   [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 20]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 21]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 22]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 23]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 24]]
+[active_model_serializers]   [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 25]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 26]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 27]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 28]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 29]]
+[active_model_serializers]   [1m[36mFiling Load (0.2ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 30]]
+[active_model_serializers]   [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mBsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" INNER JOIN "filings" ON "bs_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mIsYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" INNER JOIN "filings" ON "is_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" INNER JOIN "filings" ON "cf_yearly_results"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers]   [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT "dei_statements".* FROM "dei_statements" INNER JOIN "filings" ON "dei_statements"."filing_id" = "filings"."id" WHERE "filings"."company_id" = $1[0m  [["company_id", 31]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1565.3ms)
+Completed 200 OK in 1613ms (Views: 1456.3ms | ActiveRecord: 137.5ms)
+
+
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:18:44 +0000
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (1.1ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (1.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (16.1ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 4], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (7.3ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 3], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 2], ["LIMIT", 1]]
+  [1m[36mBsYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mBsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 4]]
+  [1m[36mBsYearlyResult Load (0.7ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 2]]
+  [1m[36mCfYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mIsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.17ms)
+Completed 200 OK in 126ms (Views: 42.3ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:22:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.7ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 4], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 3], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 2], ["LIMIT", 1]]
+  [1m[36mBsYearlyResult Load (1.3ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 4]]
+  [1m[36mBsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 2]]
+  [1m[36mCfYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mIsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 39.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/models/company.rb:64:in `[]'
+app/models/company.rb:64:in `block in get_show_model_hash'
+app/models/company.rb:64:in `each'
+app/models/company.rb:64:in `sort_by'
+app/models/company.rb:64:in `get_show_model_hash'
+app/controllers/companies_controller.rb:11:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:23:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.6ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.7ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 4], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 3], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 2], ["LIMIT", 1]]
+  [1m[36mBsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 4]]
+  [1m[36mBsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 2]]
+  [1m[36mCfYearlyResult Load (0.8ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mIsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 42.3ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/models/company.rb:64:in `[]'
+app/models/company.rb:64:in `block in get_show_model_hash'
+app/models/company.rb:64:in `each'
+app/models/company.rb:64:in `sort_by'
+app/models/company.rb:64:in `get_show_model_hash'
+app/controllers/companies_controller.rb:11:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:26:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.7ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 4], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 3], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 2], ["LIMIT", 1]]
+  [1m[36mBsYearlyResult Load (1.1ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 2]]
+  [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 4]]
+  [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mCfYearlyResult Load (1.0ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mCfYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mIsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 39.3ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/models/company.rb:64:in `[]'
+app/models/company.rb:64:in `block in get_show_model_hash'
+app/models/company.rb:64:in `each'
+app/models/company.rb:64:in `sort_by'
+app/models/company.rb:64:in `get_show_model_hash'
+app/controllers/companies_controller.rb:11:in `model_show'
+Started GET "/companies/model/AAPL" for 127.0.0.1 at 2017-02-22 16:27:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#model_show as */*
+  Parameters: {"ticker"=>"AAPL"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.5ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 1], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.6ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.3ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mDeiStatement Load (0.4ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 4], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 3], ["LIMIT", 1]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 2], ["LIMIT", 1]]
+  [1m[36mBsYearlyResult Load (0.9ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 2]]
+  [1m[36mBsYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 4]]
+  [1m[36mBsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "bs_yearly_results".* FROM "bs_yearly_results" WHERE "bs_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mCfYearlyResult Load (1.2ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mCfYearlyResult Load (0.5ms)[0m  [1m[34mSELECT "cf_yearly_results".* FROM "cf_yearly_results" WHERE "cf_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mIsYearlyResult Load (0.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 3]]
+  [1m[36mIsYearlyResult Load (0.4ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.29ms)
+Completed 200 OK in 265ms (Views: 14.5ms | ActiveRecord: 41.2ms)
+
+
