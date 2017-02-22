@@ -60,13 +60,14 @@ class ParserAndScraper
       if object
         return get_appropriate_sign_integer object
       else
-        return nil
+        return nil if title_phrase == @onclick_terms[key_symbol].last
         next
       end
     end
   end
 
   def get_float_info key_symbol, column_index
+
     @onclick_terms[key_symbol].each do |title_phrase|
       if column_index == 2 || column_index == 3
         query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[contains(@class, "num")]'

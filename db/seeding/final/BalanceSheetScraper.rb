@@ -28,6 +28,7 @@ class BalanceSheetScraper < ParserAndScraper
       goodwill: get_cell_float("GOODWILL", column_index),
       other_intangible_assets: get_cell_float("OTHER_INTANGIBLE_ASSETS", column_index),
       total_assets: get_cell_float("TOTAL_ASSETS", column_index),
+      accounts_payable_and_accrued_expenses: get_cell_float("ACCOUNTS_PAYABLE_AND_ACCRUED_EXPENSES", column_index),
       accounts_payable: get_cell_float("ACCOUNTS_PAYABLE", column_index),
       accrued_expenses: get_cell_float("ACCRUED_EXPENSES", column_index),
       short_term_debt: get_cell_float("SHORT_TERM_DEBT", column_index),

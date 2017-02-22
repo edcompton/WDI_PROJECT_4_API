@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   post 'watchlistfeed', to: "newsfeeds#watchlist_feed"
   post 'filingfeed', to: "rssfilings#filing_feed"
   post 'historicalprices', to: "historicalprices#historical_prices"
+  get 'companies/feed/:ticker', to: "newsfilingfeeds#feed"
+
+
+  # EPS estimates from yahoo
+  get 'companies/epsestimates/:ticker', to: "epsestimates#eps_estimates"
 end
