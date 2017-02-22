@@ -7,7 +7,7 @@ class BalanceSheetScraper < ParserAndScraper
 
   def create_yearly_results_hash date, column_index
     {
-      bs_id: 1,
+      # bs_id: 1,
       year: get_year_integer(date),
       date: date,
       unit: is_millions?(get_units),
@@ -50,6 +50,6 @@ class BalanceSheetScraper < ParserAndScraper
     get_date_strings
     get_document_period_end_date
     populate_data_array_with_cells
-    Pry::ColorPrinter.pp(@data)
   end
+
 end

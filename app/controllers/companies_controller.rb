@@ -6,6 +6,10 @@ class CompaniesController < ApplicationController
     render json: companies
   end
 
-  def show
+  def model_show
+    ticker = params['ticker']
+    company = Company.find_by ticker: ticker
+    render json: company
   end
+
 end
