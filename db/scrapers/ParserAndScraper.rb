@@ -38,10 +38,7 @@ class ParserAndScraper
   end
 
   def is_millions? unit_string
-    if unit_string.include? 'Million'
-      @millions = true
-    end
-    unit_string
+    !!unit_string.include?('Million')
   end
 
   # The cell float function runs on the multi column, number only data sets like balance sheet.
@@ -86,8 +83,6 @@ class ParserAndScraper
       return nokogiri_object_to_bool object end
   end
 
-
-
   def get_int_info key_symbol, column_index
     @onclick_terms[key_symbol].each do |title_phrase|
       if column_index == 2 || column_index == 3
@@ -103,7 +98,7 @@ class ParserAndScraper
 
   def nokogiri_object_to_float nokogiri_object
     value = nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-    if @millions then return (value * 10**6) end
+    return (value * @factor) if @factor
     return value
   end
 
@@ -125,11 +120,29 @@ class ParserAndScraper
     return nokogiri_object.text.gsub(/\n/, "").strip
   end
 
-  def get_units
+  def set_unit unit_string
+    if unit_string
+      @factor = 1000000 if is_millions? unit_string
+    else
+      puts "no unit_string found:"
+      p unit_string
+    end
+  end
+
+  def get_and_set_unit
+    unit_string = get_unit_string
+    set_unit unit_string
+    unit_string
+  end
+
+  def get_unit_string
     query = "//strong"
     text = get_nokogiri_objects(query)[0].text
-    if text.include?(',') then text.split(',')[1].strip!
-    else text.split(')')[1].strip! end
+    if text.include?(',')
+      text.split(',')[1].strip!
+    else
+      text.split(')')[1].strip!
+    end
   end
 
   def return_data

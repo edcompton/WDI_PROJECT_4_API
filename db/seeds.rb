@@ -17,6 +17,7 @@ require_relative './scrapers/IncomeStatementScraper'
 # p Dir["ed_compton/scraping/scraped_files/*/*"]
 
 filing_year_directories = ["ed_compton/scraping/scraped_files/AAPL/2016"]
+# filing_year_directories = Dir["ed_compton/scraping/scraped_files/*/*"][0..1]
 
 class Seeder
 
@@ -99,6 +100,7 @@ class Seeder
   end
 
   def set_file_and_parse file_path
+    puts "file path: #{file_path}"
     @file_path = file_path
     @file = File.open @file_path
     parse_file
@@ -146,6 +148,7 @@ class Seeder
   def initialize filing_year_directories
     @onclick_terms_file = get_onclick_terms_file
     filing_year_directories.each do |filing_year_directory|
+      p filing_year_directory
       set_details filing_year_directory
       set_comp_and_filing
       set_files_and_parse

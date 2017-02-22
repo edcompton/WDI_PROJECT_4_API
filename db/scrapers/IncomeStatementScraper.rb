@@ -10,7 +10,7 @@ class IncomeStatementScraper < ParserAndScraper
       # IS_id: 1,
       year: get_year_integer(date),
       date: date,
-      unit: get_units,
+      unit: get_and_set_unit,
       sales: get_cell_float("SALES", column_index),
       cogs: get_cell_float("COGS", column_index),
       ebit: get_cell_float("EBIT", column_index),
