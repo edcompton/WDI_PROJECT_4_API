@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'users/:id', to: "users#show"
+  get 'users', to: "users#index"
 
   get 'companies/:id', to: "companies#show"
 
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   post 'login', to: "authentications#login"
 
   # FEEDS
+  
   post 'watchlistfeed', to: "newsfeeds#watchlist_feed"
   post 'filingfeed', to: "rssfilings#filing_feed"
   post 'historicalprices', to: "historicalprices#historical_prices"
