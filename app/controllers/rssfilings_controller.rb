@@ -35,8 +35,7 @@ class RssfilingsController < ApplicationController
       # end
 
     end
-    newFeeds = (filingFeeds.sort_by { |k| k[:date] }).reverse
-    puts newFeeds
-    # needs
+    sortedFilingFeeds = (filingFeeds.sort_by { |k| k[:date] }).reverse
+    render json:  { filingItems: sortedFilingFeeds }    # needs
   end
 end
