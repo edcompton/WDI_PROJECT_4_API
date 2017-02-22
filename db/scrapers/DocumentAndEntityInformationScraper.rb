@@ -31,7 +31,7 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
 
   def create_yearly_results_hash date, index
     {
-      dei_id: 1,
+      # dei_id: 1,
       year: get_year_integer(date),
       monetary_units: is_millions?(get_monetary_units_dei),
       document_type: get_string_info("DOCUMENT_TYPE", 1),
@@ -72,6 +72,5 @@ class DocumentAndEntityInformationScraper < ParserAndScraper
     get_date_strings
     get_document_period_end_date_dei
     populate_data_array_with_cells
-    Pry::ColorPrinter.pp(@data)
   end
 end
