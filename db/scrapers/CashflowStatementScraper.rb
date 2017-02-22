@@ -10,7 +10,7 @@ class CashflowStatementScraper < ParserAndScraper
       # CF_id: 1,
       year: get_year_integer(date),
       date: date,
-      unit: get_units,
+      unit: get_and_set_unit,
       net_income: get_cell_float("NET_INCOME", column_index),
       d_and_a: get_cell_float("D_AND_A", column_index),
       amortisation: get_cell_float("AMORTISATION", column_index),
