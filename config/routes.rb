@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   post 'watchlistfeed', to: "newsfeeds#watchlist_feed"
   post 'filingfeed', to: "rssfilings#filing_feed"
   post 'historicalprices', to: "historicalprices#historical_prices"
+
+  # BS TESTING
+  get 'bs_yearly_result', to: "bs_yearly_results#show"
 end

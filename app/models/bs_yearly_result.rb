@@ -3,43 +3,43 @@ class BsYearlyResult < ApplicationRecord
   has_one :company, through: :filing
 
   def other_current_assets
-    total_current_assets - cce - marketable_securities - short_term_investments - inventory - accounts_recievable
+    total_current_assets.to_i - cce.to_i - marketable_securities.to_i - short_term_investments.to_i - inventory.to_i - accounts_recievable.to_i
   end
 
   def total_non_current_assets
-    total_assets - total_current_assets
+    total_assets.to_i - total_current_assets
   end
 
   def other_non_current_assets
-    total_non_current_assets - avaiable_for_sale_securities - ppe_net - goodwill - other_intangible_assets
+    total_non_current_assets.to_i - avaiable_for_sale_securities.to_i - ppe_net.to_i - goodwill.to_i - other_intangible_assets.to_i
   end
 
   def other_current_liabilities
-    total_current_liabilities - accounts_payable - accrued_expenses - short_term_debt - current_portion_of_long_term_debt - current_deferred_revenue
+    total_current_liabilities.to_i - accounts_payable.to_i - accrued_expenses.to_i - short_term_debt.to_i - current_portion_of_long_term_debt.to_i - current_deferred_revenue.to_i
   end
 
   def stock_value_and_paid_in_capital
-    stock_value + preferred_stock_value + additional_paid_in_capital
+    stock_value.to_i + preferred_stock_value.to_i + additional_paid_in_capital.to_i
   end
 
   def total_liabilities
-    total_liabilities_and_equity - total_equity
+    total_liabilities_and_equity.to_i - total_equity.to_i
   end
 
   def total_non_current_liabilities
-    total_liabilities - total_current_liabilities
+    total_liabilities.to_i - total_current_liabilities.to_i
   end
 
   def other_non_current_liabilities
-    total_non_current_liabilities - long_term_debt - non_current_deferred_revenue - deferred_tax_liabilities
+    total_non_current_liabilities.to_i - long_term_debt.to_i - non_current_deferred_revenue.to_i - deferred_tax_liabilities.to_i
   end
 
   def other_equity
-    total_equity - stock_value_and_paid_in_capital - retained_earnings - accumulated_other_comprehensive_income - treasury_stock - minority_interest
+    total_equity.to_i - stock_value_and_paid_in_capital.to_i - retained_earnings.to_i - accumulated_other_comprehensive_income.to_i - treasury_stock.to_i - minority_interest.to_i
   end
 
   def net_working_capital
-    inventory + accounts_recievable - accounts_payable
+    inventory.to_i + accounts_recievable.to_i - accounts_payable.to_i
   end
 
   # before_save :log_out_missing_fields
