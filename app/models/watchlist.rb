@@ -13,12 +13,10 @@ class Watchlist < ApplicationRecord
 
   def self.delete_company_from_watchlist company_ticker, user_id
     company = Company.find_company_by_ticker(company_ticker)
-    p company
     watchlist = User.get_watchlist(user_id)
-    p watchlist
     if watchlist
       company.watchlists.delete(watchlist)
     end
   end
-  
+
 end
