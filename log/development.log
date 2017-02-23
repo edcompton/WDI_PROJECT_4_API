@@ -24954,3 +24954,561 @@ Completed 200 OK in 127ms (Views: 2.6ms | ActiveRecord: 3.4ms)
 Completed 200 OK in 785ms (Views: 5.7ms | ActiveRecord: 0.3ms)
 
 
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWatchlist Load (3.5ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", 2017-02-23 17:09:32 UTC], ["updated_at", 2017-02-23 17:09:32 UTC]]
+  [1m[35m (64.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" IS NULL[0m
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" IS NULL[0m
+  [1m[36mCompany Load (2.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)[0m
+  [1m[36mCompany Load (2.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "companies_watchlists" ON "companies"."id" = "companies_watchlists"."company_id" WHERE "companies_watchlists"."watchlist_id" = $1[0m  [["watchlist_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AAPL"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "APPLE INC"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 1], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "AXP"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "AMERICAN EXPRESS CO"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 2], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "BA"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "BOEING CO"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 3], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "CAT"], ["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "CATERPILLAR INC"], ["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 4], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "CSCO"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "CISCO SYSTEMS INC"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 5], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "CVX"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "CHEVRON CORP"], ["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 6], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "DD"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "DUPONT E I DE NEMOURS  CO"], ["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 7], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "DIS"], ["id", 8], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "WALT DISNEY CO/"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 8], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "GE"], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "General Electric Company"], ["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 9], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "GOOG"], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Alphabet Inc.Google Inc."], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 10], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "GS"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "GOLDMAN SACHS GROUP INC"], ["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 11], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "HD"], ["id", 12], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "HOME DEPOT INC"], ["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 12], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "IBM"], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCompany Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "INTERNATIONAL BUSINESS MACHINES CORP"], ["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 13], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "INTC"], ["id", 14], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Intel Corporation"], ["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 14], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "JNJ"], ["id", 15], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "JOHNSON  JOHNSON"], ["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 15], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "JPM"], ["id", 16], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "JPMORGAN CHASE  CO"], ["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 16], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "KO"], ["id", 17], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "COCA COLA CO"], ["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 17], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "MCD"], ["id", 18], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "MCDONALDS CORP"], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 18], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "MMM"], ["id", 19], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "3M CO"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 19], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "MRK"], ["id", 20], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Merck  Co. Inc."], ["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 20], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "MSFT"], ["id", 21], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "MICROSOFT CORP"], ["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 21], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "NKE"], ["id", 22], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "NIKE INC"], ["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 22], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "PFE"], ["id", 23], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "PFIZER INC"], ["id", 23], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 23], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "PG"], ["id", 24], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "PROCTER  GAMBLE CO"], ["id", 24], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 24], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "TRV"], ["id", 25], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "Travelers Companies, Inc."], ["id", 25], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 25], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "UNH"], ["id", 26], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "UNITEDHEALTH GROUP INC"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 26], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "UTX"], ["id", 27], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "UNITED TECHNOLOGIES CORP /DE/"], ["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 27], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "V"], ["id", 28], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "VISA INC."], ["id", 28], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 28], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "VZ"], ["id", 29], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "VERIZON COMMUNICATIONS INC"], ["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 29], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "WMT"], ["id", 30], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "WAL MART STORES INC"], ["id", 30], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 30], ["watchlist_id", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."ticker" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["ticker", "XOM"], ["id", 31], ["LIMIT", 1]]
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = $1 AND ("companies"."id" != $2) LIMIT $3[0m  [["name", "EXXON MOBIL CORP"], ["id", 31], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_watchlists" ("company_id", "watchlist_id") VALUES ($1, $2)[0m  [["company_id", 31], ["watchlist_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "jackhkmatthews@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "companies_watchlists" ON "companies"."id" = "companies_watchlists"."company_id" WHERE "companies_watchlists"."watchlist_id" = $1[0m  [["watchlist_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2017-02-23 17:12:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:12:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2017-02-23 17:13:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:13:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6281188914159424335);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDescriptionToCompany (20170223145928)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mALTER TABLE "companies" ADD "description" text[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170223145928"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6281188914159424335)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:13:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-23 17:13:50 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"jackhkmatthews@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jackhkmatthews@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jackhkmatthews@gmail.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.46ms)
+Completed 200 OK in 119ms (Views: 7.1ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:13:50 +0000
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:13:50 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 1.9ms)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 11ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:13:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:13:58 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:02 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:02 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.64ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:03 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:21 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.56ms)
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:21 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:24 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.58ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:25 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:33 +0000
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-23 17:14:33 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-23 17:14:33 +0000
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 5.7ms)
+
+
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/watchlists/1" for 127.0.0.1 at 2017-02-23 17:14:33 +0000
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  
+ActionController::RoutingError (No route matches [GET] "/watchlists/1"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.58ms)
+Completed 200 OK in 144ms (Views: 3.1ms | ActiveRecord: 5.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.1ms)
+Completed 200 OK in 908ms (Views: 22.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:49 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.37ms)
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:51 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-23 17:14:55 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/historicalprices" for 127.0.0.1 at 2017-02-23 17:14:58 +0000
+Processing by HistoricalpricesController#historical_prices as HTML
+  Parameters: {"_json"=>[], "historicalprice"=>{"_json"=>[]}}
+Started POST "/watchlistfeed" for 127.0.0.1 at 2017-02-23 17:14:58 +0000
+Started POST "/filingfeed" for 127.0.0.1 at 2017-02-23 17:14:58 +0000
+Started GET "/watchlists/1" for 127.0.0.1 at 2017-02-23 17:14:58 +0000
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 2.4ms)
+
+
+Processing by NewsfeedsController#watchlist_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "newsfeed"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+Processing by RssfilingsController#filing_feed as HTML
+  Parameters: {"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"], "rssfiling"=>{"_json"=>["AAPL", "GOOG", "KO", "MMM", "AXP", "BA", "CAT", "CVX", "CSCO"]}}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  
+ActionController::RoutingError (No route matches [GET] "/watchlists/1"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.05ms)
+Completed 200 OK in 149ms (Views: 9.7ms | ActiveRecord: 4.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.16ms)
+Completed 200 OK in 884ms (Views: 9.7ms | ActiveRecord: 26.1ms)
+
+
