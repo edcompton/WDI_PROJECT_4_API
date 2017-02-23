@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+
+  get 'users/:id', to: "users#show"
+
+  get 'companies/:id', to: "companies#show"
+
+  # USERS
+  get 'users/:id', to: "users#show"
+
+  # COMPANIES
+  get 'companies', to: "companies#index"
+  get 'companies/model/:ticker', to: "companies#model_show"
+  get 'companies/info/:ticker', to: "companies#sector_description"
+  get 'companies/peerdata/:ticker', to: "companies#peer_data"
+
+=======
   # COMPANIES
   get 'companies', to: "companies#index"
   get 'companies/model/:ticker', to: "companies#model_show"
   get 'companies/:id', to: "companies#show"
+>>>>>>> edd4304dcca77c54d3e925a21e61c834a3727915
 
   # USERS
   get 'users/:id', to: "users#show"

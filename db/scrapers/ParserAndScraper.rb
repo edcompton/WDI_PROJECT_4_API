@@ -58,7 +58,7 @@ class ParserAndScraper
       # if the above returns an object then execute the rest of the method
       # next unless object
       if object
-        return get_appropriate_sign_integer object
+        return get_appropriate_sign_integer object, key_symbol
       else
         return nil if title_phrase == @onclick_terms[key_symbol].last
         next
@@ -73,15 +73,15 @@ class ParserAndScraper
         query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[contains(@class, "num")]'
       else query = '//a[contains(@onclick, "' + title_phrase + '")]/../../td[2]' end
         object = get_nokogiri_objects(query)
-        if object then return get_appropriate_sign_integer object
+        if object then return get_appropriate_sign_integer object, key_symbol
         else return nil end
       end
   end
 
 
-  def get_appropriate_sign_integer object
-    if negative_number? object then -(nokogiri_object_to_float(object))
-    else nokogiri_object_to_float object end
+  def get_appropriate_sign_integer object, key_symbol
+    if negative_number? object then -(nokogiri_object_to_float(object, key_symbol))
+    else nokogiri_object_to_float object, key_symbol end
   end
 
   def get_boolean_info key_symbol, column_index
@@ -105,9 +105,9 @@ class ParserAndScraper
     end
   end
 
-  def nokogiri_object_to_float nokogiri_object
+  def nokogiri_object_to_float nokogiri_object, key_symbol
     value = nokogiri_object.text.gsub(/[^\d|.]/, '').to_f
-    if @factor
+    if @factor && key_symbol != "BASIC_EPS" && key_symbol != "DILUTED_EPS"
       return (value * @factor)
     else
       return value
