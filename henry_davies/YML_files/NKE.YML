@@ -1,0 +1,78 @@
+income_statement: {
+  SALES: "SalesRevenueNet",
+  COGS: "CostOfGoodsSold",
+  GROSS_PROFIT: "GrossProfit",
+  OPEX_SM: "MarketingAndAdvertisingExpense"
+  OPEX_GA: "GeneralAndAdministrativeExpense",
+  OPEX_TOTAL: "SellingGeneralAndAdministrativeExpense",
+  FINANCE_OTHER_EXPENSE: "InterestIncomeExpenseNonoperatingNet",
+  FINANCE_OTHER_EXPENSE1: "OtherNonoperatingIncomeExpense",
+  PBT: "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+  TAX: "IncomeTaxExpenseBenefit",
+  NET_INCOME: "NetIncomeLoss",
+  EPS_BASIC: "EarningsPerShareBasic",
+  EPS_DILUTED: "EarningsPerShareDiluted",
+  DPS: "CommonStockDividendsPerShareDeclared"
+  }
+
+balance_sheet: {
+  CASH: "CashAndCashEquivalentsAtCarryingValue",
+  FOR_SALE_SECURITIES_CURRENT: "AvailableForSaleSecuritiesCurrent",
+  RECEIVABLES: "AccountsReceivableNetCurrent",
+  INVENTORY: "InventoryFinishedGoodsNetOfReserves",
+  PREPAID_OTHER: "PrepaidExpenseAndOtherAssetsCurrent",
+  CURRENT_ASSETS: "AssetsCurrent",
+
+  FOR_SALE_SECURITIES_NONCURRENT: "AvailableForSaleSecuritiesNoncurrent",
+  PPE: "PropertyPlantAndEquipmentNet",
+  GOODWILL: "Goodwill",
+  OTHER_INTANGIBLES: "IntangibleAssetsNetExcludingGoodwill",
+  ASSETS: "Assets",
+
+
+  PAYABLES: "AccountsPayableCurrent",
+  ACCRUED_LIABILITIES: "AccruedLiabilitiesCurrent",
+  ST_DEBT: "ShortTermBorrowings",
+  ST_DEBT_1: "LongTermDebtCurrent",
+  CURRENT_LIABILITIES: "LiabilitiesCurrent",
+
+  LT_DEBT: "LongTermDebtNoncurrent",
+
+  STOCK_AND_PAID_IN_CAPITAL: "AdditionalPaidInCapitalCommonStock",
+  RETAINED_EARNINGS: "RetainedEarningsAccumulatedDeficit",
+  OTHER_COMPREHENSIVE_INCOME: "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+  EQUITY: "StockholdersEquity",
+  LIABILITIES_AND_EQUITY: "LiabilitiesAndStockholdersEquity"
+  }
+
+cash_flow: {
+  NET_INCOME: "NetIncomeLoss",
+  D&A: "Depreciation",
+  AMORTISATION: "AmortizationAndOther"
+  SHARE_COMPENSATION: "ShareBasedCompensation",
+  DEFERRED_TAX: "DeferredIncomeTaxExpenseBenefit",
+  RECEIVABLES: "IncreaseDecreaseInAccountsReceivable",
+  INVENTORIES: "IncreaseDecreaseInInventories",
+  PAYABLES_OTHER: "IncreaseDecreaseInAccountsPayableAndOtherOperatingLiabilities",
+  NET_CASH_FROM_OPERATING_ACTIVITIES: "NetCashProvidedByUsedInOperatingActivities",
+
+  ACQUISITION_SECURITIES:
+  "PaymentsToAcquireAvailableForSaleSecuritiesDebt",
+  PROCEEDS_SECURITIES_MATURITIES: "ProceedsFromMaturitiesPrepaymentsAndCallsOfAvailableForSaleSecurities",
+  PROCEEDS_SECURITIES_SALES: "ProceedsFromSaleOfAvailableForSaleSecuritiesDebt",
+  ACQUISITIONS: "PaymentsToAcquireBusinessesNetOfCashAcquired",
+  CAPEX: "PaymentsToAcquirePropertyPlantAndEquipment",
+  DISPOSAL_OF_PPE: "ProceedsFromSaleOfPropertyPlantAndEquipment"
+  NET_CASH_FROM_INVESTING_ACTIVITIES: "NetCashProvidedByUsedInInvestingActivities",
+
+  STOCK_ISSUANCE: "ProceedsFromIssuanceOrSaleOfEquity",
+  DIVIDENDS: "PaymentsOfDividendsCommonStock",
+  STOCK_REPURCHASES: "PaymentsForRepurchaseOfCommonStock",
+  ISSUANCE_OF_DEBT: "ProceedsFromIssuanceOfLongTermDebt",
+  REPAYMENTS_OF_DEBT: "RepaymentsOfLongTermDebt",
+  NET_ST_DEBT: "ProceedsFromRepaymentsOfNotesPayable",
+  NET_CASH_FROM_FINANCING_ACTIVITIES: "NetCashProvidedByUsedInFinancingActivities",
+
+  FX_EFFECT_ON_CASH: "EffectOfExchangeRateOnCashAndCashEquivalents",
+  NET_CHANGE_IN_CASH: "CashAndCashEquivalentsPeriodIncreaseDecrease"
+  }
