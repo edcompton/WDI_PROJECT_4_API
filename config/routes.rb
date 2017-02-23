@@ -4,12 +4,15 @@ Rails.application.routes.draw do
 
   get 'companies/:id', to: "companies#show"
 
-  # COMPANIES
-  get 'companies', to: "companies#index"
   # USERS
   get 'users/:id', to: "users#show"
 
+  # COMPANIES
+  get 'companies', to: "companies#index"
   get 'companies/model/:ticker', to: "companies#model_show"
+  get 'companies/info/:ticker', to: "companies#sector_description"
+  get 'companies/peerdata/:ticker', to: "companies#peer_data"
+
 
   post 'register', to: "authentications#register"
   post 'login', to: "authentications#login"

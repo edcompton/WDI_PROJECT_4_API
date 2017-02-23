@@ -72,6 +72,20 @@ class Company < ApplicationRecord
 
     # response.sort_by { |hash| hash['year'] }
 
+    # response['description'] = company.description
+    # response['sector'] = company.sector
+    #
+    # puts '.....................'
+    # p response
+
     response
   end
+
+  def self.find_EPS ticker
+    company = Company.find_by({ticker: ticker})
+    company.filings.last.is_yearly_results
+  end
+
+
+
 end
