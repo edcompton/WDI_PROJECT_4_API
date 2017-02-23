@@ -19,7 +19,7 @@ class EpsestimatesController < ApplicationController
       eps_estimate_0: eps_estimate_0,
       eps_estimate_1: eps_estimate_1,
       estimate_0_year: estimate_0_year,
-      estimate_1_year: estimate_1_year,
+      estimate_1_year: estimate_1_year
     }
   end
 end
