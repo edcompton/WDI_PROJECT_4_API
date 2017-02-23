@@ -97,7 +97,7 @@ balance_sheet: {
   "_DeferredRevenueNoncurrent\'"
   ],
   DEFERRED_TAX_LIABILITIES: [
-  "_PLACEHOLDER\'"
+  "_DeferredTaxLiabilitiesNoncurrent\'"
   ],
   TOTAL_LIABILITIES: [
   "_Liabilities\'"
