@@ -5,7 +5,7 @@ class AuthenticationsController < ApplicationController
     puts user_params
     user = User.new(user_params)
     watchlist = Watchlist.new
-    user.watchlist = Watchlist.last
+    user.watchlist = watchlist
     if user.save
       token = Auth.issue({id: user.id})
       render json: { token: token, user: UserSerializer.new(user) }, status: :ok
