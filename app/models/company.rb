@@ -10,7 +10,7 @@ class Company < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def self.get_show_model_hash(ticker)
-    company = self.find_by_ticker(ticker)
+    company = Company.find_by({ticker: ticker})
 
     response = {
       bs_yearly_results: [],
