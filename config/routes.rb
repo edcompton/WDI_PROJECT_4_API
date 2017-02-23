@@ -20,7 +20,11 @@ Rails.application.routes.draw do
 
   # WATCHLIST
   get 'watchlists/:id', to: "watchlists#show"
+
   post 'watchlists/:id/delete/:company_id', to: "watchlists#delete_company_from_watchlist"
+
+  post 'watchlists/:id/add/:company_id', to:
+  "watchlists#add_company_to_watchlist"
 
   # FEEDS
   post 'watchlistfeed', to: "newsfeeds#watchlist_feed"
