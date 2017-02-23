@@ -86,6 +86,8 @@ class Company < ApplicationRecord
     company.filings.last.is_yearly_results
   end
 
-
+  def self.find_company_by_ticker company_ticker
+    Company.find_by_ticker(company_ticker)
+  end
 
 end

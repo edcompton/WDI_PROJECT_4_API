@@ -8,8 +8,7 @@ class UsersController < ApplicationController
 
   def show
     puts params
-    user = User.find(1)
-    p user
+    user = User.find(params["id"])
     render json: {user: user}
   end
 end
