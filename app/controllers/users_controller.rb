@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   def show
     puts params
     user = User.find(1)
-    p user
     render json: {user: user}
   end
 end

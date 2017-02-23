@@ -65,4 +65,9 @@ class Company < ApplicationRecord
 
     response
   end
+
+  def self.find_company_by_ticker company_ticker
+    Company.find_by_ticker(company_ticker)
+  end
+
 end
