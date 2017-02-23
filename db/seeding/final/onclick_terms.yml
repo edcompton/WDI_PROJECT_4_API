@@ -163,6 +163,7 @@ cashflow_statement: {
   PURCHASES_OF_MARKETABLE_SECURITIES: [
   "_PaymentsToAcquireAvailableForSaleSecurities\'",
   "_PaymentsToAcquireShortTermInvestments\'",
+  "_PurchasesOfShortTermInvestments\'",
   "_PaymentsToAcquireMarketableSecurities\'"
   ],
   PROCEEDS_FROM_SALES_OF_MARKETABLE_SECURITIES: [
@@ -175,10 +176,12 @@ cashflow_statement: {
   ACQUISITIONS: [
   "_PaymentsToAcquireBusinessesNetOfCashAcquired\'",
   "_Acquisitionsofbusinessesequitymethodinvestmentsandnonmarketablesecurities\'",
+  "_AcquisitionsAndInvestmentsPrincipallyBeverageAndBottlingCompaniesAndTrademarks\'",
   "_AcquisitionsNetOfCashAcquiredAndPurchasesOfIntangibleAndOtherAssets\'"
   ],
   DISPOSALS: [
   "_ProceedsfromDisposalsofbusinessesequitymethodinvestmentsandnonmarketablesecurities\'",
+  "_ProceedsFromDisposalsOfBottlingCompaniesAndOtherInvestments\'",
   "_ProceedsFromDivestitureOfBusinesses\'"
   ],
   NET_CASH_USED_IN_INVESTING_ACTIVITIES: [
