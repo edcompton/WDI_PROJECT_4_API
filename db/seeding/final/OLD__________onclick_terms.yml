@@ -163,7 +163,6 @@ cashflow_statement: {
   PURCHASES_OF_MARKETABLE_SECURITIES: [
   "_PaymentsToAcquireAvailableForSaleSecurities\'",
   "_PaymentsToAcquireShortTermInvestments\'",
-  "_PurchasesOfShortTermInvestments\'",
   "_PaymentsToAcquireMarketableSecurities\'"
   ],
   PROCEEDS_FROM_SALES_OF_MARKETABLE_SECURITIES: [
