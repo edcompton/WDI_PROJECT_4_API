@@ -21,4 +21,11 @@ Rails.application.routes.draw do
 
   # BS TESTING
   get 'bs_yearly_result', to: "bs_yearly_results#show"
+
+  get 'companies/feed/:ticker', to: "newsfilingfeeds#feed"
+
+
+  # EPS estimates from yahoo
+  get 'companies/epsestimates/:ticker', to: "epsestimates#eps_estimates"
+
 end

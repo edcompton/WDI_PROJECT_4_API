@@ -8,6 +8,7 @@ class RssfilingsController < ApplicationController
     filingFeeds = []
     tickers.each_with_index do |ticker, tickerIndex|
       # NEED TO LOOK UP CIK IN DATABASE
+      # Company.find_by ticker: 'AAPL'
       cik = '0000320193'
       url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=#{cik}&type=&dateb=&owner=exclude&start=0&count=10&output=atom"
       # response = HTTParty.get(url)
@@ -35,8 +36,7 @@ class RssfilingsController < ApplicationController
       # end
 
     end
-    newFeeds = (filingFeeds.sort_by { |k| k[:date] }).reverse
-    puts newFeeds
-    # needs
+    sortedFilingFeeds = (filingFeeds.sort_by { |k| k[:date] }).reverse
+    render json:  { filingItems: sortedFilingFeeds }    # needs
   end
 end

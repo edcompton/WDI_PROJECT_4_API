@@ -24,3 +24,7 @@ Finish the scrapers for cash flow, balance sheet and
 
 ##Research
 http://vrybas.github.io/blog/2014/08/15/a-way-to-organize-poros-in-rails/
+
+#Monday 20th February 2017
+
+##Goals 
