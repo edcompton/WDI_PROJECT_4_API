@@ -10,7 +10,7 @@ class Company < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def self.get_show_model_hash(ticker)
-    company = self.find_by_ticker(ticker)
+    company = Company.find_by({ticker: ticker})
 
     response = {
       bs_yearly_results: [],
@@ -20,41 +20,50 @@ class Company < ApplicationRecord
       is_yearly_results: []
     }
 
-    # get most recent filings and push into filings array
-    filing2016 = company.filings.last
-    response['filings'] = [filing2016]
-    # get filing's bs results and push into bs array
-    response['bs_yearly_results'] = [filing2016.bs_yearly_results]
-    # get filing's cf results and push into cf array
-    response['cf_yearly_results'] = [filing2016.cf_yearly_results]
-    # get filing's is results and push into is array
-    response['is_yearly_results'] = [filing2016.is_yearly_results]
-    # get filing's dei and push into dei array
-    response['dei_statements'] = [filing2016.dei_statement]
-    #
 
-    # get filing 2 years earlier and push into filings array
-    filing2014 = company.filings[-3]
-    # get filing's bs results and push into bs array
-    response['bs_yearly_results'].unshift(filing2014.bs_yearly_results)
-    # get filing's dei and push into dei array
-    response['dei_statements'].unshift(filing2014.dei_statement)
+    if company.filings.last
+      # get most recent filings and push into filings array
+      filing2016 = company.filings.last
+      response['filings'] = [filing2016]
+      # get filing's bs results and push into bs array
+      response['bs_yearly_results'] = [filing2016.bs_yearly_results]
+      # get filing's cf results and push into cf array
+      response['cf_yearly_results'] = [filing2016.cf_yearly_results]
+      # get filing's is results and push into is array
+      response['is_yearly_results'] = [filing2016.is_yearly_results]
+      # get filing's dei and push into dei array
+      response['dei_statements'] = [filing2016.dei_statement]
+      #
+    end
 
-    # get filing 3 years earlier and push into filings array
-    filing2013 = company.filings[-4]
-    # get filing's cf results and push into cf array
-    response['cf_yearly_results'].unshift(filing2013.cf_yearly_results)
-    # get filing's is results and push into is array
-    response['is_yearly_results'].unshift(filing2013.is_yearly_results)
-    # get filing's dei and push into dei array
-    response['dei_statements'].unshift(filing2013.dei_statement)
+    if company.filings[-3]
+      # get filing 2 years earlier and push into filings array
+      filing2014 = company.filings[-3]
+      # get filing's bs results and push into bs array
+      response['bs_yearly_results'].unshift(filing2014.bs_yearly_results)
+      # get filing's dei and push into dei array
+      response['dei_statements'].unshift(filing2014.dei_statement)
+    end
 
-    # get filing 4 years earlier and push into filings array
-    filing2012 = company.filings[-5]
-    # get filing's bs results and push into bs array
-    response['bs_yearly_results'].unshift(filing2012.bs_yearly_results)
-    # get filing's dei and push into dei array
-    response['dei_statements'].unshift(filing2012.dei_statement)
+    if company.filings[-4]
+      # get filing 3 years earlier and push into filings array
+      filing2013 = company.filings[-4]
+      # get filing's cf results and push into cf array
+      response['cf_yearly_results'].unshift(filing2013.cf_yearly_results)
+      # get filing's is results and push into is array
+      response['is_yearly_results'].unshift(filing2013.is_yearly_results)
+      # get filing's dei and push into dei array
+      response['dei_statements'].unshift(filing2013.dei_statement)
+    end
+
+    if company.filings[-5]
+      # get filing 4 years earlier and push into filings array
+      filing2012 = company.filings[-5]
+      # get filing's bs results and push into bs array
+      response['bs_yearly_results'].unshift(filing2012.bs_yearly_results)
+      # get filing's dei and push into dei array
+      response['dei_statements'].unshift(filing2012.dei_statement)
+    end
 
     response.each do |key, value|
       value.flatten!

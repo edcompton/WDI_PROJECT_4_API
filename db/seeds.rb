@@ -115,9 +115,17 @@ class Seeder
   end
 
   def new_company ticker
-    Company.new({
-      ticker: ticker
-    })
+    url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/#{ticker}?formatted=true&crumb=aiUUOqOuMGO&lang=en-US&region=US&modules=description%2CsummaryProfile&corsDomain=finance.yahoo.com"
+    response = HTTParty.get(url)
+    x = response.parsed_response
+
+    tickerHash = {}
+
+    tickerHash['ticker'] = "#{ticker}"
+    tickerHash['description'] = x['quoteSummary']['result'][0]['description']['shortBusinessSummary']
+    tickerHash['sector'] = x['quoteSummary']['result'][0]['summaryProfile']['sector']
+
+    Company.new(tickerHash)
   end
 
   def get_company ticker
