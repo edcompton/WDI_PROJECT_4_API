@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
-
-  get 'users/:id', to: "users#show"
-
-  get 'companies/:id', to: "companies#show"
-
   # COMPANIES
   get 'companies', to: "companies#index"
+  get 'companies/model/:ticker', to: "companies#model_show"
+  get 'companies/:id', to: "companies#show"
+
   # USERS
   get 'users/:id', to: "users#show"
-
-  get 'companies/model/:ticker', to: "companies#model_show"
-
   post 'register', to: "authentications#register"
   post 'login', to: "authentications#login"
+
+  # WATCHLIST
+  get 'watchlists/:id', to: "watchlists#show"
+  post 'watchlists/:id/delete/:company_id', to: "watchlists#delete_company_from_watchlist"
 
   # FEEDS
   post 'watchlistfeed', to: "newsfeeds#watchlist_feed"
@@ -23,7 +22,6 @@ Rails.application.routes.draw do
   get 'bs_yearly_result', to: "bs_yearly_results#show"
 
   get 'companies/feed/:ticker', to: "newsfilingfeeds#feed"
-
 
   # EPS estimates from yahoo
   get 'companies/epsestimates/:ticker', to: "epsestimates#eps_estimates"
