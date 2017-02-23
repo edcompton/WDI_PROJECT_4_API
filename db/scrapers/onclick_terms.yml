@@ -6,6 +6,7 @@ income_statement: {
   "_Revenues\'"
   ],
   COGS: [
+  "_CostOfRevenue\'",
   "_CostOfGoodsAndServicesSold\'",
   "_CostOfGoodsSold\'",
   "_CostOfRevenue\'"
@@ -38,7 +39,8 @@ balance_sheet: {
   "_CashAndCashEquivalentsAtCarryingValue\'"
   ],
   MARKETABLE_SECURITIES: [
-  "_MarketableSecuritiesCurrent'", "_AvailableForSaleSecuritiesCurrent\'"
+  "_MarketableSecuritiesCurrent'", "_AvailableForSaleSecuritiesCurrent\'",
+  "_AvailableForSaleSecurities\'",
   ],
   SHORT_TERM_INVESTMENTS: [
   "_OtherShortTermInvestments\'"
@@ -54,7 +56,7 @@ balance_sheet: {
   "_AssetsCurrent\'"
   ],
   AVAIABLE_FOR_SALE_SECURITIES: [
-  "_AvailableForSaleSecuritiesNoncurrent\'", "_AvailableForSaleSecurities\'", "_AvailableForSaleSecuritiesAndCostMethodInvestments\'"
+  "_AvailableForSaleSecuritiesNoncurrent\'", "_AvailableForSaleSecuritiesAndCostMethodInvestments\'"
   ],
   PPE_NET: [
   "_PropertyPlantAndEquipmentNet\'"
@@ -63,7 +65,8 @@ balance_sheet: {
   "_Goodwill\'"
   ],
   OTHER_INTANGIBLE_ASSETS: [
-  "_IntangibleAssetsNetExcludingGoodwill\'"
+  "_IntangibleAssetsNetExcludingGoodwill\'",
+  "_FiniteLivedIntangibleAssetsNet\'"
   ],
   TOTAL_ASSETS: [
   "_Assets\'"
@@ -79,7 +82,7 @@ balance_sheet: {
   ],
   SHORT_TERM_DEBT: [
   "_CommercialPaper\'",
-  "_LoansAndNotesPayable\'", "_ShortTermBorrowings\'"
+  "_LoansAndNotesPayable\'", "_ShortTermBorrowings\'", "_DebtCurrent\'"
   ],
   CURRENT_PORTION_OF_LONG_TERM_DEBT: [
   "_LongTermDebtCurrent\'"
@@ -91,7 +94,8 @@ balance_sheet: {
   "_LiabilitiesCurrent\'"
   ],
   LONG_TERM_DEBT: [
-  "_LongTermDebtNoncurrent\'"
+  "_LongTermDebtNoncurrent\'",
+  "_LongTermDebtAndCapitalLeaseObligations\'"
   ],
   NON_CURRENT_DEFERRED_REVENUE: [
   "_DeferredRevenueNoncurrent\'"
@@ -118,7 +122,8 @@ balance_sheet: {
     "_MinorityInterest\'"
   ],
   TOTAL_EQUITY: [
-  "_StockholdersEquity\'"
+  "_StockholdersEquity\'",
+  "_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest\'"
   ],
   TOTAL_LIABILITIES_AND_EQUITY: [
   "_LiabilitiesAndStockholdersEquity\'"
@@ -143,13 +148,15 @@ cashflow_statement: {
   D_AND_A: [
   "_DepreciationAmortizationAndAccretionNet\'",
   "_DepreciationDepletionAndAmortization\'",
-  "_DepreciationandImpairmentonDispositionofPropertyandEquipment\'"
+  "_DepreciationandImpairmentonDispositionofPropertyandEquipment\'",
+  "_DepreciationAmortizationAndOther\'"
   ],
   AMORTISATION: [
   "_AmortizationandImpairmentofIntangibleAssets\'"
   ],
   SHARE_COMPENSATION: [
-  "_ShareBasedCompensation\'"
+  "_ShareBasedCompensation\'",
+  "_AllocatedShareBasedCompensationExpense\'"
   ],
   DEFERRED_TAX: [
   "_DeferredIncomeTaxExpenseBenefit\'",
@@ -181,9 +188,12 @@ cashflow_statement: {
   PURCHASES_OF_MARKETABLE_SECURITIES: [
   "_PaymentsToAcquireAvailableForSaleSecurities\'",
   "_PaymentsToAcquireShortTermInvestments\'",
-  "_PaymentsToAcquireMarketableSecurities\'"
+  "_PurchasesOfShortTermInvestments\'",
+  "_PaymentsToAcquireMarketableSecurities\'",
+  "_PaymentsToAcquireInvestments\'"
   ],
   PROCEEDS_FROM_SALES_OF_MARKETABLE_SECURITIES: [
+  "_ProceedsFromSaleAndMaturityOfMarketableSecurities\'",
   "_ProceedsFromSaleOfAvailableForSaleSecurities\'",
   "_ProceedsFromSaleOfShortTermInvestments\'"
   ],
@@ -193,10 +203,12 @@ cashflow_statement: {
   ACQUISITIONS: [
   "_PaymentsToAcquireBusinessesNetOfCashAcquired\'",
   "_Acquisitionsofbusinessesequitymethodinvestmentsandnonmarketablesecurities\'",
+  "_AcquisitionsAndInvestmentsPrincipallyBeverageAndBottlingCompaniesAndTrademarks\'",
   "_AcquisitionsNetOfCashAcquiredAndPurchasesOfIntangibleAndOtherAssets\'"
   ],
   DISPOSALS: [
   "_ProceedsfromDisposalsofbusinessesequitymethodinvestmentsandnonmarketablesecurities\'",
+  "_ProceedsFromDisposalsOfBottlingCompaniesAndOtherInvestments\'",
   "_ProceedsFromDivestitureOfBusinesses\'"
   ],
   NET_CASH_USED_IN_INVESTING_ACTIVITIES: [
@@ -207,24 +219,29 @@ cashflow_statement: {
   "_ProceedsFromIssuanceOfCommonStock\'"
   ],
   TOTAL_DEBT_ISSUED: [
-  "_ProceedsFromIssuanceOfDebt\'"
+  "_ProceedsFromIssuanceOfDebt\'",
+  "_ProceedsFromDebtNetOfIssuanceCosts\'"
   ],
   TOTAL_DEBT_REPAYMENTS: [
   "_RepaymentsOfDebt\'"
   ],
   LONG_TERM_DEBT_RAISED: [
-  "_ProceedsFromIssuanceOfLongTermDebt\'"
+  "_ProceedsFromIssuanceOfLongTermDebt\'",
+  "_ProceedsFromDebtMaturingInMoreThanThreeMonths\'"
   ],
   LONG_TERM_DEBT_REPAYMENTS: [
-  "_RepaymentsOfLongTermDebt\'"
+  "_RepaymentsOfLongTermDebt\'",
+  "_RepaymentsOfDebtMaturingInMoreThanThreeMonths\'"
   ],
   NET_SHORT_TERM_DEBT_ISSUED: [
   "_ProceedsFromRepaymentsOfCommercialPaper\'",
-  "_ProceedsFromRepaymentsOfShortTermDebt\'"
+  "_ProceedsFromRepaymentsOfShortTermDebt\'",
+  "_ProceedsFromRepaymentsOfShortTermDebtMaturingInThreeMonthsOrLess\'",
   ],
   PAYMENT_OF_DIVIDENDS: [
   "_PaymentsOfDividendsAndDividendEquivalentsOnCommonStockAndRestrictedStockUnits\'",
-  "_PaymentsOfDividends\'"
+  "_PaymentsOfDividends\'",
+  "_PaymentsOfDividendsCommonStock\'"
   ],
   STOCK_REPURCHASES: [
   "_PaymentsForRepurchaseOfCommonStock\'"
