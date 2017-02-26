@@ -8,8 +8,7 @@ income_statement: {
   COGS: [
   "_CostOfRevenue\'",
   "_CostOfGoodsAndServicesSold\'",
-  "_CostOfGoodsSold\'",
-  "_CostOfRevenue\'"
+  "_CostOfGoodsSold\'"
   ],
   EBIT: [
   "_OperatingIncomeLoss\'"
