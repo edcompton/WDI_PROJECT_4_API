@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'Date'
+require 'date'
 
 class RssfilingsController < ApplicationController
 

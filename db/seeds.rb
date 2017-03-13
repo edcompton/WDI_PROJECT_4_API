@@ -171,3 +171,7 @@ class Seeder
 end
 
 Seeder.new filing_year_directories
+
+# challenges: requireing classes, accessing modules, loading files (relative vs load), error handling, data is never consistent
+# wins: seeing the seed file tick over, overcoming some of the above
+# learning: classes, small methods, one input, one output, makes debugging a lot easier.  bloated code is horrible, always stay focused on keeping it light a modular, future self will thank you, happy coding instead of angry coding.
