@@ -1,16 +1,10 @@
-![ga](https://cloud.githubusercontent.com/assets/20629455/23824362/2c9817c2-066d-11e7-8988-7b1eefc6d628.jpg)
-![wdi](https://cloud.githubusercontent.com/assets/20629455/23824363/2ddeaa7e-066d-11e7-8630-f7c890c9f1c1.png)
-
-___
-<br>
-
-# GA WDI24 Project 4 - [InvestSmart](https://wdi-project-4-client.herokuapp.com/home)
-
-README written by team member [Henry Davies](https://github.com/HenryDavies)
+# InvestSmart
 
 ## Overview
 
 InvestSmart makes investing in stocks & shares easier. It was created as my final project during my 12-week Web Development Immersive course at General Assembly in London. We were given the choice to work individually or as a team - I decided to work with three classmates. InvestSmart was built using a Ruby on Rails back-end, a SQL database, and AngularJS front-end.
+
+See it here: [InvestSmart](https://wdi-project-4-client.herokuapp.com/home)
 
 ## The idea
 

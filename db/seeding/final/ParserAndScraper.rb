@@ -57,7 +57,6 @@ class ParserAndScraper
       # next unless object
       if object then return get_appropriate_sign_integer object
       else return nil end
-
     end
   end
 
