@@ -23,7 +23,7 @@ class RssfilingsController < ApplicationController
             ticker: ticker,
             cik: cik,
             link: parsed.css("entry filing-href")[index].text,
-            date: Date.parse(parsed.css("entry updated")[index].text)
+            date: Date.parse(parsed.css("entry updated")[index].text).strftime("%d/%m/%Y")
           }
       end
       # links = parsed.css("entry filing-href")

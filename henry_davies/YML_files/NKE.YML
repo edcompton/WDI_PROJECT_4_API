@@ -2,13 +2,20 @@ income_statement: {
   SALES: "SalesRevenueNet",
   COGS: "CostOfGoodsSold",
   GROSS_PROFIT: "GrossProfit",
-  OPEX_SM: "MarketingAndAdvertisingExpense"
+  OPEX_SM: "MarketingAndAdvertisingExpense",
+  # OPEX_RD: "ResearchAndDevelopmentExpense",
   OPEX_GA: "GeneralAndAdministrativeExpense",
+  # OPEX_SGA: "SellingGeneralAndAdministrativeExpense",
   OPEX_TOTAL: "SellingGeneralAndAdministrativeExpense",
-  FINANCE_OTHER_EXPENSE: "InterestIncomeExpenseNonoperatingNet",
-  FINANCE_OTHER_EXPENSE1: "OtherNonoperatingIncomeExpense",
+  # EBIT: "OperatingIncomeLoss",
+  # INTEREST_EXPENSE: "InterestExpense",
+  # INTEREST_INCOME: "InvestmentIncomeInterest",
+  OTHER_NONOP_EXPENSE: "OtherNonoperatingIncomeExpense",
+  NET_INTEREST_EXPENSE: "InterestIncomeExpenseNonoperatingNet",
   PBT: "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
   TAX: "IncomeTaxExpenseBenefit",
+  # DISCONTINUED_OPS: "IncomeLossFromDiscontinuedOperationsNetOfTax",
+  # MINORITY_INTEREST: "NetIncomeLossAttributableToNoncontrollingInterest",
   NET_INCOME: "NetIncomeLoss",
   EPS_BASIC: "EarningsPerShareBasic",
   EPS_DILUTED: "EarningsPerShareDiluted",
@@ -21,48 +28,69 @@ balance_sheet: {
   RECEIVABLES: "AccountsReceivableNetCurrent",
   INVENTORY: "InventoryFinishedGoodsNetOfReserves",
   PREPAID_OTHER: "PrepaidExpenseAndOtherAssetsCurrent",
+  # OTHER_RECEIVABLES: "NontradeReceivablesCurrent",
+  # DISCONTINUED_DISPOSAL_CURRENT_ASSETS: "AssetsOfDisposalGroupIncludingDiscontinuedOperationCurrent",
   CURRENT_ASSETS: "AssetsCurrent",
 
   FOR_SALE_SECURITIES_NONCURRENT: "AvailableForSaleSecuritiesNoncurrent",
   PPE: "PropertyPlantAndEquipmentNet",
   GOODWILL: "Goodwill",
   OTHER_INTANGIBLES: "IntangibleAssetsNetExcludingGoodwill",
+  # DISCONTINUED_DISPOSAL_NONCURRENT_ASSETS: "DisposalGroupIncludingDiscontinuedOperationAssetsNoncurrent",
   ASSETS: "Assets",
 
 
   PAYABLES: "AccountsPayableCurrent",
   ACCRUED_LIABILITIES: "AccruedLiabilitiesCurrent",
+  # DEFERRED_REVENUE: "DeferredRevenueCurrent",
   ST_DEBT: "ShortTermBorrowings",
   ST_DEBT_1: "LongTermDebtCurrent",
+  # DISCONTINUED_DISPOSAL_CURRENT_LIABILITIES: "LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationCurrent",
   CURRENT_LIABILITIES: "LiabilitiesCurrent",
 
+  # DEFERRED_REVENUE_NONCURRENT: "DeferredRevenueNoncurrent",
   LT_DEBT: "LongTermDebtNoncurrent",
+  # DEFERRED_TAX_NONCURRENT: "DeferredTaxLiabilitiesNoncurrent",
+  # DISCONTINUED_DISPOSAL_NONCURRENT_LIABILITIES: "LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationNoncurrent",
+  # LIABILITIES: "Liabilities",
 
+  # COMMON_STOCK_VALUE: "CommonStockValue",
+  # ADDITIONAL_PAID_IN_CAPITAL: "AdditionalPaidInCapital",
   STOCK_AND_PAID_IN_CAPITAL: "AdditionalPaidInCapitalCommonStock",
   RETAINED_EARNINGS: "RetainedEarningsAccumulatedDeficit",
   OTHER_COMPREHENSIVE_INCOME: "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
   EQUITY: "StockholdersEquity",
+  # MINORITY_INTEREST: "MinorityInterest",
+  # EQUITY_INCL_NCI: "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
   LIABILITIES_AND_EQUITY: "LiabilitiesAndStockholdersEquity"
   }
 
 cash_flow: {
   NET_INCOME: "NetIncomeLoss",
   D&A: "Depreciation",
-  AMORTISATION: "AmortizationAndOther"
+  AMORTISATION: "AmortizationAndOther",
   SHARE_COMPENSATION: "ShareBasedCompensation",
   DEFERRED_TAX: "DeferredIncomeTaxExpenseBenefit",
+  # IMPAIRMENT: "GoodwillandIndefinitelivedIntangiblesImpairmentChargesIncludingDiscOps",
   RECEIVABLES: "IncreaseDecreaseInAccountsReceivable",
   INVENTORIES: "IncreaseDecreaseInInventories",
+  # OTHER_RECEIVABLES: "IncreaseDecreaseInOtherReceivables",
+  # PAYABLES: "IncreaseDecreaseInAccountsPayable",
+  PAYABLES_ACCRUED_LIABILITIES: "IncreaseDecreaseInAccountsPayableAndAccruedLiabilities",
   PAYABLES_OTHER: "IncreaseDecreaseInAccountsPayableAndOtherOperatingLiabilities",
+  # DEFERRED_REVENUE: "IncreaseDecreaseInDeferredRevenue",
   NET_CASH_FROM_OPERATING_ACTIVITIES: "NetCashProvidedByUsedInOperatingActivities",
 
   ACQUISITION_SECURITIES:
   "PaymentsToAcquireAvailableForSaleSecuritiesDebt",
+  # ACQUISITION_SECURITIES_1: "PaymentsToAcquireOtherInvestments",
   PROCEEDS_SECURITIES_MATURITIES: "ProceedsFromMaturitiesPrepaymentsAndCallsOfAvailableForSaleSecurities",
   PROCEEDS_SECURITIES_SALES: "ProceedsFromSaleOfAvailableForSaleSecuritiesDebt",
   ACQUISITIONS: "PaymentsToAcquireBusinessesNetOfCashAcquired",
   CAPEX: "PaymentsToAcquirePropertyPlantAndEquipment",
-  DISPOSAL_OF_PPE: "ProceedsFromSaleOfPropertyPlantAndEquipment"
+  # ACQUISITIONS_OF_INTANGIBLES: "PaymentsToAcquireIntangibleAssets",
+  # RESTRICTED_CASH: "IncreaseDecreaseInRestrictedCash",
+  DISPOSAL_OF_PPE: "ProceedsFromSaleOfPropertyPlantAndEquipment",
   NET_CASH_FROM_INVESTING_ACTIVITIES: "NetCashProvidedByUsedInInvestingActivities",
 
   STOCK_ISSUANCE: "ProceedsFromIssuanceOrSaleOfEquity",
@@ -74,5 +102,6 @@ cash_flow: {
   NET_CASH_FROM_FINANCING_ACTIVITIES: "NetCashProvidedByUsedInFinancingActivities",
 
   FX_EFFECT_ON_CASH: "EffectOfExchangeRateOnCashAndCashEquivalents",
+  
   NET_CHANGE_IN_CASH: "CashAndCashEquivalentsPeriodIncreaseDecrease"
   }

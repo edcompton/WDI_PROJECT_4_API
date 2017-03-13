@@ -1,5 +1,5 @@
 require 'nokogiri'
-@ticker = 'GOOG'
+@ticker = 'CAT'
 
 statement_files = Dir["ed_compton/scraping/scraped_files/#{@ticker}/2016/*"]
 
