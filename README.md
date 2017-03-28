@@ -1,5 +1,8 @@
 # InvestSmart
 
+<img width="1440" alt="screen shot 2017-03-13 at 20 22 16" src="https://cloud.githubusercontent.com/assets/22742327/23873791/31fa64c6-082b-11e7-9bef-fae38c3db62d.png">
+
+
 ## Overview
 
 InvestSmart makes investing in stocks & shares easier. It was created as my final project during my 12-week Web Development Immersive course at General Assembly in London. We were given the choice to work individually or as a team - I decided to work with three classmates. InvestSmart was built using a Ruby on Rails back-end, a SQL database, and AngularJS front-end.
@@ -32,8 +35,6 @@ The idea involves scraping US company financials, parsing them into a consistent
 ## The process
 
 ### 1. Financial Models
-
-PICTURE OF MODEL PAGE
 
 #### i) Scoping out the data
 
@@ -77,11 +78,8 @@ One of the tables (document and entity information) was quite different to the o
 
 We used a PostgreSQL database, with our model set up as shown below:
 
-![](/Users/henrydavies/development/WDI_PROJECT_4_API/erd.png)
-
+![](https://cloud.githubusercontent.com/assets/22742327/23875227/98727a04-0830-11e7-9aed-ee61721e8cff.png)
 ### 2. User dashboard
-
-PICTURE OF USER DASHBOARD PAGE
 
 We implemented a watchlist, which users can add stocks to. These stocks then populate the two RSS feeds - one for company news from yahoo, and one for the latest company filings (filings are information straight from the company).
 
@@ -90,8 +88,6 @@ Users can also click on the 'chart' button in the watchlist to populate the stoc
 Finally, our user dashboard contains an FX matrix of key currencies, with corresponding daily moves. The data for this is again sourced from Yahoo Finance.
 
 ### 3. Company page
-
-PICTURE OF COMPANY PAGE
 
 To get to the company page, a user can either click on a stock in their watchlist, or use the search box in the top-right of our navigation bar. We used *angucomplete-alt* to add autocomplete functionality to the search.
 

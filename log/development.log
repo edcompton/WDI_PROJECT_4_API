@@ -1,0 +1,10 @@
+  [1m[36mCompany Load (2.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mCompany Load (2.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  [1m[36mFiling Load (1.1ms)[0m  [1m[34mSELECT "filings".* FROM "filings" WHERE "filings"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[36mIsYearlyResult Load (1.6ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 6]]
+  [1m[36mDeiStatement Load (0.5ms)[0m  [1m[34mSELECT  "dei_statements".* FROM "dei_statements" WHERE "dei_statements"."filing_id" = $1 LIMIT $2[0m  [["filing_id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (2.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."ticker" = $1 LIMIT $2[0m  [["ticker", "NKE"], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 22], ["LIMIT", 1]]
+  [1m[36mFiling Load (0.4ms)[0m  [1m[34mSELECT  "filings".* FROM "filings" WHERE "filings"."company_id" = $1 ORDER BY "filings"."id" DESC LIMIT $2[0m  [["company_id", 22], ["LIMIT", 1]]
+  [1m[36mIsYearlyResult Load (0.3ms)[0m  [1m[34mSELECT "is_yearly_results".* FROM "is_yearly_results" WHERE "is_yearly_results"."filing_id" = $1[0m  [["filing_id", 117]]

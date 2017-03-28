@@ -9,7 +9,9 @@ class RssfilingsController < ApplicationController
     tickers.each_with_index do |ticker, tickerIndex|
       # NEED TO LOOK UP CIK IN DATABASE
       # Company.find_by ticker: 'AAPL'
-      cik = '0000320193'
+
+      company = Company.find_by({ticker: ticker})
+      cik = company.filings.last.dei_statement.entity_central_index_key
       url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=#{cik}&type=&dateb=&owner=exclude&start=0&count=10&output=atom"
       # response = HTTParty.get(url)
       # data = response.parsed_response
